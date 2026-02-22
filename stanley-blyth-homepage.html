@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stanley Blyth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:       #1e1a14;
+      --parchment: #f5f0e8;
+      --sand:      #e8dfc8;
+      --clay:      #b5845a;
+      --rust:      #8b4a2b;
+      --moss:      #4a5940;
+      --fog:       #c9c0ae;
+      --cream:     #faf7f2;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Spectral', Georgia, serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE TEXTURE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4rem 3rem;
+      background: rgba(250, 247, 242, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(181, 132, 90, 0.15);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      opacity: 0.65;
+      transition: opacity 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; color: var(--clay); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 80px;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 4rem 5rem 5rem;
+      position: relative;
+    }
+
+    .hero-left::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 15%;
+      bottom: 15%;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--fog), transparent);
+    }
+
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 1.8rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.2s;
+    }
+
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.5rem, 6vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.4s;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--clay);
+    }
+
+    .hero-tagline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1rem, 1.8vw, 1.3rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--moss);
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.6s;
+    }
+
+    .hero-bio {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--ink);
+      opacity: 0.75;
+      max-width: 44ch;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.8s;
+    }
+
+    .hero-bio-visible {
+      opacity: 0.75;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 1s;
+    }
+
+    .btn-primary {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--cream);
+      background: var(--rust);
+      padding: 0.85rem 2rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: var(--clay); transform: translateY(-2px); }
+
+    .btn-ghost {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--ink);
+      opacity: 0.55;
+      transition: opacity 0.2s;
+    }
+
+    .btn-ghost:hover { opacity: 1; }
+
+    /* ── HERO RIGHT (PHOTO) ── */
+    .hero-right {
+      position: relative;
+      background: var(--sand);
+      overflow: hidden;
+    }
+
+    .photo-frame {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Placeholder photo silhouette */
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      background:
+        linear-gradient(160deg, #c9b99a 0%, #a07850 40%, #6b4e35 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 3rem;
+      position: relative;
+    }
+
+    /* Decorative botanical SVG in background */
+    .photo-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='600'%3E%3Cg opacity='0.12' stroke='%23fff' stroke-width='1' fill='none'%3E%3Cellipse cx='200' cy='300' rx='120' ry='200'/%3E%3Cellipse cx='200' cy='300' rx='80' ry='150'/%3E%3Cline x1='200' y1='100' x2='200' y2='500'/%3E%3Cline x1='100' y1='250' x2='300' y2='350'/%3E%3Cline x1='100' y1='350' x2='300' y2='250'/%3E%3Cellipse cx='200' cy='300' rx='160' ry='250'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: cover;
+      pointer-events: none;
+    }
+
+    .photo-caption {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      writing-mode: vertical-rl;
+    }
+
+    .photo-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 0.5rem 1rem;
+    }
+
+    /* Replace .photo-placeholder with an actual <img> tag when you have a photo:
+       <img src="your-photo.jpg" style="width:100%;height:100%;object-fit:cover;" /> */
+
+    /* ── QUOTE STRIP ── */
+    .quote-strip {
+      background: var(--rust);
+      padding: 3.5rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-strip::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 16rem;
+      color: rgba(255,255,255,0.06);
+      position: absolute;
+      top: -4rem;
+      left: 2rem;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .quote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+      font-style: italic;
+      color: var(--parchment);
+      max-width: 70ch;
+      line-height: 1.55;
+      position: relative;
+    }
+
+    .quote-sub {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(245, 240, 232, 0.45);
+      margin-top: 1.2rem;
+    }
+
+    /* ── SECTIONS GRID ── */
+    .sections-intro {
+      padding: 6rem 5rem 2rem;
+    }
+
+    .sections-intro h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.8rem;
+    }
+
+    .sections-intro p {
+      font-size: 1rem;
+      color: var(--ink);
+      opacity: 0.6;
+      max-width: 55ch;
+    }
+
+    .sections-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      padding: 3rem 5rem 6rem;
+    }
+
+    .section-card {
+      padding: 2.5rem;
+      border: 1px solid rgba(181, 132, 90, 0.18);
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+      transition: background 0.3s;
+    }
+
+    .section-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 0;
+      background: var(--clay);
+      transition: width 0.35s ease;
+    }
+
+    .section-card:hover { background: var(--sand); }
+    .section-card:hover::before { width: 100%; }
+
+    .card-number {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--clay);
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.8rem;
+      line-height: 1.2;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--ink);
+      opacity: 0.6;
+    }
+
+    .card-arrow {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--clay);
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: opacity 0.25s, transform 0.25s;
+    }
+
+    .section-card:hover .card-arrow { opacity: 1; transform: translateX(0); }
+
+    /* Featured card */
+    .section-card.featured {
+      background: var(--moss);
+      border-color: var(--moss);
+      grid-row: span 2;
+    }
+
+    .section-card.featured .card-number { color: rgba(245,240,232,0.5); }
+    .section-card.featured .card-title { color: var(--parchment); font-size: 1.8rem; }
+    .section-card.featured .card-desc { color: rgba(245,240,232,0.7); }
+    .section-card.featured .card-arrow { color: var(--sand); }
+    .section-card.featured::before { background: var(--sand); }
+    .section-card.featured:hover { background: #3d4d33; }
+
+    /* ── RECENT WRITING ── */
+    .recent-writing {
+      background: var(--sand);
+      padding: 5rem;
+    }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--fog);
+    }
+
+    .writing-list { display: flex; flex-direction: column; gap: 0; }
+
+    .writing-item {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 2rem;
+      align-items: baseline;
+      padding: 1.8rem 0;
+      border-bottom: 1px solid rgba(181, 132, 90, 0.2);
+      text-decoration: none;
+      color: inherit;
+      transition: padding-left 0.25s;
+    }
+
+    .writing-item:hover { padding-left: 1rem; }
+
+    .writing-item:first-child { border-top: 1px solid rgba(181, 132, 90, 0.2); }
+
+    .writing-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--clay);
+      white-space: nowrap;
+      min-width: 90px;
+    }
+
+    .writing-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--ink);
+    }
+
+    .writing-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      color: var(--fog);
+      white-space: nowrap;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: var(--fog);
+      padding: 3.5rem 5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--parchment);
+    }
+
+    .footer-note {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      opacity: 0.4;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Fix: hero-bio animation overriding opacity */
+    .hero-bio { animation: fadeUp 0.8s ease forwards 0.8s; }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-right { height: 50vw; min-height: 320px; }
+      .hero-left { padding: 3rem 2rem; }
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+      .sections-grid { grid-template-columns: 1fr; padding: 2rem; }
+      .section-card.featured { grid-row: span 1; }
+      .quote-strip, .sections-intro, .recent-writing { padding: 3rem 2rem; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2.5rem; }
+      .writing-item { grid-template-columns: 1fr; gap: 0.4rem; }
+      .writing-date { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Stanley Blyth</a>
+    <ul class="nav-links">
+      <li><a href="#">Writing</a></li>
+      <li><a href="#">The Farm</a></li>
+      <li><a href="#">Philosophy</a></li>
+      <li><a href="#">History</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Project Coordinator · Hong Kong · PGCE</p>
+      <h1 class="hero-name">Stanley<br /><em>Blyth</em></h1>
+      <p class="hero-tagline">Thinking out loud, in writing.</p>
+      <p class="hero-bio">
+        I'm a project coordinator and qualified teacher based in Hong Kong, with a background in environmental management and a habit of going three layers deeper than necessary into everything that interests me. This site is where that ends up.
+      </p>
+      <div class="hero-cta">
+        <a href="#writing" class="btn-primary">Read the blog</a>
+        <a href="#about" class="btn-ghost">About me →</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="photo-placeholder">
+        <!-- 
+          REPLACE THIS ENTIRE .photo-placeholder div with:
+          <img src="your-photo.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;" alt="Stanley Blyth" />
+        -->
+        <span class="photo-label">Your photo here</span>
+        <span class="photo-caption">Stanley Blyth · Hong Kong</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE STRIP -->
+  <div class="quote-strip reveal">
+    <p class="quote-text">
+      Living without depth, without the courage to embrace it, feels like a half-life. Clarity creates courage. Work inspires motivation.
+    </p>
+    <p class="quote-sub">— Thoughts on Life</p>
+  </div>
+
+  <!-- SECTIONS -->
+  <div class="sections-intro reveal">
+    <h2>What I write about</h2>
+    <p>Opinions I've thought through, interests I've gone too deep on, and goals I'm working toward. No algorithm. No agenda. Just the long version.</p>
+  </div>
+
+  <div class="sections-grid">
+    <a href="#" class="section-card featured reveal">
+      <span class="card-number">01</span>
+      <p class="card-title">The Farm</p>
+      <p class="card-desc">One day I'll have land, animals, bees, and a vegetable patch. This is me thinking through everything that means — self-sufficiency, food, and getting back to something real.</p>
+      <span class="card-arrow">Read more →</span>
+    </a>
+
+    <a href="#" class="section-card reveal">
+      <span class="card-number">02</span>
+      <p class="card-title">Philosophy</p>
+      <p class="card-desc">My thoughts on life, intimacy, courage, and what it means to actually be present in the world.</p>
+      <span class="card-arrow">Read more →</span>
+    </a>
+
+    <a href="#" class="section-card reveal">
+      <span class="card-number">03</span>
+      <p class="card-title">History</p>
+      <p class="card-desc">Viking-era Britain, Anglo-Saxon England, what TV gets wrong, and why it matters that we represent the past accurately.</p>
+      <span class="card-arrow">Read more →</span>
+    </a>
+
+    <a href="#" class="section-card reveal">
+      <span class="card-number">04</span>
+      <p class="card-title">Fitness</p>
+      <p class="card-desc">Body composition over weight. Evidence over myth. An engineering approach to the body — with real numbers.</p>
+      <span class="card-arrow">Read more →</span>
+    </a>
+
+    <a href="#" class="section-card reveal">
+      <span class="card-number">05</span>
+      <p class="card-title">Reading & Comics</p>
+      <p class="card-desc">Honest reviews of what I'm reading. Marvel deep cuts, mythology, history. No stars — just analysis.</p>
+      <span class="card-arrow">Read more →</span>
+    </a>
+
+    <a href="#" class="section-card reveal">
+      <span class="card-number">06</span>
+      <p class="card-title">Technology</p>
+      <p class="card-desc">Pi-hole, Raspberry Pi, ad-blocking, retro gaming. I write about how things actually work, not just what to do.</p>
+      <span class="card-arrow">Read more →</span>
+    </a>
+  </div>
+
+  <!-- RECENT WRITING -->
+  <section class="recent-writing" id="writing">
+    <div class="section-label">Recent writing</div>
+    <div class="writing-list">
+
+      <a href="#" class="writing-item">
+        <span class="writing-tag">Philosophy</span>
+        <span class="writing-title">On vulnerability, trust, and the courage it takes to feel things fully</span>
+        <span class="writing-date">Coming soon</span>
+      </a>
+
+      <a href="#" class="writing-item">
+        <span class="writing-tag">The Farm</span>
+        <span class="writing-title">Why I want a farm — and what that actually means at this stage of life</span>
+        <span class="writing-date">Coming soon</span>
+      </a>
+
+      <a href="#" class="writing-item">
+        <span class="writing-tag">History</span>
+        <span class="writing-title">What The Last Kingdom gets right, what it gets wrong, and why it matters</span>
+        <span class="writing-date">Coming soon</span>
+      </a>
+
+      <a href="#" class="writing-item">
+        <span class="writing-tag">Fitness</span>
+        <span class="writing-title">Why I stopped tracking weight and started tracking everything else</span>
+        <span class="writing-date">Coming soon</span>
+      </a>
+
+      <a href="#" class="writing-item">
+        <span class="writing-tag">Comics</span>
+        <span class="writing-title">Thor: The God Butcher — what it understands about mortality that most stories don't</span>
+        <span class="writing-date">Coming soon</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-name">Stanley Blyth</span>
+    <span class="footer-note">Hong Kong · The long version of my opinions</span>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
