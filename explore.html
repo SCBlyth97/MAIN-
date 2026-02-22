@@ -7,135 +7,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=DM+Mono:wght@300;400&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --ink:       #18140f;
-      --parchment: #f4ede0;
-      --sand:      #e6d9c2;
-      --clay:      #b07d4e;
-      --rust:      #7a3f20;
-      --moss:      #445238;
-      --fog:       #bfb39e;
-      --cream:     #faf6ef;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--cream);
-      color: var(--ink);
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      line-height: 1.7;
-    }
-
-    /* GRAIN */
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 999;
-      opacity: 0.03;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.6rem 4rem;
-      background: rgba(250, 246, 239, 0.92);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(176, 125, 78, 0.12);
-    }
-
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.8rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      font-weight: 300;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--ink);
-      text-decoration: none;
-      opacity: 0.5;
-      transition: opacity 0.25s, color 0.25s;
-    }
-
-    .nav-links a:hover { opacity: 1; color: var(--clay); }
-
-    /* ── PAGE HEADER ── */
+    /* ── PAGE HEADER (overrides for explore) ── */
     .page-header {
       padding: 8rem 4rem 3rem;
-      border-bottom: 1px solid rgba(176,125,78,0.15);
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.1s;
     }
 
-    .page-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--clay);
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .page-eyebrow::before {
-      content: '';
-      display: inline-block;
-      width: 24px;
-      height: 1px;
-      background: var(--clay);
-    }
-
-    .page-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
-      font-weight: 300;
-      color: var(--ink);
-      line-height: 1.1;
-    }
-
-    .page-title em {
-      font-style: italic;
-      color: var(--clay);
-    }
-
-    .page-sub {
-      font-size: 0.9rem;
-      color: var(--ink);
-      opacity: 0.5;
-      margin-top: 0.8rem;
-      max-width: 50ch;
-    }
-
-    /* ── ROWS ── */
+    /* ── EXPLORE ROWS ── */
     .rows-wrap {
       padding: 0 4rem;
     }
@@ -180,7 +60,6 @@
       transform-origin: bottom;
       transition: transform 0.35s ease;
     }
-
     .explore-row:hover::before { transform: scaleY(1); }
 
     /* TAG column */
@@ -207,8 +86,6 @@
     }
 
     /* BODY column */
-    .row-body { }
-
     .row-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.55rem;
@@ -218,7 +95,6 @@
       margin-bottom: 0.45rem;
       transition: color 0.2s;
     }
-
     .explore-row:hover .row-title { color: var(--rust); }
 
     .row-desc {
@@ -246,7 +122,6 @@
       padding: 0.2rem 0.6rem;
       transition: border-color 0.2s, background 0.2s;
     }
-
     .explore-row:hover .pill {
       border-color: rgba(176,125,78,0.55);
       background: rgba(176,125,78,0.06);
@@ -269,7 +144,6 @@
       transition: color 0.25s, transform 0.25s;
       line-height: 1;
     }
-
     .explore-row:hover .row-arrow {
       color: var(--clay);
       transform: translateX(5px);
@@ -284,46 +158,11 @@
       text-align: right;
     }
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--ink);
-      padding: 3rem 4rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 5rem;
-    }
-
-    .footer-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-style: italic;
-      font-weight: 300;
-      color: var(--parchment);
-    }
-
-    .footer-copy {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.58rem;
-      color: var(--fog);
-      opacity: 0.3;
-    }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      nav { padding: 1.2rem 1.5rem; }
-      .nav-links { gap: 1.2rem; }
-      .page-header { padding: 7rem 1.5rem 2.5rem; }
       .rows-wrap { padding: 0 1.5rem; }
       .explore-row { grid-template-columns: 80px 1fr; gap: 1.2rem; }
       .row-action { display: none; }
-      footer { padding: 2.5rem 1.5rem; flex-direction: column; gap: 1rem; }
     }
   </style>
 </head>
@@ -331,29 +170,29 @@
 
   <!-- NAV -->
   <nav>
-    <a href="home.html" class="nav-logo">Stanley Blyth</a>
+    <a href="index.html" class="nav-logo">Stanley Blyth</a>
     <ul class="nav-links">
-      <li><a href="#">Explore</a></li>
-      <li><a href="#">Future Goals</a></li>
-      <li><a href="#">Philosophy</a></li>
-      <li><a href="#">Travel</a></li>
-      <li><a href="#">Reading</a></li>
-      <li><a href="#">Tech</a></li>
-      <li><a href="#">About</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="future-goals.html">Future Goals</a></li>
+      <li><a href="philosophy.html">Philosophy</a></li>
+      <li><a href="travel.html">Travel</a></li>
+      <li><a href="reading.html">Reading</a></li>
+      <li><a href="tech.html">Tech</a></li>
+      <li><a href="about.html">About</a></li>
     </ul>
   </nav>
 
   <!-- PAGE HEADER -->
   <div class="page-header">
-    <p class="page-eyebrow">stanleyblyth.com · Explore</p>
+    <p class="page-eyebrow">Stanley Blyth · Explore</p>
     <h1 class="page-title">Pick what <em>interests you</em></h1>
-    <p class="page-sub">Six sections. All of them are just me thinking out loud about things I care about.</p>
+    <p class="page-sub">Six sections. All of them are just me thinking out loud about things I genuinely care about.</p>
   </div>
 
   <!-- ROWS -->
   <div class="rows-wrap">
 
-    <a href="#" class="explore-row">
+    <a href="future-goals.html" class="explore-row">
       <div class="row-tag">
         <span class="row-num">01</span>
         <span class="row-tag-label">Future Goals</span>
@@ -372,7 +211,7 @@
       </div>
     </a>
 
-    <a href="#" class="explore-row">
+    <a href="philosophy.html" class="explore-row">
       <div class="row-tag">
         <span class="row-num">02</span>
         <span class="row-tag-label">Philosophy</span>
@@ -391,7 +230,7 @@
       </div>
     </a>
 
-    <a href="#" class="explore-row">
+    <a href="travel.html" class="explore-row">
       <div class="row-tag">
         <span class="row-num">03</span>
         <span class="row-tag-label">Travel</span>
@@ -411,7 +250,7 @@
       </div>
     </a>
 
-    <a href="#" class="explore-row">
+    <a href="reading.html" class="explore-row">
       <div class="row-tag">
         <span class="row-num">04</span>
         <span class="row-tag-label">Reading</span>
@@ -431,7 +270,7 @@
       </div>
     </a>
 
-    <a href="#" class="explore-row">
+    <a href="tech.html" class="explore-row">
       <div class="row-tag">
         <span class="row-num">05</span>
         <span class="row-tag-label">Tech</span>
@@ -451,7 +290,7 @@
       </div>
     </a>
 
-    <a href="#" class="explore-row">
+    <a href="about.html" class="explore-row">
       <div class="row-tag">
         <span class="row-num">06</span>
         <span class="row-tag-label">About</span>
@@ -474,8 +313,17 @@
   </div>
 
   <!-- FOOTER -->
-  <footer>
+  <footer style="margin-top: 5rem;">
     <span class="footer-name">Stanley Blyth</span>
+    <ul class="footer-nav">
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="future-goals.html">Future Goals</a></li>
+      <li><a href="philosophy.html">Philosophy</a></li>
+      <li><a href="travel.html">Travel</a></li>
+      <li><a href="reading.html">Reading</a></li>
+      <li><a href="tech.html">Tech</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
     <span class="footer-copy">© 2026 Stanley Blyth</span>
   </footer>
 

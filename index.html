@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stanley Blyth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600;1,700&family=DM+Mono:wght@300;400&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 80px;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 4rem 5rem 5rem;
+      position: relative;
+    }
+
+    .hero-left::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 15%;
+      bottom: 15%;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--fog), transparent);
+    }
+
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.64rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 1.8rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.2s;
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 6.5vw, 6rem);
+      font-weight: 300;
+      line-height: 1.0;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 0.2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.4s;
+    }
+
+    .hero-name-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--clay);
+      letter-spacing: 0.02em;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.52s;
+    }
+
+    .hero-tagline {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.66rem;
+      letter-spacing: 0.14em;
+      color: var(--fog);
+      margin-bottom: 2.8rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.65s;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.8s;
+    }
+
+    /* ── HERO RIGHT ── */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+      min-height: 60vh;
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 60vh;
+      background: linear-gradient(160deg, #d4c4a8 0%, #b09070 40%, #7a5a3a 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .photo-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='600'%3E%3Cg opacity='0.07' stroke='%23fff' stroke-width='0.5' fill='none'%3E%3Cellipse cx='200' cy='300' rx='150' ry='250'/%3E%3Cellipse cx='200' cy='300' rx='100' ry='175'/%3E%3Cline x1='200' y1='50' x2='200' y2='550'/%3E%3Cline x1='70' y1='180' x2='330' y2='420'/%3E%3Cline x1='70' y1='420' x2='330' y2='180'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: cover;
+      pointer-events: none;
+    }
+
+    .photo-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 0.5rem 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .photo-caption {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      writing-mode: vertical-rl;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── IDENTITY STRIP ── */
+    .identity-strip {
+      background: var(--ink);
+      padding: 2rem 4rem;
+      overflow: hidden;
+    }
+
+    .identity-strip-inner {
+      display: flex;
+      gap: 4rem;
+      align-items: center;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .identity-strip-inner::-webkit-scrollbar { display: none; }
+
+    .identity-fact {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .identity-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.56rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--fog);
+      opacity: 0.45;
+    }
+
+    .identity-divider {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--fog);
+      opacity: 0.2;
+    }
+
+    .identity-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--parchment);
+      opacity: 0.85;
+    }
+
+    /* ── SECTIONS PREVIEW ── */
+    .sections-wrap {
+      padding: 5rem 4rem 6rem;
+    }
+
+    .sections-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 0.6rem;
+    }
+
+    .sections-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .sections-sub {
+      font-size: 0.88rem;
+      color: var(--ink);
+      opacity: 0.5;
+      max-width: 52ch;
+      margin-bottom: 3rem;
+    }
+
+    .sections-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(176,125,78,0.15);
+      border: 1px solid rgba(176,125,78,0.15);
+    }
+
+    .section-card {
+      padding: 2.5rem;
+      background: var(--cream);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s ease;
+    }
+
+    .section-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--clay);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.35s ease;
+    }
+
+    .section-card:hover { background: var(--sand); }
+    .section-card:hover::before { transform: scaleY(1); }
+
+    .card-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: var(--clay);
+      opacity: 0.6;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+      transition: color 0.25s;
+    }
+
+    .section-card:hover .card-title { color: var(--rust); }
+
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--ink);
+      opacity: 0.55;
+      line-height: 1.75;
+    }
+
+    .card-arrow {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--clay);
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: opacity 0.25s, transform 0.25s;
+    }
+
+    .section-card:hover .card-arrow { opacity: 1; transform: translateX(0); }
+
+    /* FEATURED CARD */
+    .section-card.featured {
+      background: var(--moss);
+      grid-column: span 2;
+    }
+
+    .section-card.featured .card-num  { color: rgba(244, 237, 224, 0.4); opacity: 1; }
+    .section-card.featured .card-title { color: var(--parchment); font-size: 2rem; }
+    .section-card.featured .card-desc  { color: rgba(244,237,224,0.65); opacity: 1; }
+    .section-card.featured .card-arrow { color: var(--sand); }
+    .section-card.featured::before { background: rgba(244,237,224,0.3); }
+    .section-card.featured:hover { background: #3a4730; }
+    .section-card.featured:hover .card-title { color: var(--parchment); }
+
+    /* ── LATEST POSTS ── */
+    .latest-posts {
+      background: var(--sand);
+      padding: 5rem 4rem;
+    }
+
+    .latest-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 0.5rem;
+    }
+
+    .latest-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 300;
+      color: var(--ink);
+      margin-bottom: 3rem;
+    }
+
+    .writing-list { display: flex; flex-direction: column; }
+
+    .writing-item {
+      display: grid;
+      grid-template-columns: 120px 1fr 130px;
+      gap: 3rem;
+      align-items: baseline;
+      padding: 1.8rem 0;
+      border-bottom: 1px solid rgba(176,125,78,0.18);
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      transition: padding-left 0.25s ease;
+    }
+
+    .writing-item:first-child { border-top: 1px solid rgba(176,125,78,0.18); }
+    .writing-item:hover { padding-left: 0.8rem; }
+
+    .writing-item::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--clay);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.3s ease;
+    }
+    .writing-item:hover::before { transform: scaleY(1); }
+
+    .writing-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--clay);
+    }
+
+    .writing-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+      transition: color 0.2s;
+    }
+    .writing-item:hover .writing-title { color: var(--rust); }
+
+    .writing-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      color: var(--fog);
+      text-align: right;
+      opacity: 0.7;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-right { height: 55vw; min-height: 280px; }
+      .hero-left { padding: 5rem 2rem 3rem; }
+      .hero-left::after { display: none; }
+      .identity-strip { padding: 1.8rem 2rem; }
+      .sections-wrap { padding: 3.5rem 2rem 4rem; }
+      .sections-grid { grid-template-columns: 1fr 1fr; }
+      .section-card.featured { grid-column: span 2; }
+      .latest-posts { padding: 3.5rem 2rem; }
+      .writing-item { grid-template-columns: 80px 1fr; gap: 1.2rem; }
+      .writing-date { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .sections-grid { grid-template-columns: 1fr; }
+      .section-card.featured { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Stanley Blyth</a>
+    <ul class="nav-links">
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="future-goals.html">Future Goals</a></li>
+      <li><a href="philosophy.html">Philosophy</a></li>
+      <li><a href="travel.html">Travel</a></li>
+      <li><a href="reading.html">Reading</a></li>
+      <li><a href="tech.html">Tech</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Project Coordinator · Hong Kong · PGCE</p>
+      <h1 class="hero-name">Stanley<br>Blyth</h1>
+      <p class="hero-name-sub">— in writing.</p>
+      <p class="hero-tagline">Hong Kong based &nbsp;·&nbsp; Globally minded &nbsp;·&nbsp; Always learning</p>
+      <div class="hero-cta">
+        <a href="explore.html" class="btn-primary">Explore the site</a>
+        <a href="about.html" class="btn-ghost">About me →</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="photo-placeholder">
+        <!--
+          Replace this entire .photo-placeholder div with:
+          <img src="your-photo.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;" alt="Stanley Blyth" />
+        -->
+        <span class="photo-label">Photo coming soon</span>
+        <span class="photo-caption">Stanley Blyth · Hong Kong</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- IDENTITY STRIP -->
+  <div class="identity-strip reveal">
+    <div class="identity-strip-inner">
+      <div class="identity-fact">
+        <span class="identity-label">Role</span>
+        <span class="identity-divider">·</span>
+        <span class="identity-value">Project Coordinator</span>
+      </div>
+      <div class="identity-fact">
+        <span class="identity-label">Based</span>
+        <span class="identity-divider">·</span>
+        <span class="identity-value">Hong Kong</span>
+      </div>
+      <div class="identity-fact">
+        <span class="identity-label">Qualified</span>
+        <span class="identity-divider">·</span>
+        <span class="identity-value">PGCE · Environmental Management</span>
+      </div>
+      <div class="identity-fact">
+        <span class="identity-label">Future</span>
+        <span class="identity-divider">·</span>
+        <span class="identity-value">The Farm · The Book</span>
+      </div>
+      <div class="identity-fact">
+        <span class="identity-label">Currently</span>
+        <span class="identity-divider">·</span>
+        <span class="identity-value">Reading, building, thinking</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTIONS PREVIEW -->
+  <div class="sections-wrap">
+    <p class="sections-eyebrow reveal">What I write about</p>
+    <h2 class="sections-heading reveal">Five sections. All of them genuine.</h2>
+    <p class="sections-sub reveal">Opinions I've thought through, interests I've gone too deep on, and goals I'm working toward. No algorithm. No agenda. Just the long version.</p>
+
+    <div class="sections-grid">
+
+      <!-- FEATURED: Future Goals -->
+      <a href="future-goals.html" class="section-card featured reveal">
+        <span class="card-num">01</span>
+        <p class="card-title">Future Goals</p>
+        <p class="card-desc">The farm I'm building toward. The book I'm going to write. Long-term ambitions documented in detail — the things that keep everything else in perspective.</p>
+        <span class="card-arrow">Explore →</span>
+      </a>
+
+      <a href="philosophy.html" class="section-card reveal">
+        <span class="card-num">02</span>
+        <p class="card-title">Philosophy</p>
+        <p class="card-desc">Clarity, courage, friendship, and how I see the world. The long version of my opinions on what actually matters.</p>
+        <span class="card-arrow">Read →</span>
+      </a>
+
+      <a href="travel.html" class="section-card reveal">
+        <span class="card-num">03</span>
+        <p class="card-title">Travel & Achievements</p>
+        <p class="card-desc">Mt Fuji. The Ha Giang Loop. The places I've been, what I did, and what they actually meant to me.</p>
+        <span class="card-arrow">Read →</span>
+      </a>
+
+      <a href="reading.html" class="section-card reveal">
+        <span class="card-num">04</span>
+        <p class="card-title">Reading</p>
+        <p class="card-desc">Comics, books, honest reviews. No pretension — just what I actually thought about what I read.</p>
+        <span class="card-arrow">Read →</span>
+      </a>
+
+      <a href="tech.html" class="section-card reveal">
+        <span class="card-num">05</span>
+        <p class="card-title">Tech</p>
+        <p class="card-desc">Pi-hole, Raspberry Pi, coding notes, CompTIA. How things actually work — not just what to do but why.</p>
+        <span class="card-arrow">Read →</span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- LATEST POSTS -->
+  <section class="latest-posts reveal">
+    <p class="latest-eyebrow">Latest writing</p>
+    <h2 class="latest-heading">Recent posts</h2>
+
+    <div class="writing-list">
+      <a href="post.html" class="writing-item">
+        <span class="writing-tag">Philosophy</span>
+        <span class="writing-title">On clarity, courage, and the value of thinking things through properly</span>
+        <span class="writing-date">Coming soon</span>
+      </a>
+      <a href="post.html" class="writing-item">
+        <span class="writing-tag">Future Goals</span>
+        <span class="writing-title">Why I want a farm — and what that actually means at this stage of life</span>
+        <span class="writing-date">Coming soon</span>
+      </a>
+      <a href="post.html" class="writing-item">
+        <span class="writing-tag">Travel</span>
+        <span class="writing-title">Mt Fuji: what climbing a mountain teaches you about what you're made of</span>
+        <span class="writing-date">Coming soon</span>
+      </a>
+      <a href="post.html" class="writing-item">
+        <span class="writing-tag">Reading</span>
+        <span class="writing-title">Thor: The God Butcher — what it understands about mortality that most stories don't</span>
+        <span class="writing-date">Coming soon</span>
+      </a>
+      <a href="post.html" class="writing-item">
+        <span class="writing-tag">Tech</span>
+        <span class="writing-title">Pi-hole: why I block ads at the network level and how I actually set it up</span>
+        <span class="writing-date">Coming soon</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-name">Stanley Blyth</span>
+    <ul class="footer-nav">
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="future-goals.html">Future Goals</a></li>
+      <li><a href="philosophy.html">Philosophy</a></li>
+      <li><a href="travel.html">Travel</a></li>
+      <li><a href="reading.html">Reading</a></li>
+      <li><a href="tech.html">Tech</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Stanley Blyth</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

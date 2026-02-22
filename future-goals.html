@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Future Goals — Stanley Blyth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=DM+Mono:wght@300;400&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── SUB-TOPIC CARDS ── */
+    .subtopics {
+      padding: 3.5rem 4rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(176,125,78,0.12);
+      border: 1px solid rgba(176,125,78,0.12);
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.3s;
+    }
+
+    .subtopic-card {
+      padding: 2.5rem;
+      background: var(--cream);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      position: relative;
+      transition: background 0.3s ease;
+    }
+
+    .subtopic-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--clay);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.35s ease;
+    }
+
+    .subtopic-card:hover { background: var(--sand); }
+    .subtopic-card:hover::before { transform: scaleY(1); }
+
+    .subtopic-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clay);
+      opacity: 0.7;
+      margin-bottom: 0.8rem;
+    }
+
+    .subtopic-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 0.7rem;
+      transition: color 0.25s;
+    }
+
+    .subtopic-card:hover .subtopic-title { color: var(--rust); }
+
+    .subtopic-desc {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: var(--ink);
+      opacity: 0.55;
+    }
+
+    /* ── DIVIDER LABEL ── */
+    .section-divide {
+      padding: 3rem 4rem 0;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--clay);
+      opacity: 0;
+      animation: fadeUp 0.5s ease forwards 0.5s;
+    }
+
+    @media (max-width: 768px) {
+      .subtopics { grid-template-columns: 1fr; padding: 2.5rem 1.5rem 0; }
+      .section-divide { padding: 2.5rem 1.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Stanley Blyth</a>
+    <ul class="nav-links">
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="future-goals.html">Future Goals</a></li>
+      <li><a href="philosophy.html">Philosophy</a></li>
+      <li><a href="travel.html">Travel</a></li>
+      <li><a href="reading.html">Reading</a></li>
+      <li><a href="tech.html">Tech</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="page-eyebrow">Stanley Blyth · Future Goals</p>
+    <h1 class="page-title">The things I'm <em>working toward</em></h1>
+    <p class="page-sub">Long-term ambitions planned in detail. Two big ones: The Farm and The Book. This is where I think through what they actually mean.</p>
+  </div>
+
+  <!-- SUB-TOPIC CARDS -->
+  <div class="subtopics">
+    <a href="post.html" class="subtopic-card">
+      <p class="subtopic-tag">Sub-topic 01</p>
+      <p class="subtopic-title">The Farm</p>
+      <p class="subtopic-desc">Land, animals, bees, a vegetable patch. What it would look like, how I'd live it, and why this kind of life matters to me. Not a fantasy — a plan.</p>
+    </a>
+    <a href="post.html" class="subtopic-card">
+      <p class="subtopic-tag">Sub-topic 02</p>
+      <p class="subtopic-title">Write a Book</p>
+      <p class="subtopic-desc">A cultural history of food origins — the civilisations, migrations, and trade routes that shaped what we eat. The research, the structure, and what I'm trying to say.</p>
+    </a>
+  </div>
+
+  <!-- POST LIST -->
+  <p class="section-divide">All posts</p>
+
+  <div class="post-list">
+
+    <a href="post.html" class="post-item">
+      <span class="post-tag">The Farm</span>
+      <span class="post-title-link">Why I want a farm — and what that actually means at this stage of life</span>
+      <span class="post-date">Coming soon</span>
+    </a>
+
+    <a href="post.html" class="post-item">
+      <span class="post-tag">The Farm</span>
+      <span class="post-title-link">Animals, land, and the case for growing your own food in a world that's forgotten how</span>
+      <span class="post-date">Coming soon</span>
+    </a>
+
+    <a href="post.html" class="post-item">
+      <span class="post-tag">The Farm</span>
+      <span class="post-title-link">Beekeeping: why I'm drawn to it, what it takes, and how I'd approach it from scratch</span>
+      <span class="post-date">Coming soon</span>
+    </a>
+
+    <a href="post.html" class="post-item">
+      <span class="post-tag">Write a Book</span>
+      <span class="post-title-link">The book idea: cultures, origins, and the untold story of where our food actually comes from</span>
+      <span class="post-date">Coming soon</span>
+    </a>
+
+    <a href="post.html" class="post-item">
+      <span class="post-tag">Write a Book</span>
+      <span class="post-title-link">How I'm approaching the research — and what I've found so far</span>
+      <span class="post-date">Coming soon</span>
+    </a>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-name">Stanley Blyth</span>
+    <ul class="footer-nav">
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="future-goals.html">Future Goals</a></li>
+      <li><a href="philosophy.html">Philosophy</a></li>
+      <li><a href="travel.html">Travel</a></li>
+      <li><a href="reading.html">Reading</a></li>
+      <li><a href="tech.html">Tech</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Stanley Blyth</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
