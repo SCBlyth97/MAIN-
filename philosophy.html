@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Philosophy — Stanley Blyth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=DM+Mono:wght@300;400&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── QUOTE PULL ── */
+    .pull-quote {
+      padding: 4rem 4rem;
+      border-bottom: 1px solid rgba(176,125,78,0.15);
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.3s;
+    }
+
+    .pull-quote-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.35rem, 2.8vw, 2rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--ink);
+      max-width: 72ch;
+      line-height: 1.55;
+      opacity: 0.85;
+    }
+
+    .pull-quote-attr {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clay);
+      opacity: 0.6;
+      margin-top: 1.2rem;
+    }
+
+    /* ── SECTION DIVIDE ── */
+    .section-divide {
+      padding: 3rem 4rem 0;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--clay);
+      opacity: 0;
+      animation: fadeUp 0.5s ease forwards 0.5s;
+    }
+
+    @media (max-width: 768px) {
+      .pull-quote { padding: 3rem 1.5rem; }
+      .section-divide { padding: 2.5rem 1.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Stanley Blyth</a>
+    <ul class="nav-links">
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="future-goals.html">Future Goals</a></li>
+      <li><a href="philosophy.html">Philosophy</a></li>
+      <li><a href="travel.html">Travel</a></li>
+      <li><a href="reading.html">Reading</a></li>
+      <li><a href="tech.html">Tech</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="page-eyebrow">Stanley Blyth · Philosophy</p>
+    <h1 class="page-title">How I see <em>the world</em></h1>
+    <p class="page-sub">Clarity, courage, friendship, and what actually matters. The long version of opinions I've spent real time forming.</p>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="pull-quote">
+    <p class="pull-quote-text">"Living without depth — without the courage to embrace it — feels like a half-life. Clarity creates courage. Work inspires motivation."</p>
+    <p class="pull-quote-attr">— Thoughts on life</p>
+  </div>
+
+  <!-- POST LIST -->
+  <p class="section-divide">Essays &amp; thoughts</p>
+
+  <div class="post-list">
+
+    <a href="post.html" class="post-item">
+      <span class="post-tag">Philosophy</span>
+      <span class="post-title-link">On clarity, courage, and the value of thinking things through properly</span>
+      <span class="post-date">Coming soon</span>
+    </a>
+
+    <a href="post.html" class="post-item">
+      <span class="post-tag">Philosophy</span>
+      <span class="post-title-link">Friendship: what it actually means and why so few people maintain it well</span>
+      <span class="post-date">Coming soon</span>
+    </a>
+
+    <a href="post.html" class="post-item">
+      <span class="post-tag">Philosophy</span>
+      <span class="post-title-link">On being present: why distraction is a choice and what you give up when you make it</span>
+      <span class="post-date">Coming soon</span>
+    </a>
+
+    <a href="post.html" class="post-item">
+      <span class="post-tag">Philosophy</span>
+      <span class="post-title-link">Why I think most people mistake comfort for contentment</span>
+      <span class="post-date">Coming soon</span>
+    </a>
+
+    <a href="post.html" class="post-item">
+      <span class="post-tag">Philosophy</span>
+      <span class="post-title-link">Depth over breadth: the case for going properly deep into fewer things</span>
+      <span class="post-date">Coming soon</span>
+    </a>
+
+    <a href="post.html" class="post-item">
+      <span class="post-tag">Philosophy</span>
+      <span class="post-title-link">On work, motivation, and why the relationship between them is backwards for most people</span>
+      <span class="post-date">Coming soon</span>
+    </a>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-name">Stanley Blyth</span>
+    <ul class="footer-nav">
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="future-goals.html">Future Goals</a></li>
+      <li><a href="philosophy.html">Philosophy</a></li>
+      <li><a href="travel.html">Travel</a></li>
+      <li><a href="reading.html">Reading</a></li>
+      <li><a href="tech.html">Tech</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Stanley Blyth</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech — Stanley Blyth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=DM+Mono:wght@300;400&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── TECH TAGS BAR ── */
+    .tech-tags {
+      padding: 2.5rem 4rem;
+      border-bottom: 1px solid rgba(176,125,78,0.15);
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.5s ease forwards 0.3s;
+    }
+
+    .tech-tag-pill {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--clay);
+      border: 1px solid rgba(176,125,78,0.28);
+      padding: 0.35rem 0.85rem;
+    }
+
+    /* ── SECTION DIVIDE ── */
+    .section-divide {
+      padding: 3rem 4rem 0;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--clay);
+      opacity: 0;
+      animation: fadeUp 0.5s ease forwards 0.45s;
+    }
+
+    @media (max-width: 768px) {
+      .tech-tags { padding: 2rem 1.5rem; }
+      .section-divide { padding: 2.5rem 1.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Stanley Blyth</a>
+    <ul class="nav-links">
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="future-goals.html">Future Goals</a></li>
+      <li><a href="philosophy.html">Philosophy</a></li>
+      <li><a href="travel.html">Travel</a></li>
+      <li><a href="reading.html">Reading</a></li>
+      <li><a href="tech.html">Tech</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="page-eyebrow">Stanley Blyth · Tech</p>
+    <h1 class="page-title">How things <em>actually work</em></h1>
+    <p class="page-sub">Pi-hole, Raspberry Pi, networking, CompTIA, and coding notes. Not just what to do — but why, and what you learn by doing it yourself.</p>
+  </div>
+
+  <!-- TECH TAGS -->
+  <div class="tech-tags">
+    <span class="tech-tag-pill">Pi-hole</span>
+    <span class="tech-tag-pill">Raspberry Pi</span>
+    <span class="tech-tag-pill">Networking</span>
+    <span class="tech-tag-pill">CompTIA</span>
+    <span class="tech-tag-pill">Coding</span>
+    <span class="tech-tag-pill">Hardware</span>
+    <span class="tech-tag-pill">Self-hosting</span>
+  </div>
+
+  <!-- POST LIST -->
+  <p class="section-divide">All posts</p>
+
+  <div class="post-list">
+
+    <a href="post.html" class="post-item">
+      <span class="post-tag">Networking</span>
+      <span class="post-title-link">Pi-hole: why I block ads at the network level and how I actually set it up</span>
+      <span class="post-date">Coming soon</span>
+    </a>
+
+    <a href="post.html" class="post-item">
+      <span class="post-tag">Hardware</span>
+      <span class="post-title-link">Raspberry Pi as a home server: what I'm running on it and what I've learned</span>
+      <span class="post-date">Coming soon</span>
+    </a>
+
+    <a href="post.html" class="post-item">
+      <span class="post-tag">CompTIA</span>
+      <span class="post-title-link">Why I'm studying for CompTIA and what the certification process actually looks like</span>
+      <span class="post-date">Coming soon</span>
+    </a>
+
+    <a href="post.html" class="post-item">
+      <span class="post-tag">Coding</span>
+      <span class="post-title-link">What building this website taught me about HTML, CSS, and design systems</span>
+      <span class="post-date">Coming soon</span>
+    </a>
+
+    <a href="post.html" class="post-item">
+      <span class="post-tag">Networking</span>
+      <span class="post-title-link">DNS, DHCP, and why understanding your home network is worth the hour it takes</span>
+      <span class="post-date">Coming soon</span>
+    </a>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-name">Stanley Blyth</span>
+    <ul class="footer-nav">
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="future-goals.html">Future Goals</a></li>
+      <li><a href="philosophy.html">Philosophy</a></li>
+      <li><a href="travel.html">Travel</a></li>
+      <li><a href="reading.html">Reading</a></li>
+      <li><a href="tech.html">Tech</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Stanley Blyth</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

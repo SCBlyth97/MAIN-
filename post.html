@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post Title — Stanley Blyth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=DM+Mono:wght@300;400&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── POST HEADER ── */
+    .post-header {
+      padding: 9rem 4rem 4rem;
+      border-bottom: 1px solid rgba(176,125,78,0.15);
+      max-width: 860px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.15s;
+    }
+
+    .post-back {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clay);
+      text-decoration: none;
+      opacity: 0.7;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      transition: opacity 0.2s;
+    }
+    .post-back:hover { opacity: 1; }
+
+    .post-category {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 1rem;
+    }
+
+    .post-h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      max-width: 22ch;
+    }
+
+    .post-meta {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .post-meta-item {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      color: var(--fog);
+      opacity: 0.7;
+    }
+
+    .post-meta-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--fog);
+      opacity: 0.4;
+    }
+
+    /* ── ARTICLE BODY ── */
+    .post-article {
+      max-width: 680px;
+      padding: 4rem 4rem 6rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.3s;
+    }
+
+    .post-article p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--ink);
+      opacity: 0.8;
+      margin-bottom: 1.6rem;
+    }
+
+    .post-article h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .post-article h3 {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-top: 2.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .post-article blockquote {
+      border-left: 3px solid var(--clay);
+      padding: 1rem 0 1rem 2rem;
+      margin: 2.5rem 0;
+    }
+
+    .post-article blockquote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      font-weight: 300;
+      opacity: 0.85;
+      margin-bottom: 0;
+      line-height: 1.55;
+    }
+
+    .post-article ul, .post-article ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .post-article li {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--ink);
+      opacity: 0.8;
+      margin-bottom: 0.4rem;
+    }
+
+    .post-article a {
+      color: var(--clay);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(176,125,78,0.3);
+      transition: border-color 0.2s;
+    }
+    .post-article a:hover { border-color: var(--clay); }
+
+    /* ── POST FOOTER / NEXT ── */
+    .post-end {
+      border-top: 1px solid rgba(176,125,78,0.15);
+      padding: 3.5rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 860px;
+      opacity: 0;
+      animation: fadeUp 0.5s ease forwards 0.45s;
+    }
+
+    .post-end-back {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--clay);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .post-end-back:hover { opacity: 1; }
+
+    .post-end-section {
+      text-align: right;
+    }
+
+    .post-end-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.56rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--fog);
+      opacity: 0.5;
+      margin-bottom: 0.3rem;
+    }
+
+    .post-end-next {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .post-end-next:hover { color: var(--rust); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .post-header { padding: 7rem 1.5rem 3rem; }
+      .post-article { padding: 3rem 1.5rem 4rem; }
+      .post-end { padding: 2.5rem 1.5rem; flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+      .post-end-section { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Stanley Blyth</a>
+    <ul class="nav-links">
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="future-goals.html">Future Goals</a></li>
+      <li><a href="philosophy.html">Philosophy</a></li>
+      <li><a href="travel.html">Travel</a></li>
+      <li><a href="reading.html">Reading</a></li>
+      <li><a href="tech.html">Tech</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- POST HEADER -->
+  <div class="post-header">
+    <a href="philosophy.html" class="post-back">← Back to Philosophy</a>
+    <p class="post-category">Philosophy</p>
+    <h1 class="post-h1">On clarity, courage, and the value of thinking things through properly</h1>
+    <div class="post-meta">
+      <span class="post-meta-item">Coming soon</span>
+      <span class="post-meta-dot"></span>
+      <span class="post-meta-item">8 min read</span>
+      <span class="post-meta-dot"></span>
+      <span class="post-meta-item">Stanley Blyth</span>
+    </div>
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <article class="post-article">
+
+    <p><em>This post is coming soon. The layout below is a template showing how posts will be structured across the site.</em></p>
+
+    <p>Most people have opinions. Fewer people have thought them through. There's a specific kind of clarity that comes from sitting with an idea long enough that you understand not just what you think, but why — and whether that reason actually holds up when you look at it directly.</p>
+
+    <h2>Why clarity matters more than certainty</h2>
+
+    <p>Certainty is often just confidence worn without justification. Clarity is different. It's the result of having actually examined something — turned it over, tested the edges, asked what you'd need to believe for your position to be wrong. That process is slow and uncomfortable, which is why most people skip it.</p>
+
+    <blockquote>
+      <p>"Living without depth — without the courage to embrace it — feels like a half-life."</p>
+    </blockquote>
+
+    <p>The courage part matters. Thinking clearly about things often leads you somewhere you weren't expecting, and sometimes that somewhere is uncomfortable. You might discover that a belief you've held for years doesn't actually survive examination. That's useful information, but it's not easy to sit with.</p>
+
+    <h3>The practical side of this</h3>
+
+    <p>This isn't philosophy for philosophy's sake. Clarity in how you think about your life — what you want, why you want it, what you'd actually do if you got it — has direct consequences. It changes decisions. It changes relationships. It changes what you prioritise and what you stop wasting time on.</p>
+
+    <p>That's what this section of the site is about: not abstract philosophy, but the applied kind. The kind that has something at stake.</p>
+
+    <h2>What comes next</h2>
+
+    <p>Posts in this section will cover specific ideas — friendship, motivation, presence, depth, courage — with the same approach: spend enough time on it to actually say something worth reading, then write it up clearly.</p>
+
+    <p>No word count targets. No publishing schedule. Just when I have something real to say.</p>
+
+  </article>
+
+  <!-- POST END -->
+  <div class="post-end">
+    <a href="philosophy.html" class="post-end-back">← All Philosophy posts</a>
+    <div class="post-end-section">
+      <p class="post-end-label">Next post</p>
+      <a href="post.html" class="post-end-next">Friendship: what it actually means →</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-name">Stanley Blyth</span>
+    <ul class="footer-nav">
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="future-goals.html">Future Goals</a></li>
+      <li><a href="philosophy.html">Philosophy</a></li>
+      <li><a href="travel.html">Travel</a></li>
+      <li><a href="reading.html">Reading</a></li>
+      <li><a href="tech.html">Tech</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Stanley Blyth</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
