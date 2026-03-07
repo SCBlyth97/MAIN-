@@ -59,6 +59,7 @@
       if (!isOpen) {
         e.preventDefault();
         dd.classList.add('open');
+        link.blur();
       }
     });
   });

@@ -12,7 +12,7 @@
   --rust:      #7a3f20;
   --moss:      #445238;
   --fog:       #bfb39e;
-  --cream:     #faf6ef;
+  --cream:     #f5f0eb;
 }
 
 /* =====================
@@ -109,9 +109,10 @@ html.dark .writing-item:first-child {
 }
 
 .nav-dropdown > a {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.3rem;
+  vertical-align: middle;
 }
 
 .nav-dropdown > a::after {
@@ -137,7 +138,9 @@ html.dark .writing-item:first-child {
   left: 50%;
   transform: translateX(-50%);
   background: var(--cream);
-  border: 1px solid rgba(176, 125, 78, 0.18);
+  border: 1px solid rgba(176, 125, 78, 0.22);
+  border-radius: 4px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.10), 0 2px 8px rgba(0, 0, 0, 0.06);
   min-width: 280px;
   opacity: 0;
   pointer-events: none;
@@ -222,7 +225,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 4rem;
-  background: rgba(250, 246, 239, 0.92);
+  background: rgba(245, 240, 235, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(176, 125, 78, 0.12);
@@ -256,6 +259,11 @@ nav {
   opacity: 0.5;
   position: relative;
   transition: opacity 0.25s, color 0.25s;
+  outline: none;
+}
+.nav-links a:focus-visible {
+  outline: 1px solid var(--clay);
+  outline-offset: 3px;
 }
 
 .nav-links a::after {
