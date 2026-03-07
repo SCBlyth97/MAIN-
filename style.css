@@ -15,6 +15,179 @@
   --cream:     #faf6ef;
 }
 
+/* =====================
+   DARK MODE — warm brown/tan palette
+   ===================== */
+html.dark {
+  --ink:       #e8d4b5;
+  --parchment: #2e2216;
+  --sand:      #2a1e14;
+  --clay:      #c9975e;
+  --rust:      #c26a40;
+  --moss:      #526342;
+  --fog:       #7a6a56;
+  --cream:     #231810;
+}
+
+html.dark body {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+html.dark nav {
+  background: rgba(22, 16, 10, 0.94);
+  border-bottom-color: rgba(201, 151, 94, 0.14);
+}
+
+html.dark .identity-strip {
+  background: #1a1108;
+}
+
+html.dark .section-card {
+  background: #2a1e14;
+}
+
+html.dark .section-card:hover {
+  background: #312416;
+}
+
+html.dark .section-card.featured {
+  background: #3a4d2e;
+}
+
+html.dark .section-card.featured:hover {
+  background: #2f3f25;
+}
+
+html.dark .latest-posts {
+  background: #2a1e14;
+}
+
+html.dark footer {
+  background: #1a1108;
+}
+
+html.dark .sections-grid {
+  background: rgba(201, 151, 94, 0.12);
+  border-color: rgba(201, 151, 94, 0.12);
+}
+
+html.dark .writing-item {
+  border-bottom-color: rgba(201, 151, 94, 0.18);
+}
+
+html.dark .writing-item:first-child {
+  border-top-color: rgba(201, 151, 94, 0.18);
+}
+
+/* =====================
+   DARK MODE TOGGLE
+   ===================== */
+.dark-toggle {
+  background: none;
+  border: 1px solid rgba(176, 125, 78, 0.3);
+  cursor: pointer;
+  padding: 0.35rem 0.65rem;
+  border-radius: 2px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.55;
+  transition: opacity 0.2s, border-color 0.2s, color 0.2s;
+  margin-left: 1.5rem;
+  flex-shrink: 0;
+}
+.dark-toggle:hover { opacity: 1; border-color: var(--clay); color: var(--clay); }
+
+/* =====================
+   NAV DROPDOWN (Career)
+   ===================== */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown > a {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.nav-dropdown > a::after {
+  content: none !important;
+}
+
+.nav-dropdown > a .dropdown-caret {
+  display: inline-block;
+  font-size: 0.5rem;
+  opacity: 0.5;
+  transition: transform 0.2s;
+  pointer-events: none;
+}
+
+.nav-dropdown:hover > a .dropdown-caret,
+.nav-dropdown.open > a .dropdown-caret {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 1.2rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--cream);
+  border: 1px solid rgba(176, 125, 78, 0.18);
+  min-width: 280px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-6px);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  z-index: 600;
+}
+
+html.dark .nav-dropdown-menu {
+  background: #231810;
+  border-color: rgba(201, 151, 94, 0.2);
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown.open .nav-dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 0.85rem 1.3rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  opacity: 0.6;
+  border-bottom: 1px solid rgba(176, 125, 78, 0.1);
+  transition: opacity 0.2s, background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+html.dark .nav-dropdown-menu a {
+  border-bottom-color: rgba(201, 151, 94, 0.1);
+}
+
+.nav-dropdown-menu a:last-child { border-bottom: none; }
+.nav-dropdown-menu a:hover { opacity: 1; color: var(--clay); background: rgba(176, 125, 78, 0.06); }
+
+.nav-dropdown-menu .menu-period {
+  display: block;
+  font-size: 0.52rem;
+  opacity: 0.45;
+  margin-top: 0.2rem;
+  font-style: normal;
+}
+
 html { scroll-behavior: smooth; }
 
 body {
