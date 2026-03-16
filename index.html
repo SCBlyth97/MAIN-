@@ -159,8 +159,17 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .about-body { padding: 3rem 1.5rem 4rem; }
-      .about-intro { grid-template-columns: 1fr; gap: 2.5rem; }
-      .about-photo { display: none; }
+      .about-intro {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .about-intro-left { order: 2; }
+      .about-photo {
+        order: 1;
+        position: static;
+        height: 300px;
+        overflow: hidden;
+      }
       .cred-item { grid-template-columns: 1fr; gap: 0.3rem; }
     }
   </style>
@@ -175,6 +184,9 @@
       <li><a href="career.html">Career</a></li>
     </ul>
     <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">&#9681; Dark</button>
+    <button class="nav-burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- PAGE HEADER -->

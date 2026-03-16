@@ -37,6 +37,24 @@
   }
 })();
 
+// Mobile hamburger menu
+(function () {
+  var burger = document.querySelector('.nav-burger');
+  var nav = document.querySelector('nav');
+  if (!burger || !nav) return;
+
+  burger.addEventListener('click', function () {
+    nav.classList.toggle('nav-open');
+  });
+
+  // Close menu when a nav link is tapped
+  document.querySelectorAll('.nav-links a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      nav.classList.remove('nav-open');
+    });
+  });
+})();
+
 // Career dropdown — close on outside click
 (function () {
   document.addEventListener('click', function (e) {
