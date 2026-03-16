@@ -521,18 +521,21 @@ footer {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.4rem;
+  padding: 0.5rem;
   flex-direction: column;
   justify-content: center;
-  gap: 5px;
+  gap: 6px;
   margin-left: 1rem;
+  width: 36px;
+  height: 36px;
 }
 
 .nav-burger span {
   display: block;
-  width: 22px;
-  height: 1.5px;
+  width: 24px;
+  height: 2px;
   background: var(--ink);
+  border-radius: 2px;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
