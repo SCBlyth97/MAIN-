@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career — Stanley Blyth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=DM+Mono:wght@300;400&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ══════════════════════════════════════════
+       CAREER PAGE — inline styles
+       ══════════════════════════════════════════ */
+
+    /* ── CV OVERVIEW (top section) ── */
+
+    .cv-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 4rem 5rem;
+    }
+
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 5rem;
+      padding: 4rem 0 5rem;
+      border-bottom: 1px solid rgba(176,125,78,0.15);
+    }
+
+    /* Summary */
+    .cv-summary {
+      margin-bottom: 3.5rem;
+    }
+
+    .cv-block-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 1.2rem;
+    }
+
+    .cv-summary-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--ink);
+      opacity: 0.85;
+    }
+
+    .cv-summary-text em {
+      font-style: italic;
+      color: var(--clay);
+    }
+
+    /* Experience timeline */
+    .cv-timeline {
+      list-style: none;
+      position: relative;
+      padding-left: 1.6rem;
+    }
+
+    .cv-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      bottom: 6px;
+      width: 1px;
+      background: rgba(176,125,78,0.25);
+    }
+
+    .cv-timeline-item {
+      position: relative;
+      padding-bottom: 2.4rem;
+    }
+
+    .cv-timeline-item:last-child { padding-bottom: 0; }
+
+    .cv-timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.6rem;
+      top: 7px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--clay);
+      transform: translateX(-2px);
+    }
+
+    .cv-role-period {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clay);
+      opacity: 0.75;
+      margin-bottom: 0.3rem;
+    }
+
+    .cv-role-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .cv-role-org {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.8rem;
+      color: var(--ink);
+      opacity: 0.45;
+      margin-top: 0.15rem;
+    }
+
+    /* Right column — photo + education + skills */
+    .cv-aside {}
+
+    .cv-photo {
+      width: 100%;
+      height: 260px;
+      overflow: hidden;
+      margin-bottom: 2.8rem;
+    }
+
+    .cv-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .cv-aside-block {
+      margin-bottom: 2.5rem;
+    }
+
+    .cv-edu-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(176,125,78,0.1);
+    }
+
+    .cv-edu-item:first-of-type { border-top: 1px solid rgba(176,125,78,0.1); }
+
+    .cv-edu-qual {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clay);
+    }
+
+    .cv-edu-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
+    .cv-edu-detail {
+      font-size: 0.78rem;
+      color: var(--ink);
+      opacity: 0.45;
+    }
+
+    /* Skills pills */
+    .cv-skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .cv-skill-pill {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      opacity: 0.6;
+      background: rgba(176,125,78,0.1);
+      border: 1px solid rgba(176,125,78,0.18);
+      padding: 0.3rem 0.7rem;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    /* ── DETAIL SECTIONS (bottom) ── */
+
+    .detail-nav {
+      position: sticky;
+      top: 62px;
+      z-index: 100;
+      background: rgba(245, 240, 235, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(176,125,78,0.12);
+      padding: 0 4rem;
+      display: flex;
+      gap: 2.4rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .detail-nav::-webkit-scrollbar { display: none; }
+
+    html.dark .detail-nav {
+      background: rgba(35, 24, 16, 0.95);
+    }
+
+    .detail-nav a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      opacity: 0.4;
+      padding: 1.1rem 0;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      transition: opacity 0.2s, border-color 0.2s, color 0.2s;
+      flex-shrink: 0;
+    }
+
+    .detail-nav a:hover { opacity: 1; color: var(--clay); }
+    .detail-nav a.active { opacity: 1; color: var(--clay); border-bottom-color: var(--clay); }
+
+    /* Detail sections */
+    .detail-sections {
+      border-top: 3px solid rgba(176,125,78,0.1);
+    }
+
+    .detail-section {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 5rem 4rem 5.5rem;
+      border-bottom: 1px solid rgba(176,125,78,0.12);
+    }
+
+    .detail-section:last-child { border-bottom: none; }
+
+    .detail-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--clay);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .detail-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 1px;
+      background: var(--clay);
+    }
+
+    .detail-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.9rem);
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 0.4rem;
+    }
+
+    .detail-heading em {
+      font-style: italic;
+      color: var(--clay);
+    }
+
+    .detail-org {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.88rem;
+      color: var(--ink);
+      opacity: 0.45;
+      margin-bottom: 3rem;
+    }
+
+    .detail-text {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--ink);
+      opacity: 0.78;
+      margin-bottom: 1.5rem;
+    }
+
+    .detail-subhead {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-top: 3rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .detail-highlights {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .detail-highlights li {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--ink);
+      opacity: 0.82;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .detail-highlights li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--clay);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+    }
+
+    .detail-pullquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--clay);
+      border-left: 2px solid var(--clay);
+      padding: 1rem 1.5rem;
+      margin: 2.5rem 0;
+      opacity: 0.85;
+      line-height: 1.55;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .cv-section { padding: 0 2.5rem 4rem; }
+      .cv-grid { gap: 3.5rem; }
+      .detail-section { padding: 4rem 2.5rem 4.5rem; }
+      .detail-nav { padding: 0 2.5rem; }
+    }
+
+    @media (max-width: 768px) {
+      .cv-section { padding: 0 1.5rem 3.5rem; }
+      .cv-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding-bottom: 3rem;
+      }
+      .cv-photo { height: 200px; margin-bottom: 2rem; }
+      .detail-section { padding: 3.5rem 1.5rem 4rem; }
+      .detail-nav { padding: 0 1.5rem; gap: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Stanley Blyth</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="career.html">Career</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="explore.html">Explore</a></li>
+    </ul>
+    <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">&#9681; Dark</button>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="page-eyebrow">Stanley Blyth · Career</p>
+    <h1 class="page-title">Experience, <em>education</em> &amp; the path so far</h1>
+    <p class="page-sub">A concise overview at the top — more detail and a bit of personality further down.</p>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SECTION 1 — CV OVERVIEW
+       ══════════════════════════════════════════ -->
+  <div class="cv-section">
+    <div class="cv-grid reveal">
+
+      <!-- Left: summary + experience -->
+      <div>
+        <!-- Summary -->
+        <div class="cv-summary">
+          <p class="cv-block-label">Professional Summary</p>
+          <p class="cv-summary-text">Educator and project coordinator with a <em>PGCE (Cum Laude)</em> and extensive TEFL and vocational training experience. Skilled in curriculum design, workshop delivery, and student-centred instruction. Complementary background in account management and tech-driven environments — comfortable moving between classroom and boardroom.</p>
+        </div>
+
+        <!-- Experience -->
+        <p class="cv-block-label">Experience</p>
+        <ul class="cv-timeline">
+          <li class="cv-timeline-item">
+            <p class="cv-role-period">Mar 2025 – Present</p>
+            <p class="cv-role-title">Teaching Associate &amp; Project Coordinator</p>
+            <p class="cv-role-org">Hong Kong Institute of Vocational Education (IVE) · Hong Kong</p>
+          </li>
+          <li class="cv-timeline-item">
+            <p class="cv-role-period">Jul 2023 – Mar 2025</p>
+            <p class="cv-role-title">NET Teacher</p>
+            <p class="cv-role-org">Babington Education · Hong Kong</p>
+          </li>
+          <li class="cv-timeline-item">
+            <p class="cv-role-period">Feb 2023 – Jul 2023</p>
+            <p class="cv-role-title">Account Manager</p>
+            <p class="cv-role-org">MAPO Software Solutions · South Africa</p>
+          </li>
+          <li class="cv-timeline-item">
+            <p class="cv-role-period">2020 – 2023</p>
+            <p class="cv-role-title">Bartender &amp; Floor Manager</p>
+            <p class="cv-role-org">Hospitality Industry</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right: photo + education + skills -->
+      <div class="cv-aside">
+        <div class="cv-photo">
+          <img src="Academia Style Teacher Profile - Refined.png" alt="Stanley Blyth" />
+        </div>
+
+        <!-- Education -->
+        <div class="cv-aside-block">
+          <p class="cv-block-label">Education</p>
+          <div class="cv-edu-item">
+            <span class="cv-edu-qual">PGCE · Cum Laude · 2022</span>
+            <span class="cv-edu-name">Postgraduate Certificate in Education</span>
+            <span class="cv-edu-detail">Biology &amp; Geography · UNISA</span>
+          </div>
+          <div class="cv-edu-item">
+            <span class="cv-edu-qual">BA · 2017 – 2020</span>
+            <span class="cv-edu-name">Environmental Management</span>
+            <span class="cv-edu-detail">University of South Africa (UNISA)</span>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="cv-aside-block">
+          <p class="cv-block-label">Skills &amp; Tools</p>
+          <div class="cv-skills-grid">
+            <span class="cv-skill-pill">Curriculum Design</span>
+            <span class="cv-skill-pill">TEFL / EFL</span>
+            <span class="cv-skill-pill">Read Write Inc.</span>
+            <span class="cv-skill-pill">SEN Support</span>
+            <span class="cv-skill-pill">Canva</span>
+            <span class="cv-skill-pill">Google Workspace</span>
+            <span class="cv-skill-pill">Microsoft 365</span>
+            <span class="cv-skill-pill">GitHub</span>
+            <span class="cv-skill-pill">Claude / AI-assisted dev</span>
+            <span class="cv-skill-pill">CRM Systems</span>
+            <span class="cv-skill-pill">Infographic Design</span>
+            <span class="cv-skill-pill">Workshop Facilitation</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SECTION 2 — DETAIL SECTIONS
+       ══════════════════════════════════════════ -->
+
+  <!-- Sticky sub-nav -->
+  <nav class="detail-nav" aria-label="Career detail navigation">
+    <a href="#ive">IVE · 2025–Present</a>
+    <a href="#babington">Babington · 2023–25</a>
+    <a href="#mapo">MAPO · 2023</a>
+    <a href="#hospitality">Hospitality · 2020–23</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills &amp; Approach</a>
+  </nav>
+
+  <div class="detail-sections">
+
+    <!-- IVE -->
+    <div class="detail-section reveal" id="ive">
+      <p class="detail-eyebrow">2025 – Present · Hong Kong</p>
+      <h2 class="detail-heading">Teaching Associate &amp; <em>Project Coordinator</em></h2>
+      <p class="detail-org">Hong Kong Institute of Vocational Education (IVE) — VTC</p>
+
+      <p class="detail-text">I currently work as a Project Coordinator and Teaching Associate, delivering tertiary-level English education at a vocational institution in Hong Kong. The role combines teaching, educational design, and project coordination — with a focus on creating learning experiences that are genuinely engaging rather than just formally correct.</p>
+
+      <p class="detail-text">A significant part of my work involves developing educational materials from scratch: presentations, worksheets, posters, and visual resources that support students in building their communication skills. I also design and run immersive workshops that teach English through practical, hands-on activities rather than traditional grammar-based lessons.</p>
+
+      <div class="detail-pullquote">The goal was never just to teach language. It was to make students forget they were learning it.</div>
+
+      <p class="detail-text">Workshops have included cooking sessions, darts games, and creative activities like making balloon animals — all structured around real communication tasks. Over time I've refined these sessions to focus on the most useful language skills while keeping students motivated enough to actually show up voluntarily.</p>
+
+      <p class="detail-text">One of my larger content projects involved taking over 1,300 pages of course documentation and transforming it into a 30-page series of comic-style infographics for a module on pitching and public speaking. The idea was simple: if students aren't going to read 1,300 pages, what will they actually read? Design the thing they'll use.</p>
+
+      <p class="detail-text">I also support a high-volume SEN caseload — up to 20 students per day — providing tailored tutoring, adapted resources, and pastoral support within a vocational setting. In addition, I use the Ruth Miskin Read Write Inc. phonics approach to teach foundational English literacy to students who entered the institution unable to read in English. After a year of voluntary sessions outside my core duties, several students who previously couldn't read English developed the ability to decode unfamiliar words independently. That's probably the achievement I'm most proud of in my teaching career so far.</p>
+
+      <p class="detail-text">As part of my Teaching Associate role, I also work directly within classrooms alongside other instructors — delivering specialist workshops on non-verbal communication, professional disagreement, presentation nerves, and assessment preparation.</p>
+
+      <p class="detail-subhead">Key responsibilities</p>
+      <ul class="detail-highlights">
+        <li>Design, coordinate, and deliver immersive English workshops and outreach programmes for vocational learners (teens to young adults)</li>
+        <li>Teach English language classes with a focus on speaking, pronunciation, and individualised coaching — adapted for Cantonese and Mandarin speakers</li>
+        <li>Support a high-volume SEN caseload with tailored resources and pastoral care</li>
+        <li>Develop curriculum materials aligned with communicative language teaching principles</li>
+        <li>Transformed 1,300+ pages of course documentation into a 30-page comic-style infographic series</li>
+        <li>Voluntary RWI phonics literacy support — helping non-reading students reach independent decoding ability</li>
+      </ul>
+    </div>
+
+    <!-- Babington / NET Teacher -->
+    <div class="detail-section reveal" id="babington">
+      <p class="detail-eyebrow">July 2023 – March 2025 · Hong Kong</p>
+      <h2 class="detail-heading"><em>NET Teacher</em></h2>
+      <p class="detail-org">Babington Education</p>
+
+      <p class="detail-text">My first teaching role in Hong Kong. Working as a Native English Teacher (NET) across primary-age learners, I delivered structured English lessons using the Read Write Inc. and English Ladder curricula — adapting instruction to meet very different learning needs within the same classroom.</p>
+
+      <p class="detail-text">The role demanded a lot in terms of relationship management: communicating with parents regularly, writing clear and honest progress reports, and building the kind of classroom culture where students feel safe to make mistakes. That last part matters more than most people give it credit for. A student who's afraid to be wrong in front of their classmates will never really learn anything.</p>
+
+      <p class="detail-text">I worked with students presenting a range of Special Educational Needs, providing one-to-one and small group tutoring alongside adapted materials. The experience here directly shaped how I approached SEN support in my subsequent IVE role.</p>
+
+      <p class="detail-subhead">Key responsibilities</p>
+      <ul class="detail-highlights">
+        <li>Delivered structured lessons using RWI and English Ladder curricula across diverse year groups</li>
+        <li>Designed engaging activities to improve participation, comprehension, and enjoyment of English</li>
+        <li>Communicated with parents through regular progress reports and updates</li>
+        <li>Provided one-to-one and small group SEN support with adapted materials and individualised coaching</li>
+        <li>Fostered a collaborative, inclusive classroom environment built on confidence and curiosity</li>
+      </ul>
+    </div>
+
+    <!-- MAPO -->
+    <div class="detail-section reveal" id="mapo">
+      <p class="detail-eyebrow">February 2023 – July 2023 · South Africa</p>
+      <h2 class="detail-heading">Account Manager — <em>Software Start-Up</em></h2>
+      <p class="detail-org">MAPO Software Solutions</p>
+
+      <p class="detail-text">A brief but instructive chapter. I joined MAPO as an early-stage member of an automotive software startup — the kind of role where the job description is a loose guideline and you fill in the rest as you go. The company was building fleet management and telematics software for automotive OEMs, and I was brought in across sales, client management, and internal operations.</p>
+
+      <p class="detail-text">The most interesting problem I worked on was client retention. A significant portion of hesitant clients were stalling not because the product was bad, but because they hadn't seen it work in a context that felt relevant to them. I designed a product demo strategy specifically targeted at this group — tailoring demonstrations to each client's actual operational concerns rather than running a standard pitch. It drove a retention rate exceeding 70% for clients in that category, which had a direct impact on the company's early-stage revenue stability.</p>
+
+      <div class="detail-pullquote">The product wasn't the problem. The clients just needed to see themselves in it.</div>
+
+      <p class="detail-text">Beyond sales, I led the company's migration to Microsoft 365, designed and implemented a custom CRM system from scratch, and handled a lot of the written output — proposals, policy documents, website copy — that a small startup needs but rarely has time to do well.</p>
+
+      <p class="detail-text">I also represented the company at industry conventions, delivering live demonstrations and speaking to prospective OEM partners. For someone who'd spent the previous few years largely in hospitality, it was a fast education in how early-stage businesses actually operate.</p>
+
+      <p class="detail-subhead">Key responsibilities</p>
+      <ul class="detail-highlights">
+        <li>Designed a client-specific demo strategy that drove a 70%+ retention rate among hesitant accounts</li>
+        <li>Led software sales and OEM relationship management with a consultative, problem-first approach</li>
+        <li>Represented the company at industry conventions with live product demonstrations</li>
+        <li>Produced TCO reports, managed CRM implementation, and led the Microsoft 365 migration</li>
+        <li>Authored proposals, policy documents, and website content to professionalise internal operations</li>
+      </ul>
+    </div>
+
+    <!-- Hospitality -->
+    <div class="detail-section reveal" id="hospitality">
+      <p class="detail-eyebrow">2020 – 2023</p>
+      <h2 class="detail-heading">Bartender &amp; <em>Floor Manager</em></h2>
+      <p class="detail-org">Hospitality Industry</p>
+
+      <p class="detail-text">Three years in hospitality — bartending and eventually managing a floor — taught me things that no classroom or office reliably does. How to read a room. How to stay calm when five things need doing at once and three of them are someone else's fault. How to have a difficult conversation with a colleague at the end of a twelve-hour shift without either of you taking it home.</p>
+
+      <p class="detail-text">The floor manager responsibilities came gradually: handling staff rotas, managing opening and closing procedures, making the on-the-spot calls that nobody upstairs has had time to write a policy for. It's the kind of seniority that teaches you the difference between authority and competence — mostly by showing you which people confuse the two.</p>
+
+      <div class="detail-pullquote">Hospitality is where you learn that communication is mostly about timing, not vocabulary.</div>
+
+      <p class="detail-text">I don't want to overstate the intellectual weight of pouring drinks. But I'd take someone with serious front-of-house experience over a pure office background for most coordination roles — the interpersonal resilience it builds is real and hard to replicate.</p>
+
+      <p class="detail-subhead">Key responsibilities</p>
+      <ul class="detail-highlights">
+        <li>Managed front-of-house operations across busy service periods, coordinating staff and maintaining service standards under pressure</li>
+        <li>Built genuine rapport with regulars and new guests — the kind of people skills that only come from years of face-to-face work</li>
+        <li>Handled supervisory responsibilities: staff rotas, opening/closing procedures, on-the-spot problem solving</li>
+        <li>Developed strong foundations in communication, adaptability, and high-tempo teamwork</li>
+      </ul>
+    </div>
+
+    <!-- Education detail -->
+    <div class="detail-section reveal" id="education">
+      <p class="detail-eyebrow">Qualifications</p>
+      <h2 class="detail-heading">Education &amp; <em>formal training</em></h2>
+      <p class="detail-org">University of South Africa (UNISA)</p>
+
+      <p class="detail-text">Both degrees are from UNISA — which is worth explaining for anyone unfamiliar. UNISA is one of the largest distance-learning universities in the world and a genuinely rigorous institution. Studying there required self-discipline of a different order to a conventional campus degree: no lectures to attend, no tutorial groups to prop you up, just the material and a deadline. I mention this not to be defensive about it but because it's genuinely relevant to how I work.</p>
+
+      <p class="detail-subhead">PGCE — Postgraduate Certificate in Education</p>
+      <ul class="detail-highlights">
+        <li>Graduated Cum Laude · 2022</li>
+        <li>Specialisation: Biology &amp; Geography (Secondary level)</li>
+        <li>Covered curriculum theory, learning design, assessment, and inclusive education</li>
+        <li>Practical teaching placements alongside distance study</li>
+      </ul>
+
+      <p class="detail-subhead" style="margin-top: 2.5rem;">BA Environmental Management</p>
+      <ul class="detail-highlights">
+        <li>2017 – 2020</li>
+        <li>Covered ecology, land management, environmental policy, and systems thinking</li>
+        <li>Built a strong foundation in analytical thinking and working with complex interconnected systems</li>
+        <li>Directly shaped my interest in how things — biological, social, organisational — actually work beneath the surface</li>
+      </ul>
+    </div>
+
+    <!-- Skills & Approach -->
+    <div class="detail-section reveal" id="skills">
+      <p class="detail-eyebrow">Tools &amp; approach</p>
+      <h2 class="detail-heading">Skills &amp; <em>how I work</em></h2>
+      <p class="detail-org">A mix of the technical and the practical</p>
+
+      <p class="detail-text">The skills section of most CVs is a list of software logos. This is that, but with a bit more context on how I actually use these things.</p>
+
+      <p class="detail-subhead">Communication &amp; teaching</p>
+      <ul class="detail-highlights">
+        <li><strong>Curriculum design</strong> — lesson planning, material development, workshop structuring from scratch</li>
+        <li><strong>TEFL / EFL instruction</strong> — communicative language teaching, speaking and pronunciation focus</li>
+        <li><strong>Read Write Inc. (RWI)</strong> — Ruth Miskin phonics for foundational literacy, including SEN adaptations</li>
+        <li><strong>SEN support</strong> — adapted resources, one-to-one coaching, pastoral care in vocational settings</li>
+        <li><strong>Workshop facilitation</strong> — immersive, activity-based learning design and delivery</li>
+      </ul>
+
+      <p class="detail-subhead" style="margin-top: 2.5rem;">Design &amp; content</p>
+      <ul class="detail-highlights">
+        <li><strong>Canva</strong> — infographics, educational posters, visual learning materials. Used daily.</li>
+        <li><strong>Claude / AI-assisted development</strong> — used Claude Code to build and maintain this website; comfortable integrating AI tools into real workflows</li>
+        <li><strong>Infographic creation</strong> — condensing complex information into clear, usable visual formats</li>
+        <li><strong>Writing &amp; editing</strong> — proposals, policies, reports, and content written to a professional standard</li>
+      </ul>
+
+      <p class="detail-subhead" style="margin-top: 2.5rem;">Productivity &amp; operations</p>
+      <ul class="detail-highlights">
+        <li><strong>Google Workspace</strong> — Docs, Sheets, Slides, Drive; used across teaching and coordination work</li>
+        <li><strong>Microsoft 365</strong> — Word, Excel, PowerPoint; led a company-wide M365 migration at MAPO</li>
+        <li><strong>GitHub &amp; GitHub Pages</strong> — version control and static site hosting; used for this portfolio</li>
+        <li><strong>CRM systems</strong> — designed and implemented a CRM from scratch; comfortable with client management tooling</li>
+      </ul>
+
+      <div class="detail-pullquote">I pick up tools quickly when I need them. The ones listed above are the ones I actually use.</div>
+    </div>
+
+  </div><!-- end .detail-sections -->
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-name">Stanley Blyth</span>
+    <ul class="footer-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="career.html">Career</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Stanley Blyth</span>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Highlight active detail-nav link on scroll
+    (function () {
+      const sections = document.querySelectorAll('.detail-section[id]');
+      const navLinks = document.querySelectorAll('.detail-nav a');
+
+      function onScroll() {
+        let current = '';
+        sections.forEach(section => {
+          const top = section.getBoundingClientRect().top;
+          if (top <= 140) current = section.id;
+        });
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>
