@@ -167,8 +167,12 @@
       .about-photo {
         order: 1;
         position: static;
-        height: 300px;
-        overflow: hidden;
+        height: auto;
+        overflow: visible;
+      }
+      .about-photo img {
+        height: auto;
+        object-fit: unset;
       }
       .cred-item { grid-template-columns: 1fr; gap: 0.3rem; }
     }
