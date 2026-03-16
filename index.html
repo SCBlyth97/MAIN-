@@ -124,6 +124,38 @@
       margin-top: 0.25rem;
     }
 
+    /* Contact block */
+    .contact-block {
+      padding-top: 4rem;
+      border-top: 1px solid rgba(176,125,78,0.15);
+    }
+
+    .contact-email {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      color: var(--clay);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(176,125,78,0.35);
+      padding-bottom: 0.15rem;
+      margin: 1rem 0 1.4rem;
+      transition: border-color 0.2s, opacity 0.2s;
+    }
+
+    .contact-email:hover {
+      opacity: 0.75;
+      border-color: var(--clay);
+    }
+
+    .contact-note {
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: var(--ink);
+      opacity: 0.5;
+      max-width: 58ch;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .about-body { padding: 3rem 1.5rem 4rem; }
@@ -175,6 +207,14 @@
       <div class="about-photo">
         <img src="Academia Style Teacher Profile - Refined.png" alt="Stanley Blyth" />
       </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-block">
+      <p class="credentials-heading">Get in touch</p>
+      <p class="about-text">The best way to reach me is by email. I check it regularly and will always respond.</p>
+      <a href="mailto:scblyth1997@gmail.com" class="contact-email">scblyth1997@gmail.com</a>
+      <p class="contact-note">I don't check LinkedIn daily, and I don't answer calls from numbers I don't recognise — cyber fraud is genuinely rampant in Hong Kong and I've learned to be cautious. Email is the right route.</p>
     </div>
 
   </div>
