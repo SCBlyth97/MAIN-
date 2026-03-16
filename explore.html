@@ -10,45 +10,132 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    .coming-soon-wrap {
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 8rem 4rem 3rem;
+    }
+
+    /* ── ROWS WRAPPER ── */
+    .rows-wrap {
+      padding: 0 4rem;
+    }
+
+    /* ── INDIVIDUAL ROW ── */
+    .explore-row {
+      display: grid;
+      grid-template-columns: 130px 1fr 140px;
+      gap: 3rem;
+      align-items: center;
+      padding: 2.6rem 0;
+      border-bottom: 1px solid rgba(176,125,78,0.12);
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards;
+    }
+
+    .explore-row:first-child { border-top: 1px solid rgba(176,125,78,0.12); }
+
+    .explore-row:nth-child(1) { animation-delay: 0.25s; }
+    .explore-row:nth-child(2) { animation-delay: 0.35s; }
+    .explore-row:nth-child(3) { animation-delay: 0.45s; }
+    .explore-row:nth-child(4) { animation-delay: 0.55s; }
+    .explore-row:nth-child(5) { animation-delay: 0.65s; }
+    .explore-row:nth-child(6) { animation-delay: 0.75s; }
+
+    /* TAG column */
+    .row-tag {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 55vh;
-      padding: 4rem 2rem;
-      text-align: center;
+      gap: 0.3rem;
     }
 
-    .coming-soon-label {
+    .row-num {
       font-family: 'DM Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.22em;
+      font-size: 0.52rem;
+      letter-spacing: 0.2em;
+      color: var(--fog);
+      opacity: 0.5;
+    }
+
+    .row-tag-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--clay);
-      margin-bottom: 1.4rem;
+      opacity: 0.45;
+      line-height: 1.4;
     }
 
-    .coming-soon-title {
+    /* BODY column */
+    .row-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      font-weight: 300;
+      font-size: 1.45rem;
+      font-weight: 600;
       color: var(--ink);
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
+      opacity: 0.35;
+      line-height: 1.2;
+      margin-bottom: 0.45rem;
     }
 
-    .coming-soon-title em {
-      font-style: italic;
-      color: var(--clay);
-    }
-
-    .coming-soon-sub {
-      font-size: 0.95rem;
+    .row-desc {
+      font-size: 0.86rem;
       color: var(--ink);
-      opacity: 0.5;
+      opacity: 0.28;
       line-height: 1.75;
-      max-width: 42ch;
+      max-width: 58ch;
+    }
+
+    .row-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.7rem;
+    }
+
+    .pill {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.52rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--clay);
+      opacity: 0.35;
+      border: 1px solid rgba(176,125,78,0.18);
+      padding: 0.2rem 0.6rem;
+    }
+
+    /* COMING SOON column */
+    .row-soon {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+    }
+
+    .soon-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.52rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clay);
+      opacity: 0.5;
+      border: 1px solid rgba(176,125,78,0.22);
+      padding: 0.3rem 0.65rem;
+    }
+
+    .soon-rule {
+      width: 24px;
+      height: 1px;
+      background: rgba(176,125,78,0.25);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .rows-wrap { padding: 0 1.5rem; }
+      .explore-row {
+        grid-template-columns: 70px 1fr;
+        gap: 1.2rem;
+      }
+      .row-soon { display: none; }
     }
   </style>
 </head>
@@ -64,11 +151,134 @@
     <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">&#9681; Dark</button>
   </nav>
 
-  <!-- COMING SOON -->
-  <div class="coming-soon-wrap">
-    <p class="coming-soon-label">Stanley Blyth · Explore</p>
-    <h1 class="coming-soon-title">Coming <em>soon</em></h1>
-    <p class="coming-soon-sub">This section is being built. Check back later.</p>
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="page-eyebrow">Stanley Blyth · Explore</p>
+    <h1 class="page-title">Six sections, <em>in progress</em></h1>
+    <p class="page-sub">Each of these is being built. They'll open when they're ready.</p>
+  </div>
+
+  <!-- ROWS -->
+  <div class="rows-wrap">
+
+    <div class="explore-row">
+      <div class="row-tag">
+        <span class="row-num">01</span>
+        <span class="row-tag-label">Future Goals</span>
+      </div>
+      <div class="row-body">
+        <p class="row-title">Future Goals</p>
+        <p class="row-desc">The farm I'm building toward. The book I'm going to write. Long-term ambitions planned in detail and documented here.</p>
+        <div class="row-pills">
+          <span class="pill">The Farm</span>
+          <span class="pill">Write a Book</span>
+        </div>
+      </div>
+      <div class="row-soon">
+        <span class="soon-rule"></span>
+        <span class="soon-tag">Coming soon</span>
+      </div>
+    </div>
+
+    <div class="explore-row">
+      <div class="row-tag">
+        <span class="row-num">02</span>
+        <span class="row-tag-label">Philosophy</span>
+      </div>
+      <div class="row-body">
+        <p class="row-title">Philosophy</p>
+        <p class="row-desc">Clarity, courage, friendship and how I see the world. The long version of my opinions on what actually matters.</p>
+        <div class="row-pills">
+          <span class="pill">Essays</span>
+          <span class="pill">Thoughts on Life</span>
+        </div>
+      </div>
+      <div class="row-soon">
+        <span class="soon-rule"></span>
+        <span class="soon-tag">Coming soon</span>
+      </div>
+    </div>
+
+    <div class="explore-row">
+      <div class="row-tag">
+        <span class="row-num">03</span>
+        <span class="row-tag-label">Travel</span>
+      </div>
+      <div class="row-body">
+        <p class="row-title">Travel &amp; Achievements</p>
+        <p class="row-desc">Mt Fuji. The Ha Giang Loop. The places I've been, what I did, and what they actually meant to me.</p>
+        <div class="row-pills">
+          <span class="pill">Places</span>
+          <span class="pill">Stories</span>
+          <span class="pill">Achievements</span>
+        </div>
+      </div>
+      <div class="row-soon">
+        <span class="soon-rule"></span>
+        <span class="soon-tag">Coming soon</span>
+      </div>
+    </div>
+
+    <div class="explore-row">
+      <div class="row-tag">
+        <span class="row-num">04</span>
+        <span class="row-tag-label">Reading</span>
+      </div>
+      <div class="row-body">
+        <p class="row-title">Reading</p>
+        <p class="row-desc">Comics, books, honest reviews. No pretension — just what I actually thought about what I read.</p>
+        <div class="row-pills">
+          <span class="pill">Comics</span>
+          <span class="pill">Books</span>
+          <span class="pill">Reviews</span>
+        </div>
+      </div>
+      <div class="row-soon">
+        <span class="soon-rule"></span>
+        <span class="soon-tag">Coming soon</span>
+      </div>
+    </div>
+
+    <div class="explore-row">
+      <div class="row-tag">
+        <span class="row-num">05</span>
+        <span class="row-tag-label">Tech</span>
+      </div>
+      <div class="row-body">
+        <p class="row-title">Tech</p>
+        <p class="row-desc">Pi-hole, Raspberry Pi, coding notes, CompTIA. How things actually work — not just what to do but why.</p>
+        <div class="row-pills">
+          <span class="pill">Networking</span>
+          <span class="pill">Coding</span>
+          <span class="pill">Hardware</span>
+        </div>
+      </div>
+      <div class="row-soon">
+        <span class="soon-rule"></span>
+        <span class="soon-tag">Coming soon</span>
+      </div>
+    </div>
+
+    <div class="explore-row">
+      <div class="row-tag">
+        <span class="row-num">06</span>
+        <span class="row-tag-label">About</span>
+      </div>
+      <div class="row-body">
+        <p class="row-title">About Me</p>
+        <p class="row-desc">Who I am, where I've been, where I'm going. Credentials, background, and everything in between.</p>
+        <div class="row-pills">
+          <span class="pill">Bio</span>
+          <span class="pill">Background</span>
+          <span class="pill">Credentials</span>
+        </div>
+      </div>
+      <div class="row-soon">
+        <span class="soon-rule"></span>
+        <span class="soon-tag">Coming soon</span>
+      </div>
+    </div>
+
   </div>
 
   <!-- FOOTER -->
