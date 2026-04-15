@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Studies — Stanley Blyth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=DM+Mono:wght@300;400&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ══════════════════════════════════════════
+       CASE STUDIES PAGE — inline styles
+       ══════════════════════════════════════════ */
+
+    .detail-nav {
+      position: sticky;
+      top: 62px;
+      z-index: 100;
+      background: rgba(245, 240, 235, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(176,125,78,0.12);
+      padding: 0 4rem;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      gap: 2.4rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .detail-nav::-webkit-scrollbar { display: none; }
+
+    html.dark .detail-nav {
+      background: rgba(35, 24, 16, 0.95);
+    }
+
+    .detail-nav a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      opacity: 0.4;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      transition: opacity 0.2s, color 0.2s, box-shadow 0.2s;
+      flex-shrink: 0;
+    }
+
+    .detail-nav a:hover { opacity: 1; color: var(--clay); }
+    .detail-nav a.active { opacity: 1; color: var(--clay); box-shadow: inset 0 -2px 0 var(--clay); }
+
+    .detail-sections {
+      border-top: 3px solid rgba(176,125,78,0.1);
+    }
+
+    .detail-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 4rem 5.5rem;
+      border-bottom: 1px solid rgba(176,125,78,0.12);
+    }
+
+    .detail-section:last-child { border-bottom: none; }
+
+    .detail-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--clay);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .detail-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 1px;
+      background: var(--clay);
+    }
+
+    .detail-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.9rem);
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 0.4rem;
+    }
+
+    .detail-heading em {
+      font-style: italic;
+      color: var(--clay);
+    }
+
+    .detail-org {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.88rem;
+      color: var(--ink);
+      opacity: 0.45;
+      margin-bottom: 3rem;
+    }
+
+    .detail-text {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--ink);
+      opacity: 0.78;
+      margin-bottom: 1.5rem;
+    }
+
+    .detail-subhead {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-top: 3rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .detail-highlights {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .detail-highlights li {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--ink);
+      opacity: 0.82;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .detail-highlights li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--clay);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+    }
+
+    .detail-pullquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--clay);
+      border-left: 2px solid var(--clay);
+      padding: 1rem 1.5rem;
+      margin: 2.5rem 0;
+      opacity: 0.85;
+      line-height: 1.55;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .detail-section { padding: 4rem 2.5rem 4.5rem; }
+      .detail-nav { padding: 0 2.5rem; }
+    }
+
+    @media (max-width: 768px) {
+      .detail-section { padding: 3.5rem 1.5rem 4rem; }
+      .detail-nav { padding: 0 1.5rem; gap: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Stanley Blyth</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="career.html">Career</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+    </ul>
+    <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">&#9681; Dark</button>
+    <button class="nav-burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="page-eyebrow">Stanley Blyth · Case Studies</p>
+    <h1 class="page-title">The full story: <em>MAPO Software Solutions</em></h1>
+    <p class="page-sub">Two wins, one promotion, and everything that needed doing alongside them.</p>
+  </div>
+
+  <!-- Sticky sub-nav -->
+  <nav class="detail-nav" aria-label="Case studies navigation">
+    <a href="#context">Context</a>
+    <a href="#automation">Win 01 · Automation</a>
+    <a href="#strategy">Win 02 · Strategy</a>
+    <a href="#operations">Supporting work</a>
+  </nav>
+
+  <div class="detail-sections">
+
+    <!-- CONTEXT -->
+    <div class="detail-section reveal" id="context">
+      <p class="detail-eyebrow">February 2023 · South Africa</p>
+      <h2 class="detail-heading">Account Manager, <em>early stage</em></h2>
+      <p class="detail-org">MAPO Software Solutions</p>
+
+      <p class="detail-text">I joined MAPO as one of the first hires at an automotive software startup. The title was Account Manager. The job description was a loose framework. What it actually meant was sales, client management, internal operations, and whatever else needed doing on a given day.</p>
+
+      <p class="detail-text">MAPO built fleet management and Total Cost of Ownership software for automotive dealers and OEMs. The client base was dealership groups across South Africa. The OEM relationships included Ford and Mercedes. The product worked. The company was small and moving fast.</p>
+
+      <p class="detail-text">This page covers what I actually worked on: two projects that measurably improved the business, and the operational work that ran alongside them.</p>
+    </div>
+
+    <!-- WIN 01 — PROCESS AUTOMATION -->
+    <div class="detail-section reveal" id="automation">
+      <p class="detail-eyebrow">Win 01 · Process Automation</p>
+      <h2 class="detail-heading">Four people. One month. <em>Then one file.</em></h2>
+      <p class="detail-org">Total Cost of Ownership reporting · OEM data processing</p>
+
+      <p class="detail-text">By the end of my first month at the company, the process that had required four staff members working for a full month had been replaced by a single person uploading a file.</p>
+
+      <div class="detail-pullquote">I automated myself out of my original function. My manager promoted me.</div>
+
+      <p class="detail-subhead">The problem</p>
+
+      <p class="detail-text">Building Total Cost of Ownership reports required approximately 12,000 manual data inputs per cycle. OEMs like Ford and Mercedes sent through data in Excel files. Staff at MAPO worked through those files by hand, extracting and entering data point by point. Four people. About a month. Every cycle.</p>
+
+      <p class="detail-text">The process worked. It was also slow, labour-intensive, and entirely dependent on no one making errors across 12,000 inputs.</p>
+
+      <p class="detail-subhead">What changed</p>
+
+      <p class="detail-text">I used AI to prototype the extraction and calculation logic, then built that into the software. The first iteration reduced manual inputs from approximately 12,000 to 69.</p>
+
+      <p class="detail-text">Then I removed the 69. Connecting the software directly to the OEM source files made the remaining manual steps unnecessary. The workflow became: upload a file, get a report. Four people working for a month became one person working for minutes.</p>
+
+      <p class="detail-text">In doing this, I had built myself out of my original job function. That got me promoted.</p>
+
+      <p class="detail-subhead">Summary</p>
+      <ul class="detail-highlights">
+        <li>Manual data inputs reduced from approximately 12,000 to 69, then to near zero</li>
+        <li>Process time reduced from roughly one month (four people) to minutes (one person)</li>
+        <li>Built and implemented within the first month at the company</li>
+        <li>Resulted in a promotion to Account Manager</li>
+      </ul>
+    </div>
+
+    <!-- WIN 02 — PRODUCT STRATEGY -->
+    <div class="detail-section reveal" id="strategy">
+      <p class="detail-eyebrow">Win 02 · Product Strategy</p>
+      <h2 class="detail-heading">The 90-day trial. <em>70% conversion.</em></h2>
+      <p class="detail-org">Sales pipeline · Demo strategy · Client acquisition</p>
+
+      <p class="detail-text">Approximately 70% of clients who entered the demo period converted to paid subscriptions.</p>
+
+      <p class="detail-text">After the promotion, I was managing the sales pipeline. It was moving slowly. The hesitation from prospective clients was not about the product. South Africa's automotive sector was still recalibrating post-COVID, and dealership managers were cautious about new software commitments, particularly where they hadn't seen the system work against their own data in their own context.</p>
+
+      <p class="detail-text">A standard pitch was not going to close that gap. What they needed was experience with the product before they committed to it.</p>
+
+      <p class="detail-subhead">The solution</p>
+
+      <p class="detail-text">I proposed a 90-day demo mode. Full product access, using the client's own data, for 90 days. After that, access expired unless they converted. The expiry was fixed.</p>
+
+      <p class="detail-text">The logic drew on how the same problem gets solved outside automotive software. Platforms like Steam built large user bases through free access that converted once users had meaningful experience with the product. SaaS free-tier models work on the same principle: remove the friction at first contact, let the product demonstrate its value, and give the relationship time to develop before asking for a financial commitment. The key addition was the hard cutoff. Open-ended free access removes the conversion pressure. A defined deadline restores it.</p>
+
+      <p class="detail-text">For clients where price was the stated barrier, I negotiated value-for-access arrangements: a case study, a referral, a co-marketing contribution. Something useful to the company that didn't require cash up front.</p>
+
+      <div class="detail-pullquote">The product closes the deal. The demo just has to get them there.</div>
+
+      <p class="detail-subhead">Results</p>
+
+      <p class="detail-text">The 70% conversion rate held across the demo cohort.</p>
+
+      <p class="detail-text">One dealership manager chose not to convert at the end of his 90 days. I went above him to the group owner. The owner signed all nine dealerships in the group.</p>
+
+      <p class="detail-text">I also brokered a direct partnership between two existing MAPO clients. The arrangement moved over 100 vehicles between their lots and generated referrals back to MAPO from both sides.</p>
+
+      <p class="detail-subhead">Summary</p>
+      <ul class="detail-highlights">
+        <li>Approximately 70% demo-to-paid conversion rate across the cohort</li>
+        <li>90-day hard-expiry trial model, designed and implemented from scratch</li>
+        <li>Negotiated value-for-access deals for price-sensitive clients</li>
+        <li>Converted a full nine-dealership group after a single manager declined</li>
+        <li>Brokered a client-to-client partnership that moved 100+ vehicles and produced referrals back to MAPO</li>
+      </ul>
+    </div>
+
+    <!-- SUPPORTING WORK -->
+    <div class="detail-section reveal" id="operations">
+      <p class="detail-eyebrow">Supporting work</p>
+      <h2 class="detail-heading">Everything else that <em>needed doing</em></h2>
+      <p class="detail-org">Operations · Content · External representation</p>
+
+      <p class="detail-text">Alongside the two main projects, I handled a range of operational and written work that came with being in a small team where responsibilities overlapped freely.</p>
+
+      <ul class="detail-highlights">
+        <li><strong>Microsoft 365 migration</strong> — led the company's full migration to M365, covering Teams, SharePoint, and standardised internal workflows</li>
+        <li><strong>CRM build</strong> — designed and built a CRM system from scratch, structuring the client base and sales pipeline into a format the team could actually use</li>
+        <li><strong>Industry conventions</strong> — represented MAPO at automotive industry events, delivering live software demonstrations to OEM representatives from Ford, Mercedes, and prospective partners</li>
+        <li><strong>Written output</strong> — authored proposals, policy documents, and website copy; the written infrastructure a startup needs but rarely has dedicated bandwidth for</li>
+      </ul>
+    </div>
+
+  </div><!-- end .detail-sections -->
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-name">Stanley Blyth</span>
+    <ul class="footer-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="career.html">Career</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Stanley Blyth</span>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Highlight active detail-nav link on scroll
+    (function () {
+      const sections = document.querySelectorAll('.detail-section[id]');
+      const navLinks = document.querySelectorAll('.detail-nav a');
+
+      function onScroll() {
+        let current = '';
+        sections.forEach(section => {
+          const top = section.getBoundingClientRect().top;
+          if (top <= 140) current = section.id;
+        });
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>
