@@ -175,8 +175,7 @@ function updateAccountUI() {
 function logout() {
   currentUser = null;
   localStorage.removeItem('deutsch_user');
-  state = defaultState();
-  saveState();
+  localStorage.removeItem(STORAGE_KEY);
   location.reload();
 }
 
