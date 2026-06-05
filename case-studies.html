@@ -220,7 +220,7 @@
 
       <p class="detail-text">I joined MAPO as one of the first hires at an automotive software startup. The title was Account Manager. The job description was a loose framework. What it actually meant was sales, client management, internal operations, and whatever else needed doing on a given day.</p>
 
-      <p class="detail-text">MAPO built fleet management and Total Cost of Ownership software for automotive dealers and OEMs. The client base was dealership groups across South Africa. The OEM relationships included Ford and Mercedes. The product worked. The company was small and moving fast.</p>
+      <p class="detail-text">MAPO built fleet management and Total Cost of Ownership software for automotive dealers and OEMs. The client base was dealership groups across South Africa. The OEM relationships spanned a significant range of manufacturers: Ford, Mercedes, the full Stellantis group, Jaguar Land Rover, Volkswagen, Renault, and others. The product worked. The company was small and moving fast.</p>
 
       <p class="detail-text">This page covers what I actually worked on: two projects that measurably improved the business, and the operational work that ran alongside them.</p>
     </div>
@@ -237,21 +237,25 @@
 
       <p class="detail-subhead">The problem</p>
 
-      <p class="detail-text">Building Total Cost of Ownership reports required approximately 12,000 manual data inputs per cycle. OEMs like Ford and Mercedes sent through data in Excel files. Staff at MAPO worked through those files by hand, extracting and entering data point by point. Four people. About a month. Every cycle.</p>
+      <p class="detail-text">Building Total Cost of Ownership reports required approximately 12,000 manual data inputs per cycle. The company worked with a wide range of OEMs — Ford, Mercedes, the Stellantis group, Jaguar Land Rover, Volkswagen, Renault, and others — each running a different file format and reporting structure. The core of the manual work was cross-referencing: incoming files had to be compared against existing records to identify which parts hadn't been replaced yet, extracting only the new data forward. Multiplied across manufacturers and thousands of vehicles, that comparison was where most of the 12,000 inputs came from. Four people. About a month. Every cycle.</p>
 
-      <p class="detail-text">The process worked. It was also slow, labour-intensive, and entirely dependent on no one making errors across 12,000 inputs.</p>
+      <p class="detail-text">The process worked. It was also slow, error-prone, and entirely manual from end to end.</p>
 
       <p class="detail-subhead">What changed</p>
 
-      <p class="detail-text">I used AI to prototype the extraction and calculation logic, then built that into the software. The first iteration reduced manual inputs from approximately 12,000 to 69.</p>
+      <p class="detail-text">There were two problems to solve. The first was the cross-referencing. I built a process that automated the comparison step: incoming files were compared against existing records automatically, extracting only unreplaced parts and producing a clean output. That removed the bulk of the manual work.</p>
 
-      <p class="detail-text">Then I removed the 69. Connecting the software directly to the OEM source files made the remaining manual steps unnecessary. The workflow became: upload a file, get a report. Four people working for a month became one person working for minutes.</p>
+      <p class="detail-text">The second was the format problem. Every OEM structured their files differently, which meant each one required manual interpretation before anything could be entered into the system. I built the software to read incoming files regardless of how they were laid out and auto-populate the system from whatever it received — no manual reformatting required.</p>
 
-      <p class="detail-text">In doing this, I had built myself out of my original job function. That got me promoted.</p>
+      <p class="detail-text">Two manual steps remained: receive the files, upload the file. Everything in between was handled automatically. Four people working for a month became one person working for minutes.</p>
+
+      <p class="detail-text">In building this, I had automated myself out of my original function. That got me promoted.</p>
 
       <p class="detail-subhead">Summary</p>
       <ul class="detail-highlights">
-        <li>Manual data inputs reduced from approximately 12,000 to 69, then to near zero</li>
+        <li>Automated the cross-reference step: incoming OEM files are compared automatically and only unreplaced parts are extracted</li>
+        <li>Built format-agnostic file reading compatible with every OEM's reporting structure — Ford, Mercedes, Stellantis, Jaguar Land Rover, Volkswagen, Renault, and others</li>
+        <li>Reduced approximately 12,000 manual data inputs to two steps: receive the files, upload the file</li>
         <li>Process time reduced from roughly one month (four people) to minutes (one person)</li>
         <li>Built and implemented within the first month at the company</li>
         <li>Resulted in a promotion to Account Manager</li>
@@ -309,7 +313,7 @@
       <ul class="detail-highlights">
         <li><strong>Microsoft 365 migration</strong> — led the company's full migration to M365, covering Teams, SharePoint, and standardised internal workflows</li>
         <li><strong>CRM build</strong> — designed and built a CRM system from scratch, structuring the client base and sales pipeline into a format the team could actually use</li>
-        <li><strong>Industry conventions</strong> — represented MAPO at automotive industry events, delivering live software demonstrations to OEM representatives from Ford, Mercedes, and prospective partners</li>
+        <li><strong>Industry conventions</strong> — represented MAPO at automotive industry events, delivering live software demonstrations to OEM representatives from Ford, Mercedes, Stellantis, Jaguar Land Rover, Volkswagen, Renault, and other manufacturers</li>
         <li><strong>Written output</strong> — authored proposals, policy documents, and website copy; the written infrastructure a startup needs but rarely has dedicated bandwidth for</li>
       </ul>
     </div>
