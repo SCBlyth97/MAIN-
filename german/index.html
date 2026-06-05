@@ -19,45 +19,15 @@
 </head>
 <body>
 
-  <!-- ===== LOGIN OVERLAY ===== -->
-  <div class="login-overlay" id="loginOverlay">
-    <div class="login-card">
-      <h1 class="login-title">Deutsch</h1>
-      <p class="login-sub muted">Sign in to sync your progress across devices</p>
-
-      <div class="login-tabs">
-        <button class="login-tab active" id="tabLogin" data-tab="login">Log In</button>
-        <button class="login-tab" id="tabRegister" data-tab="register">Sign Up</button>
-      </div>
-
-      <form class="login-form" id="loginForm" autocomplete="on">
-        <div class="login-field">
-          <label class="login-label" for="inputUsername">Username</label>
-          <input class="login-input" id="inputUsername" type="text" autocomplete="username"
-                 placeholder="e.g. stanley" spellcheck="false" />
-        </div>
-        <div class="login-field">
-          <label class="login-label" for="inputPassword">Password</label>
-          <input class="login-input" id="inputPassword" type="password" autocomplete="current-password"
-                 placeholder="••••••••" />
-        </div>
-        <p class="login-error hidden" id="loginError"></p>
-        <button class="btn btn-primary btn-full" id="loginSubmitBtn" type="submit">Log In</button>
-      </form>
-    </div>
-  </div>
-
   <!-- ===== HEADER ===== -->
   <header class="header">
+    <button class="icon-btn hidden" id="backBtn" aria-label="Back to groups">←</button>
     <span class="header-title">Deutsch</span>
-    <div class="header-right">
-      <button class="icon-btn" id="accountBtn" aria-label="Account" title="">👤</button>
-      <button class="icon-btn" id="settingsBtn" aria-label="Open settings">⚙</button>
-    </div>
+    <button class="icon-btn" id="settingsBtn" aria-label="Open settings">⚙</button>
   </header>
 
   <!-- ===== PROGRESS STRIP ===== -->
-  <div class="progress-strip" id="progressStrip">
+  <div class="progress-strip hidden" id="progressStrip">
     <div class="progress-info">
       <span id="statLearned">0</span> learned
       <span class="sep">·</span>
@@ -72,6 +42,11 @@
 
   <!-- ===== MAIN AREA ===== -->
   <main class="main" id="main">
+
+    <!-- Group selector -->
+    <div class="state-screen hidden" id="groupScreen">
+      <div class="group-grid" id="groupGrid"></div>
+    </div>
 
     <!-- Loading -->
     <div class="state-screen" id="loadingScreen">
@@ -132,6 +107,7 @@
       <div class="done-stats" id="doneStats"></div>
       <button class="btn btn-primary" id="btnMore">Pull in more new cards</button>
       <button class="btn btn-secondary" id="btnRestart">Restart with due cards</button>
+      <button class="btn btn-secondary" id="btnBackFromDone">← All groups</button>
     </div>
 
     <!-- Nothing due screen -->
@@ -140,6 +116,7 @@
       <h2 class="done-title">All caught up!</h2>
       <p class="muted">Come back tomorrow — your cards will be waiting.</p>
       <div class="done-stats" id="emptyStats"></div>
+      <button class="btn btn-secondary" id="btnBackFromEmpty">← All groups</button>
     </div>
 
   </main>
@@ -170,15 +147,6 @@
         <div class="legend-item"><span class="legend-dot" style="background:#b39bf2"></span> verb</div>
       </div>
     </div>
-
-    <!-- Account -->
-    <div class="setting-row" id="accountRow">
-      <span class="setting-label">Signed in as <strong id="accountUsername"></strong></span>
-      <button class="btn btn-secondary btn-sm" id="logoutBtn">Log out</button>
-    </div>
-
-    <!-- Sync status -->
-    <div class="sync-status" id="syncStatus"></div>
 
     <!-- Reset -->
     <div class="reset-section">
