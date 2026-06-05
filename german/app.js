@@ -89,6 +89,7 @@ const dom = {
   // Done/empty
   btnMore:          $('btnMore'),
   btnRestart:       $('btnRestart'),
+  btnStudyAgain:    $('btnStudyAgain'),
   btnBackFromDone:  $('btnBackFromDone'),
   btnBackFromEmpty: $('btnBackFromEmpty'),
 
@@ -524,6 +525,13 @@ function wireEvents() {
   dom.backBtn.addEventListener('click', goBackToGroups);
   dom.btnBackFromDone.addEventListener('click', goBackToGroups);
   dom.btnBackFromEmpty.addEventListener('click', goBackToGroups);
+
+  // Study again — replay all group words regardless of due dates
+  dom.btnStudyAgain.addEventListener('click', () => {
+    session    = shuffle([...sessionWords]);
+    sessionIdx = 0;
+    showNextCard();
+  });
 
   // Card flip
   dom.card.addEventListener('click', e => {
