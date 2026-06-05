@@ -7,6 +7,180 @@
 'use strict';
 
 // ─────────────────────────────────────────────
+// SUPABASE CONFIG
+// ─────────────────────────────────────────────
+
+const SUPABASE_URL = 'https://wnwwnkfbclrdgtmnhul.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_IG_F4wtfW3G0U3o4yQ37HQ_IyRK6a3t';
+const SUPABASE_HEADERS = {
+  'apikey': SUPABASE_KEY,
+  'Authorization': `Bearer ${SUPABASE_KEY}`,
+  'Content-Type': 'application/json'
+};
+
+let currentUser = null; // { username } once logged in
+let syncTimer   = null;
+
+async function hashPassword(password) {
+  const data = new TextEncoder().encode(password);
+  const buf  = await crypto.subtle.digest('SHA-256', data);
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function sbFetchUser(username) {
+  const res = await fetch(
+    `${SUPABASE_URL}/rest/v1/users?username=eq.${encodeURIComponent(username)}&select=username,password_hash,progress`,
+    { headers: SUPABASE_HEADERS }
+  );
+  if (!res.ok) throw new Error(`DB error ${res.status}`);
+  const rows = await res.json();
+  return rows[0] || null;
+}
+
+async function sbCreateUser(username, passwordHash) {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/users`, {
+    method: 'POST',
+    headers: { ...SUPABASE_HEADERS, 'Prefer': 'return=minimal' },
+    body: JSON.stringify({ username, password_hash: passwordHash, progress: {} })
+  });
+  if (!res.ok) {
+    const body = await res.text();
+    if (body.includes('duplicate') || body.includes('unique')) throw new Error('Username already taken.');
+    throw new Error(`Could not create account (${res.status})`);
+  }
+}
+
+async function sbSyncProgress(username, progress) {
+  const res = await fetch(
+    `${SUPABASE_URL}/rest/v1/users?username=eq.${encodeURIComponent(username)}`,
+    {
+      method: 'PATCH',
+      headers: { ...SUPABASE_HEADERS, 'Prefer': 'return=minimal' },
+      body: JSON.stringify({ progress, updated_at: new Date().toISOString() })
+    }
+  );
+  if (!res.ok) console.warn('Deutsch: sync failed', res.status);
+}
+
+function scheduleSyncProgress() {
+  if (!currentUser) return;
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(() => {
+    sbSyncProgress(currentUser.username, state.progress)
+      .then(() => setSyncStatus('Synced'))
+      .catch(() => setSyncStatus('Sync failed'));
+  }, 2000);
+  setSyncStatus('Saving…');
+}
+
+function setSyncStatus(msg) {
+  const el = document.getElementById('syncStatus');
+  if (el) el.textContent = msg;
+}
+
+// ─────────────────────────────────────────────
+// LOGIN UI
+// ─────────────────────────────────────────────
+
+function showLoginOverlay() {
+  const overlay = document.getElementById('loginOverlay');
+  if (overlay) overlay.classList.remove('hidden');
+}
+
+function hideLoginOverlay() {
+  const overlay = document.getElementById('loginOverlay');
+  if (overlay) overlay.classList.add('hidden');
+}
+
+function wireLoginUI() {
+  const tabs      = document.querySelectorAll('.login-tab');
+  const submitBtn = document.getElementById('loginSubmitBtn');
+  const form      = document.getElementById('loginForm');
+  const errorEl   = document.getElementById('loginError');
+  let mode = 'login'; // 'login' | 'register'
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      mode = tab.dataset.tab;
+      tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === mode));
+      submitBtn.textContent = mode === 'login' ? 'Log In' : 'Create Account';
+      errorEl.classList.add('hidden');
+      errorEl.textContent = '';
+    });
+  });
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const username = document.getElementById('inputUsername').value.trim();
+    const password = document.getElementById('inputPassword').value;
+
+    errorEl.classList.add('hidden');
+    if (!username || !password) {
+      errorEl.textContent = 'Please enter a username and password.';
+      errorEl.classList.remove('hidden');
+      return;
+    }
+    if (username.length < 2) {
+      errorEl.textContent = 'Username must be at least 2 characters.';
+      errorEl.classList.remove('hidden');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Please wait…';
+
+    try {
+      const hash = await hashPassword(password);
+
+      if (mode === 'login') {
+        const user = await sbFetchUser(username);
+        if (!user) throw new Error('Username not found.');
+        if (user.password_hash !== hash) throw new Error('Incorrect password.');
+        // Load cloud progress into state
+        if (user.progress && typeof user.progress === 'object') {
+          state.progress = user.progress;
+          saveState();
+        }
+      } else {
+        await sbCreateUser(username, hash);
+      }
+
+      currentUser = { username };
+      localStorage.setItem('deutsch_user', username);
+      updateAccountUI();
+      hideLoginOverlay();
+      buildSession();
+      if (session.length === 0) {
+        showEmptyScreen();
+        updateProgressUI();
+      } else {
+        showNextCard();
+        wireEvents();
+      }
+    } catch (err) {
+      errorEl.textContent = err.message || 'Something went wrong.';
+      errorEl.classList.remove('hidden');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = mode === 'login' ? 'Log In' : 'Create Account';
+    }
+  });
+}
+
+function updateAccountUI() {
+  const el = document.getElementById('accountUsername');
+  if (el && currentUser) el.textContent = currentUser.username;
+}
+
+function logout() {
+  currentUser = null;
+  localStorage.removeItem('deutsch_user');
+  state = defaultState();
+  saveState();
+  location.reload();
+}
+
+// ─────────────────────────────────────────────
 // PLACEHOLDER DATA
 // These 8 words are used ONLY when words.json
 // cannot be fetched (offline / not yet provided).
@@ -201,6 +375,7 @@ function saveState() {
   } catch {
     console.warn('Deutsch: could not save state to localStorage');
   }
+  scheduleSyncProgress();
 }
 
 // ─────────────────────────────────────────────
@@ -522,8 +697,38 @@ async function init() {
     allWords = data;
   } catch (err) {
     console.warn('Deutsch: could not load words.json, using fallback data.', err);
-    // If you haven't provided words.json yet this keeps the app usable
     allWords = FALLBACK_WORDS;
+  }
+
+  // Check for saved session
+  const savedUser = localStorage.getItem('deutsch_user');
+  if (savedUser) {
+    // Re-verify user still exists and pull latest progress
+    try {
+      const user = await sbFetchUser(savedUser);
+      if (user) {
+        currentUser = { username: savedUser };
+        if (user.progress && typeof user.progress === 'object' && Object.keys(user.progress).length > 0) {
+          state.progress = user.progress;
+          saveState();
+        }
+        updateAccountUI();
+      } else {
+        localStorage.removeItem('deutsch_user');
+      }
+    } catch {
+      // Offline — continue with local state
+      currentUser = { username: savedUser };
+      updateAccountUI();
+    }
+  }
+
+  wireLoginUI();
+
+  if (!currentUser) {
+    showScreen('loading'); // keep loading hidden behind overlay
+    showLoginOverlay();
+    return;
   }
 
   buildSession();
@@ -531,10 +736,9 @@ async function init() {
   if (session.length === 0) {
     showEmptyScreen();
     updateProgressUI();
-    return;
+  } else {
+    showNextCard();
   }
-
-  showNextCard();
   wireEvents();
 }
 
@@ -588,6 +792,13 @@ function wireEvents() {
       showNextCard();
     }
   });
+
+  // ── Account ──
+  const logoutBtn = document.getElementById('logoutBtn');
+  if (logoutBtn) logoutBtn.addEventListener('click', logout);
+
+  const accountBtn = document.getElementById('accountBtn');
+  if (accountBtn) accountBtn.addEventListener('click', openSettings);
 
   // ── Settings ──
   dom.settingsBtn.addEventListener('click', openSettings);
