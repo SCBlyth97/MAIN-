@@ -1,0 +1,5002 @@
+[
+  {
+    "id": "sein",
+    "group": 1,
+    "type": "verb",
+    "de": "sein",
+    "en": "to be",
+    "forms": "ist · war · sein gewesen",
+    "example": "Ich bin müde.",
+    "exampleEn": "I am tired."
+  },
+  {
+    "id": "haben",
+    "group": 1,
+    "type": "verb",
+    "de": "haben",
+    "en": "to have",
+    "forms": "hat · hatte · haben gehabt",
+    "example": "Sie hat ein Buch.",
+    "exampleEn": "She has a book."
+  },
+  {
+    "id": "werden",
+    "group": 1,
+    "type": "verb",
+    "de": "werden",
+    "en": "to become",
+    "forms": "wird · wurde · sein geworden",
+    "example": "Er wird Arzt.",
+    "exampleEn": "He is becoming a doctor."
+  },
+  {
+    "id": "koennen",
+    "group": 1,
+    "type": "verb",
+    "de": "können",
+    "en": "can / to be able to",
+    "forms": "kann · konnte · haben können",
+    "example": "Ich kann schwimmen.",
+    "exampleEn": "I can swim."
+  },
+  {
+    "id": "muessen",
+    "group": 1,
+    "type": "verb",
+    "de": "müssen",
+    "en": "must / to have to",
+    "forms": "muss · musste · haben gemusst",
+    "example": "Du musst schlafen.",
+    "exampleEn": "You must sleep."
+  },
+  {
+    "id": "sagen",
+    "group": 1,
+    "type": "verb",
+    "de": "sagen",
+    "en": "to say",
+    "forms": "sagt · sagte · haben gesagt",
+    "example": "Er sagt die Wahrheit.",
+    "exampleEn": "He tells the truth."
+  },
+  {
+    "id": "machen",
+    "group": 1,
+    "type": "verb",
+    "de": "machen",
+    "en": "to make / do",
+    "forms": "macht · machte · haben gemacht",
+    "example": "Wir machen Hausaufgaben.",
+    "exampleEn": "We do homework."
+  },
+  {
+    "id": "gehen",
+    "group": 1,
+    "type": "verb",
+    "de": "gehen",
+    "en": "to go",
+    "forms": "geht · ging · sein gegangen",
+    "example": "Ich gehe nach Hause.",
+    "exampleEn": "I'm going home."
+  },
+  {
+    "id": "kommen",
+    "group": 1,
+    "type": "verb",
+    "de": "kommen",
+    "en": "to come",
+    "forms": "kommt · kam · sein gekommen",
+    "example": "Sie kommt aus Berlin.",
+    "exampleEn": "She comes from Berlin."
+  },
+  {
+    "id": "wissen",
+    "group": 1,
+    "type": "verb",
+    "de": "wissen",
+    "en": "to know",
+    "forms": "weiß · wusste · haben gewusst",
+    "example": "Ich weiß die Antwort.",
+    "exampleEn": "I know the answer."
+  },
+  {
+    "id": "mann",
+    "group": 1,
+    "type": "der",
+    "de": "der Mann",
+    "en": "man",
+    "forms": "die Männer",
+    "example": "Der Mann liest die Zeitung.",
+    "exampleEn": "The man reads the newspaper."
+  },
+  {
+    "id": "frau",
+    "group": 1,
+    "type": "die",
+    "de": "die Frau",
+    "en": "woman",
+    "forms": "die Frauen",
+    "example": "Die Frau arbeitet im Büro.",
+    "exampleEn": "The woman works in the office."
+  },
+  {
+    "id": "kind",
+    "group": 1,
+    "type": "das",
+    "de": "das Kind",
+    "en": "child",
+    "forms": "die Kinder",
+    "example": "Das Kind spielt im Garten.",
+    "exampleEn": "The child plays in the garden."
+  },
+  {
+    "id": "jahr",
+    "group": 1,
+    "type": "das",
+    "de": "das Jahr",
+    "en": "year",
+    "forms": "die Jahre",
+    "example": "Dieses Jahr fahre ich nach Italien.",
+    "exampleEn": "This year I'm going to Italy."
+  },
+  {
+    "id": "zeit",
+    "group": 1,
+    "type": "die",
+    "de": "die Zeit",
+    "en": "time",
+    "forms": "die Zeiten",
+    "example": "Hast du Zeit?",
+    "exampleEn": "Do you have time?"
+  },
+  {
+    "id": "hand",
+    "group": 1,
+    "type": "die",
+    "de": "die Hand",
+    "en": "hand",
+    "forms": "die Hände",
+    "example": "Er gibt mir die Hand.",
+    "exampleEn": "He shakes my hand."
+  },
+  {
+    "id": "stadt",
+    "group": 1,
+    "type": "die",
+    "de": "die Stadt",
+    "en": "city",
+    "forms": "die Städte",
+    "example": "Berlin ist eine große Stadt.",
+    "exampleEn": "Berlin is a big city."
+  },
+  {
+    "id": "land",
+    "group": 1,
+    "type": "das",
+    "de": "das Land",
+    "en": "country",
+    "forms": "die Länder",
+    "example": "Ich komme aus einem kleinen Land.",
+    "exampleEn": "I come from a small country."
+  },
+  {
+    "id": "welt",
+    "group": 1,
+    "type": "die",
+    "de": "die Welt",
+    "en": "world",
+    "forms": "die Welten",
+    "example": "Die Welt ist groß.",
+    "exampleEn": "The world is big."
+  },
+  {
+    "id": "tag",
+    "group": 1,
+    "type": "der",
+    "de": "der Tag",
+    "en": "day",
+    "forms": "die Tage",
+    "example": "Der Tag war lang.",
+    "exampleEn": "The day was long."
+  },
+  {
+    "id": "sehen",
+    "group": 2,
+    "type": "verb",
+    "de": "sehen",
+    "en": "to see",
+    "forms": "sieht · sah · haben gesehen",
+    "example": "Siehst du den Hund?",
+    "exampleEn": "Do you see the dog?"
+  },
+  {
+    "id": "lassen",
+    "group": 2,
+    "type": "verb",
+    "de": "lassen",
+    "en": "to let / leave",
+    "forms": "lässt · ließ · haben gelassen",
+    "example": "Er lässt mich schlafen.",
+    "exampleEn": "He lets me sleep."
+  },
+  {
+    "id": "stehen",
+    "group": 2,
+    "type": "verb",
+    "de": "stehen",
+    "en": "to stand",
+    "forms": "steht · stand · haben gestanden",
+    "example": "Das Buch steht im Regal.",
+    "exampleEn": "The book is on the shelf."
+  },
+  {
+    "id": "finden",
+    "group": 2,
+    "type": "verb",
+    "de": "finden",
+    "en": "to find",
+    "forms": "findet · fand · haben gefunden",
+    "example": "Ich finde meinen Schlüssel nicht.",
+    "exampleEn": "I can't find my key."
+  },
+  {
+    "id": "bleiben",
+    "group": 2,
+    "type": "verb",
+    "de": "bleiben",
+    "en": "to stay",
+    "forms": "bleibt · blieb · sein geblieben",
+    "example": "Wir bleiben zu Hause.",
+    "exampleEn": "We're staying home."
+  },
+  {
+    "id": "liegen",
+    "group": 2,
+    "type": "verb",
+    "de": "liegen",
+    "en": "to lie / be located",
+    "forms": "liegt · lag · haben gelegen",
+    "example": "Die Katze liegt auf dem Sofa.",
+    "exampleEn": "The cat is lying on the sofa."
+  },
+  {
+    "id": "heissen",
+    "group": 2,
+    "type": "verb",
+    "de": "heißen",
+    "en": "to be called",
+    "forms": "heißt · hieß · haben geheißen",
+    "example": "Wie heißt du?",
+    "exampleEn": "What is your name?"
+  },
+  {
+    "id": "denken",
+    "group": 2,
+    "type": "verb",
+    "de": "denken",
+    "en": "to think",
+    "forms": "denkt · dachte · haben gedacht",
+    "example": "Ich denke an dich.",
+    "exampleEn": "I'm thinking of you."
+  },
+  {
+    "id": "nehmen",
+    "group": 2,
+    "type": "verb",
+    "de": "nehmen",
+    "en": "to take",
+    "forms": "nimmt · nahm · haben genommen",
+    "example": "Nimmst du Zucker?",
+    "exampleEn": "Do you take sugar?"
+  },
+  {
+    "id": "tun",
+    "group": 2,
+    "type": "verb",
+    "de": "tun",
+    "en": "to do",
+    "forms": "tut · tat · haben getan",
+    "example": "Was tust du gerade?",
+    "exampleEn": "What are you doing right now?"
+  },
+  {
+    "id": "haus",
+    "group": 2,
+    "type": "das",
+    "de": "das Haus",
+    "en": "house",
+    "forms": "die Häuser",
+    "example": "Wir wohnen in einem alten Haus.",
+    "exampleEn": "We live in an old house."
+  },
+  {
+    "id": "mensch",
+    "group": 2,
+    "type": "der",
+    "de": "der Mensch",
+    "en": "person / human",
+    "forms": "die Menschen",
+    "example": "Der Mensch braucht Wasser.",
+    "exampleEn": "A person needs water."
+  },
+  {
+    "id": "arbeit",
+    "group": 2,
+    "type": "die",
+    "de": "die Arbeit",
+    "en": "work",
+    "forms": "die Arbeiten",
+    "example": "Die Arbeit macht Spaß.",
+    "exampleEn": "The work is fun."
+  },
+  {
+    "id": "leben",
+    "group": 2,
+    "type": "das",
+    "de": "das Leben",
+    "en": "life",
+    "forms": "die Leben",
+    "example": "Das Leben ist schön.",
+    "exampleEn": "Life is beautiful."
+  },
+  {
+    "id": "wasser",
+    "group": 2,
+    "type": "das",
+    "de": "das Wasser",
+    "en": "water",
+    "forms": "die Wasser",
+    "example": "Ich trinke viel Wasser.",
+    "exampleEn": "I drink a lot of water."
+  },
+  {
+    "id": "weg",
+    "group": 2,
+    "type": "der",
+    "de": "der Weg",
+    "en": "way / path",
+    "forms": "die Wege",
+    "example": "Welcher Weg führt zum Bahnhof?",
+    "exampleEn": "Which way leads to the station?"
+  },
+  {
+    "id": "schule",
+    "group": 2,
+    "type": "die",
+    "de": "die Schule",
+    "en": "school",
+    "forms": "die Schulen",
+    "example": "Die Kinder gehen zur Schule.",
+    "exampleEn": "The children go to school."
+  },
+  {
+    "id": "auto",
+    "group": 2,
+    "type": "das",
+    "de": "das Auto",
+    "en": "car",
+    "forms": "die Autos",
+    "example": "Mein Auto ist rot.",
+    "exampleEn": "My car is red."
+  },
+  {
+    "id": "geld",
+    "group": 2,
+    "type": "das",
+    "de": "das Geld",
+    "en": "money",
+    "forms": "die Gelder",
+    "example": "Ich habe kein Geld.",
+    "exampleEn": "I have no money."
+  },
+  {
+    "id": "essen",
+    "group": 2,
+    "type": "das",
+    "de": "das Essen",
+    "en": "food",
+    "forms": "die Essen",
+    "example": "Ich esse gerne Pizza.",
+    "exampleEn": "I like eating pizza."
+  },
+  {
+    "id": "glauben",
+    "group": 3,
+    "type": "verb",
+    "de": "glauben",
+    "en": "to believe",
+    "forms": "glaubt · glaubte · haben geglaubt",
+    "example": "Ich glaube dir.",
+    "exampleEn": "I believe you."
+  },
+  {
+    "id": "halten",
+    "group": 3,
+    "type": "verb",
+    "de": "halten",
+    "en": "to hold / stop",
+    "forms": "hält · hielt · haben gehalten",
+    "example": "Der Bus hält hier.",
+    "exampleEn": "The bus stops here."
+  },
+  {
+    "id": "nennen",
+    "group": 3,
+    "type": "verb",
+    "de": "nennen",
+    "en": "to name / call",
+    "forms": "nennt · nannte · haben genannt",
+    "example": "Wir nennen ihn Max.",
+    "exampleEn": "We call him Max."
+  },
+  {
+    "id": "zeigen",
+    "group": 3,
+    "type": "verb",
+    "de": "zeigen",
+    "en": "to show",
+    "forms": "zeigt · zeigte · haben gezeigt",
+    "example": "Sie zeigt mir den Weg.",
+    "exampleEn": "She shows me the way."
+  },
+  {
+    "id": "fuehren",
+    "group": 3,
+    "type": "verb",
+    "de": "führen",
+    "en": "to lead",
+    "forms": "führt · führte · haben geführt",
+    "example": "Der Weg führt zum Park.",
+    "exampleEn": "The path leads to the park."
+  },
+  {
+    "id": "arbeiten",
+    "group": 3,
+    "type": "verb",
+    "de": "arbeiten",
+    "en": "to work",
+    "forms": "arbeitet · arbeitete · haben gearbeitet",
+    "example": "Er arbeitet im Büro.",
+    "exampleEn": "He works in the office."
+  },
+  {
+    "id": "spielen",
+    "group": 3,
+    "type": "verb",
+    "de": "spielen",
+    "en": "to play",
+    "forms": "spielt · spielte · haben gespielt",
+    "example": "Die Kinder spielen im Park.",
+    "exampleEn": "The children play in the park."
+  },
+  {
+    "id": "sprechen",
+    "group": 3,
+    "type": "verb",
+    "de": "sprechen",
+    "en": "to speak",
+    "forms": "spricht · sprach · haben gesprochen",
+    "example": "Sprechen Sie Deutsch?",
+    "exampleEn": "Do you speak German?"
+  },
+  {
+    "id": "bringen",
+    "group": 3,
+    "type": "verb",
+    "de": "bringen",
+    "en": "to bring",
+    "forms": "bringt · brachte · haben gebracht",
+    "example": "Ich bringe das Buch.",
+    "exampleEn": "I'll bring the book."
+  },
+  {
+    "id": "leben_2",
+    "group": 3,
+    "type": "verb",
+    "de": "leben",
+    "en": "to live",
+    "forms": "lebt · lebte · haben gelebt",
+    "example": "Das Leben ist schön.",
+    "exampleEn": "Life is beautiful."
+  },
+  {
+    "id": "buch",
+    "group": 3,
+    "type": "das",
+    "de": "das Buch",
+    "en": "book",
+    "forms": "die Bücher",
+    "example": "Das Buch ist interessant.",
+    "exampleEn": "The book is interesting."
+  },
+  {
+    "id": "tisch",
+    "group": 3,
+    "type": "der",
+    "de": "der Tisch",
+    "en": "table",
+    "forms": "die Tische",
+    "example": "Das Essen steht auf dem Tisch.",
+    "exampleEn": "The food is on the table."
+  },
+  {
+    "id": "stuhl",
+    "group": 3,
+    "type": "der",
+    "de": "der Stuhl",
+    "en": "chair",
+    "forms": "die Stühle",
+    "example": "Setz dich auf den Stuhl!",
+    "exampleEn": "Sit down on the chair!"
+  },
+  {
+    "id": "tuer",
+    "group": 3,
+    "type": "die",
+    "de": "die Tür",
+    "en": "door",
+    "forms": "die Türen",
+    "example": "Die Tür ist offen.",
+    "exampleEn": "The door is open."
+  },
+  {
+    "id": "fenster",
+    "group": 3,
+    "type": "das",
+    "de": "das Fenster",
+    "en": "window",
+    "forms": "die Fenster",
+    "example": "Das Fenster ist zu.",
+    "exampleEn": "The window is closed."
+  },
+  {
+    "id": "bett",
+    "group": 3,
+    "type": "das",
+    "de": "das Bett",
+    "en": "bed",
+    "forms": "die Betten",
+    "example": "Ich gehe ins Bett.",
+    "exampleEn": "I'm going to bed."
+  },
+  {
+    "id": "boden",
+    "group": 3,
+    "type": "der",
+    "de": "der Boden",
+    "en": "floor / ground",
+    "forms": "die Böden",
+    "example": "Die Katze sitzt auf dem Boden.",
+    "exampleEn": "The cat sits on the floor."
+  },
+  {
+    "id": "wand",
+    "group": 3,
+    "type": "die",
+    "de": "die Wand",
+    "en": "wall",
+    "forms": "die Wände",
+    "example": "Das Bild hängt an der Wand.",
+    "exampleEn": "The picture is on the wall."
+  },
+  {
+    "id": "familie",
+    "group": 3,
+    "type": "die",
+    "de": "die Familie",
+    "en": "family",
+    "forms": "die Familien",
+    "example": "Meine Familie ist groß.",
+    "exampleEn": "My family is big."
+  },
+  {
+    "id": "mutter",
+    "group": 3,
+    "type": "die",
+    "de": "die Mutter",
+    "en": "mother",
+    "forms": "die Mütter",
+    "example": "Meine Mutter kocht gut.",
+    "exampleEn": "My mother cooks well."
+  },
+  {
+    "id": "fahren",
+    "group": 4,
+    "type": "verb",
+    "de": "fahren",
+    "en": "to drive / travel",
+    "forms": "fährt · fuhr · sein gefahren",
+    "example": "Wir fahren mit dem Zug.",
+    "exampleEn": "We travel by train."
+  },
+  {
+    "id": "fallen",
+    "group": 4,
+    "type": "verb",
+    "de": "fallen",
+    "en": "to fall",
+    "forms": "fällt · fiel · sein gefallen",
+    "example": "Das Blatt fällt vom Baum.",
+    "exampleEn": "The leaf falls from the tree."
+  },
+  {
+    "id": "folgen",
+    "group": 4,
+    "type": "verb",
+    "de": "folgen",
+    "en": "to follow",
+    "forms": "folgt · folgte · sein gefolgt",
+    "example": "Folg mir bitte!",
+    "exampleEn": "Please follow me!"
+  },
+  {
+    "id": "geben",
+    "group": 4,
+    "type": "verb",
+    "de": "geben",
+    "en": "to give",
+    "forms": "gibt · gab · haben gegeben",
+    "example": "Kannst du mir einen Stift geben?",
+    "exampleEn": "Can you give me a pen?"
+  },
+  {
+    "id": "handeln",
+    "group": 4,
+    "type": "verb",
+    "de": "handeln",
+    "en": "to act / deal",
+    "forms": "handelt · handelte · haben gehandelt",
+    "example": "Es handelt sich um ein Problem.",
+    "exampleEn": "It's about a problem."
+  },
+  {
+    "id": "helfen",
+    "group": 4,
+    "type": "verb",
+    "de": "helfen",
+    "en": "to help",
+    "forms": "hilft · half · haben geholfen",
+    "example": "Kann ich dir helfen?",
+    "exampleEn": "Can I help you?"
+  },
+  {
+    "id": "hoeren",
+    "group": 4,
+    "type": "verb",
+    "de": "hören",
+    "en": "to hear / listen",
+    "forms": "hört · hörte · haben gehört",
+    "example": "Ich höre Musik.",
+    "exampleEn": "I'm listening to music."
+  },
+  {
+    "id": "kaufen",
+    "group": 4,
+    "type": "verb",
+    "de": "kaufen",
+    "en": "to buy",
+    "forms": "kauft · kaufte · haben gekauft",
+    "example": "Er kauft Brot im Supermarkt.",
+    "exampleEn": "He buys bread at the supermarket."
+  },
+  {
+    "id": "kennen",
+    "group": 4,
+    "type": "verb",
+    "de": "kennen",
+    "en": "to know (person)",
+    "forms": "kennt · kannte · haben gekannt",
+    "example": "Kennst du Berlin?",
+    "exampleEn": "Do you know Berlin?"
+  },
+  {
+    "id": "laufen",
+    "group": 4,
+    "type": "verb",
+    "de": "laufen",
+    "en": "to run / walk",
+    "forms": "läuft · lief · sein gelaufen",
+    "example": "Sie läuft jeden Morgen.",
+    "exampleEn": "She runs every morning."
+  },
+  {
+    "id": "vater",
+    "group": 4,
+    "type": "der",
+    "de": "der Vater",
+    "en": "father",
+    "forms": "die Väter",
+    "example": "Mein Vater arbeitet viel.",
+    "exampleEn": "My father works a lot."
+  },
+  {
+    "id": "bruder",
+    "group": 4,
+    "type": "der",
+    "de": "der Bruder",
+    "en": "brother",
+    "forms": "die Brüder",
+    "example": "Mein Bruder ist jünger als ich.",
+    "exampleEn": "My brother is younger than me."
+  },
+  {
+    "id": "schwester",
+    "group": 4,
+    "type": "die",
+    "de": "die Schwester",
+    "en": "sister",
+    "forms": "die Schwestern",
+    "example": "Meine Schwester singt gut.",
+    "exampleEn": "My sister sings well."
+  },
+  {
+    "id": "sohn",
+    "group": 4,
+    "type": "der",
+    "de": "der Sohn",
+    "en": "son",
+    "forms": "die Söhne",
+    "example": "Ihr Sohn ist acht Jahre alt.",
+    "exampleEn": "Her son is eight years old."
+  },
+  {
+    "id": "tochter",
+    "group": 4,
+    "type": "die",
+    "de": "die Tochter",
+    "en": "daughter",
+    "forms": "die Töchter",
+    "example": "Ihre Tochter geht zur Schule.",
+    "exampleEn": "Her daughter goes to school."
+  },
+  {
+    "id": "freund",
+    "group": 4,
+    "type": "der",
+    "de": "der Freund",
+    "en": "friend / boyfriend",
+    "forms": "die Freunde",
+    "example": "Mein Freund kommt morgen.",
+    "exampleEn": "My friend is coming tomorrow."
+  },
+  {
+    "id": "freundin",
+    "group": 4,
+    "type": "die",
+    "de": "die Freundin",
+    "en": "friend / girlfriend",
+    "forms": "die Freundinnen",
+    "example": "Meine Freundin wohnt in Hamburg.",
+    "exampleEn": "My girlfriend lives in Hamburg."
+  },
+  {
+    "id": "lehrer",
+    "group": 4,
+    "type": "der",
+    "de": "der Lehrer",
+    "en": "teacher",
+    "forms": "die Lehrer",
+    "example": "Der Lehrer erklärt die Aufgabe.",
+    "exampleEn": "The teacher explains the task."
+  },
+  {
+    "id": "schueler",
+    "group": 4,
+    "type": "der",
+    "de": "der Schüler",
+    "en": "student / pupil",
+    "forms": "die Schüler",
+    "example": "Der Schüler macht seine Hausaufgaben.",
+    "exampleEn": "The student does his homework."
+  },
+  {
+    "id": "arzt",
+    "group": 4,
+    "type": "der",
+    "de": "der Arzt",
+    "en": "doctor",
+    "forms": "die Ärzte",
+    "example": "Der Arzt kommt gleich.",
+    "exampleEn": "The doctor is coming soon."
+  },
+  {
+    "id": "lesen",
+    "group": 5,
+    "type": "verb",
+    "de": "lesen",
+    "en": "to read",
+    "forms": "liest · las · haben gelesen",
+    "example": "Ich lese ein Buch.",
+    "exampleEn": "I'm reading a book."
+  },
+  {
+    "id": "meinen",
+    "group": 5,
+    "type": "verb",
+    "de": "meinen",
+    "en": "to mean / think",
+    "forms": "meint · meinte · haben gemeint",
+    "example": "Was meinst du?",
+    "exampleEn": "What do you think?"
+  },
+  {
+    "id": "oeffnen",
+    "group": 5,
+    "type": "verb",
+    "de": "öffnen",
+    "en": "to open",
+    "forms": "öffnet · öffnete · haben geöffnet",
+    "example": "Er öffnet die Tür.",
+    "exampleEn": "He opens the door."
+  },
+  {
+    "id": "schreiben",
+    "group": 5,
+    "type": "verb",
+    "de": "schreiben",
+    "en": "to write",
+    "forms": "schreibt · schrieb · haben geschrieben",
+    "example": "Sie schreibt einen Brief.",
+    "exampleEn": "She writes a letter."
+  },
+  {
+    "id": "setzen",
+    "group": 5,
+    "type": "verb",
+    "de": "setzen",
+    "en": "to put / set",
+    "forms": "setzt · setzte · haben gesetzt",
+    "example": "Er setzt sich auf den Stuhl.",
+    "exampleEn": "He sits down on the chair."
+  },
+  {
+    "id": "suchen",
+    "group": 5,
+    "type": "verb",
+    "de": "suchen",
+    "en": "to look for",
+    "forms": "sucht · suchte · haben gesucht",
+    "example": "Ich suche meine Jacke.",
+    "exampleEn": "I'm looking for my jacket."
+  },
+  {
+    "id": "treffen",
+    "group": 5,
+    "type": "verb",
+    "de": "treffen",
+    "en": "to meet",
+    "forms": "trifft · traf · haben getroffen",
+    "example": "Wir treffen uns um drei.",
+    "exampleEn": "We meet at three."
+  },
+  {
+    "id": "warten",
+    "group": 5,
+    "type": "verb",
+    "de": "warten",
+    "en": "to wait",
+    "forms": "wartet · wartete · haben gewartet",
+    "example": "Sie wartet auf den Bus.",
+    "exampleEn": "She's waiting for the bus."
+  },
+  {
+    "id": "essen_2",
+    "group": 5,
+    "type": "verb",
+    "de": "essen",
+    "en": "to eat",
+    "forms": "isst · aß · haben gegessen",
+    "example": "Ich esse gerne Pizza.",
+    "exampleEn": "I like eating pizza."
+  },
+  {
+    "id": "trinken",
+    "group": 5,
+    "type": "verb",
+    "de": "trinken",
+    "en": "to drink",
+    "forms": "trinkt · trank · haben getrunken",
+    "example": "Er trinkt Kaffee.",
+    "exampleEn": "He drinks coffee."
+  },
+  {
+    "id": "polizist",
+    "group": 5,
+    "type": "der",
+    "de": "der Polizist",
+    "en": "police officer",
+    "forms": "die Polizisten",
+    "example": "Der Polizist hilft uns.",
+    "exampleEn": "The police officer helps us."
+  },
+  {
+    "id": "firma",
+    "group": 5,
+    "type": "die",
+    "de": "die Firma",
+    "en": "company",
+    "forms": "die Firmen",
+    "example": "Die Firma ist groß.",
+    "exampleEn": "The company is large."
+  },
+  {
+    "id": "buero",
+    "group": 5,
+    "type": "das",
+    "de": "das Büro",
+    "en": "office",
+    "forms": "die Büros",
+    "example": "Er arbeitet im Büro.",
+    "exampleEn": "He works in the office."
+  },
+  {
+    "id": "bahnhof",
+    "group": 5,
+    "type": "der",
+    "de": "der Bahnhof",
+    "en": "train station",
+    "forms": "die Bahnhöfe",
+    "example": "Der Bahnhof ist weit.",
+    "exampleEn": "The station is far."
+  },
+  {
+    "id": "flughafen",
+    "group": 5,
+    "type": "der",
+    "de": "der Flughafen",
+    "en": "airport",
+    "forms": "die Flughäfen",
+    "example": "Der Flughafen ist sehr groß.",
+    "exampleEn": "The airport is very big."
+  },
+  {
+    "id": "hotel",
+    "group": 5,
+    "type": "das",
+    "de": "das Hotel",
+    "en": "hotel",
+    "forms": "die Hotels",
+    "example": "Das Hotel ist schön.",
+    "exampleEn": "The hotel is nice."
+  },
+  {
+    "id": "restaurant",
+    "group": 5,
+    "type": "das",
+    "de": "das Restaurant",
+    "en": "restaurant",
+    "forms": "die Restaurants",
+    "example": "Das Restaurant ist teuer.",
+    "exampleEn": "The restaurant is expensive."
+  },
+  {
+    "id": "geschaeft",
+    "group": 5,
+    "type": "das",
+    "de": "das Geschäft",
+    "en": "shop / business",
+    "forms": "die Geschäfte",
+    "example": "Das Geschäft ist geschlossen.",
+    "exampleEn": "The shop is closed."
+  },
+  {
+    "id": "markt",
+    "group": 5,
+    "type": "der",
+    "de": "der Markt",
+    "en": "market",
+    "forms": "die Märkte",
+    "example": "Ich gehe auf den Markt.",
+    "exampleEn": "I'm going to the market."
+  },
+  {
+    "id": "strasse",
+    "group": 5,
+    "type": "die",
+    "de": "die Straße",
+    "en": "street",
+    "forms": "die Straßen",
+    "example": "Die Straße ist breit.",
+    "exampleEn": "The street is wide."
+  },
+  {
+    "id": "schlafen",
+    "group": 6,
+    "type": "verb",
+    "de": "schlafen",
+    "en": "to sleep",
+    "forms": "schläft · schlief · haben geschlafen",
+    "example": "Das Kind schläft schon.",
+    "exampleEn": "The child is already asleep."
+  },
+  {
+    "id": "wohnen",
+    "group": 6,
+    "type": "verb",
+    "de": "wohnen",
+    "en": "to live (somewhere)",
+    "forms": "wohnt · wohnte · haben gewohnt",
+    "example": "Wo wohnst du?",
+    "exampleEn": "Where do you live?"
+  },
+  {
+    "id": "lernen",
+    "group": 6,
+    "type": "verb",
+    "de": "lernen",
+    "en": "to learn",
+    "forms": "lernt · lernte · haben gelernt",
+    "example": "Ich lerne Deutsch.",
+    "exampleEn": "I'm learning German."
+  },
+  {
+    "id": "verstehen",
+    "group": 6,
+    "type": "verb",
+    "de": "verstehen",
+    "en": "to understand",
+    "forms": "versteht · verstand · haben verstanden",
+    "example": "Ich verstehe nicht.",
+    "exampleEn": "I don't understand."
+  },
+  {
+    "id": "fragen",
+    "group": 6,
+    "type": "verb",
+    "de": "fragen",
+    "en": "to ask",
+    "forms": "fragt · fragte · haben gefragt",
+    "example": "Darf ich fragen?",
+    "exampleEn": "May I ask?"
+  },
+  {
+    "id": "antworten",
+    "group": 6,
+    "type": "verb",
+    "de": "antworten",
+    "en": "to answer",
+    "forms": "antwortet · antwortete · haben geantwortet",
+    "example": "Er antwortet auf die Frage.",
+    "exampleEn": "He answers the question."
+  },
+  {
+    "id": "beginnen",
+    "group": 6,
+    "type": "verb",
+    "de": "beginnen",
+    "en": "to begin",
+    "forms": "beginnt · begann · haben begonnen",
+    "example": "Der Unterricht beginnt um acht.",
+    "exampleEn": "Class begins at eight."
+  },
+  {
+    "id": "brauchen",
+    "group": 6,
+    "type": "verb",
+    "de": "brauchen",
+    "en": "to need",
+    "forms": "braucht · brauchte · haben gebraucht",
+    "example": "Ich brauche Hilfe.",
+    "exampleEn": "I need help."
+  },
+  {
+    "id": "vergessen",
+    "group": 6,
+    "type": "verb",
+    "de": "vergessen",
+    "en": "to forget",
+    "forms": "vergisst · vergaß · haben vergessen",
+    "example": "Ich vergesse immer meinen Schlüssel.",
+    "exampleEn": "I always forget my key."
+  },
+  {
+    "id": "erinnern",
+    "group": 6,
+    "type": "verb",
+    "de": "erinnern",
+    "en": "to remember",
+    "forms": "erinnert · erinnerte · haben erinnert",
+    "example": "Ich erinnere mich an ihn.",
+    "exampleEn": "I remember him."
+  },
+  {
+    "id": "platz",
+    "group": 6,
+    "type": "der",
+    "de": "der Platz",
+    "en": "square / place",
+    "forms": "die Plätze",
+    "example": "Der Platz ist groß.",
+    "exampleEn": "The square is big."
+  },
+  {
+    "id": "park",
+    "group": 6,
+    "type": "der",
+    "de": "der Park",
+    "en": "park",
+    "forms": "die Parks",
+    "example": "Wir gehen in den Park.",
+    "exampleEn": "We're going to the park."
+  },
+  {
+    "id": "berg",
+    "group": 6,
+    "type": "der",
+    "de": "der Berg",
+    "en": "mountain",
+    "forms": "die Berge",
+    "example": "Der Berg ist sehr hoch.",
+    "exampleEn": "The mountain is very high."
+  },
+  {
+    "id": "fluss",
+    "group": 6,
+    "type": "der",
+    "de": "der Fluss",
+    "en": "river",
+    "forms": "die Flüsse",
+    "example": "Der Fluss ist breit.",
+    "exampleEn": "The river is wide."
+  },
+  {
+    "id": "see",
+    "group": 6,
+    "type": "der",
+    "de": "der See",
+    "en": "lake",
+    "forms": "die Seen",
+    "example": "Der See ist kalt.",
+    "exampleEn": "The lake is cold."
+  },
+  {
+    "id": "meer",
+    "group": 6,
+    "type": "das",
+    "de": "das Meer",
+    "en": "sea",
+    "forms": "die Meere",
+    "example": "Das Meer ist blau.",
+    "exampleEn": "The sea is blue."
+  },
+  {
+    "id": "hund",
+    "group": 6,
+    "type": "der",
+    "de": "der Hund",
+    "en": "dog",
+    "forms": "die Hunde",
+    "example": "Der Hund ist groß.",
+    "exampleEn": "The dog is big."
+  },
+  {
+    "id": "katze",
+    "group": 6,
+    "type": "die",
+    "de": "die Katze",
+    "en": "cat",
+    "forms": "die Katzen",
+    "example": "Die Katze schläft.",
+    "exampleEn": "The cat is sleeping."
+  },
+  {
+    "id": "vogel",
+    "group": 6,
+    "type": "der",
+    "de": "der Vogel",
+    "en": "bird",
+    "forms": "die Vögel",
+    "example": "Der Vogel singt.",
+    "exampleEn": "The bird sings."
+  },
+  {
+    "id": "fisch",
+    "group": 6,
+    "type": "der",
+    "de": "der Fisch",
+    "en": "fish",
+    "forms": "die Fische",
+    "example": "Der Fisch schwimmt.",
+    "exampleEn": "The fish swims."
+  },
+  {
+    "id": "sterben",
+    "group": 7,
+    "type": "verb",
+    "de": "sterben",
+    "en": "to die",
+    "forms": "stirbt · starb · sein gestorben",
+    "example": "Die Blume stirbt ohne Wasser.",
+    "exampleEn": "The flower dies without water."
+  },
+  {
+    "id": "wachsen",
+    "group": 7,
+    "type": "verb",
+    "de": "wachsen",
+    "en": "to grow",
+    "forms": "wächst · wuchs · sein gewachsen",
+    "example": "Die Kinder wachsen schnell.",
+    "exampleEn": "The children grow quickly."
+  },
+  {
+    "id": "kochen",
+    "group": 7,
+    "type": "verb",
+    "de": "kochen",
+    "en": "to cook",
+    "forms": "kocht · kochte · haben gekocht",
+    "example": "Meine Mutter kocht gut.",
+    "exampleEn": "My mother cooks well."
+  },
+  {
+    "id": "waschen",
+    "group": 7,
+    "type": "verb",
+    "de": "waschen",
+    "en": "to wash",
+    "forms": "wäscht · wusch · haben gewaschen",
+    "example": "Ich wasche meine Wäsche.",
+    "exampleEn": "I wash my laundry."
+  },
+  {
+    "id": "fliegen",
+    "group": 7,
+    "type": "verb",
+    "de": "fliegen",
+    "en": "to fly",
+    "forms": "fliegt · flog · sein geflogen",
+    "example": "Das Flugzeug fliegt hoch.",
+    "exampleEn": "The plane flies high."
+  },
+  {
+    "id": "schwimmen",
+    "group": 7,
+    "type": "verb",
+    "de": "schwimmen",
+    "en": "to swim",
+    "forms": "schwimmt · schwamm · sein geschwommen",
+    "example": "Er schwimmt jeden Tag.",
+    "exampleEn": "He swims every day."
+  },
+  {
+    "id": "tanzen",
+    "group": 7,
+    "type": "verb",
+    "de": "tanzen",
+    "en": "to dance",
+    "forms": "tanzt · tanzte · haben getanzt",
+    "example": "Wir tanzen auf der Party.",
+    "exampleEn": "We dance at the party."
+  },
+  {
+    "id": "singen",
+    "group": 7,
+    "type": "verb",
+    "de": "singen",
+    "en": "to sing",
+    "forms": "singt · sang · haben gesungen",
+    "example": "Sie singt sehr schön.",
+    "exampleEn": "She sings very beautifully."
+  },
+  {
+    "id": "gewinnen",
+    "group": 7,
+    "type": "verb",
+    "de": "gewinnen",
+    "en": "to win",
+    "forms": "gewinnt · gewann · haben gewonnen",
+    "example": "Wir wollen das Spiel gewinnen.",
+    "exampleEn": "We want to win the game."
+  },
+  {
+    "id": "verlieren",
+    "group": 7,
+    "type": "verb",
+    "de": "verlieren",
+    "en": "to lose",
+    "forms": "verliert · verlor · haben verloren",
+    "example": "Er verliert immer seine Brille.",
+    "exampleEn": "He always loses his glasses."
+  },
+  {
+    "id": "pferd",
+    "group": 7,
+    "type": "das",
+    "de": "das Pferd",
+    "en": "horse",
+    "forms": "die Pferde",
+    "example": "Das Pferd ist schnell.",
+    "exampleEn": "The horse is fast."
+  },
+  {
+    "id": "kuh",
+    "group": 7,
+    "type": "die",
+    "de": "die Kuh",
+    "en": "cow",
+    "forms": "die Kühe",
+    "example": "Die Kuh gibt Milch.",
+    "exampleEn": "The cow gives milk."
+  },
+  {
+    "id": "schwein",
+    "group": 7,
+    "type": "das",
+    "de": "das Schwein",
+    "en": "pig",
+    "forms": "die Schweine",
+    "example": "Das Schwein ist auf dem Bauernhof.",
+    "exampleEn": "The pig is on the farm."
+  },
+  {
+    "id": "huhn",
+    "group": 7,
+    "type": "das",
+    "de": "das Huhn",
+    "en": "chicken",
+    "forms": "die Hühner",
+    "example": "Das Huhn legt Eier.",
+    "exampleEn": "The chicken lays eggs."
+  },
+  {
+    "id": "brot",
+    "group": 7,
+    "type": "das",
+    "de": "das Brot",
+    "en": "bread",
+    "forms": "die Brote",
+    "example": "Das Brot ist frisch.",
+    "exampleEn": "The bread is fresh."
+  },
+  {
+    "id": "milch",
+    "group": 7,
+    "type": "die",
+    "de": "die Milch",
+    "en": "milk",
+    "forms": "die Milche",
+    "example": "Ich trinke Milch.",
+    "exampleEn": "I drink milk."
+  },
+  {
+    "id": "fleisch",
+    "group": 7,
+    "type": "das",
+    "de": "das Fleisch",
+    "en": "meat",
+    "forms": "kein Plural",
+    "example": "Er isst kein Fleisch.",
+    "exampleEn": "He doesn't eat meat."
+  },
+  {
+    "id": "gemuese",
+    "group": 7,
+    "type": "das",
+    "de": "das Gemüse",
+    "en": "vegetables",
+    "forms": "die Gemüse",
+    "example": "Gemüse ist gesund.",
+    "exampleEn": "Vegetables are healthy."
+  },
+  {
+    "id": "obst",
+    "group": 7,
+    "type": "das",
+    "de": "das Obst",
+    "en": "fruit",
+    "forms": "kein Plural",
+    "example": "Obst ist lecker.",
+    "exampleEn": "Fruit is tasty."
+  },
+  {
+    "id": "apfel",
+    "group": 7,
+    "type": "der",
+    "de": "der Apfel",
+    "en": "apple",
+    "forms": "die Äpfel",
+    "example": "Der Apfel ist rot.",
+    "exampleEn": "The apple is red."
+  },
+  {
+    "id": "erklaeren",
+    "group": 8,
+    "type": "verb",
+    "de": "erklären",
+    "en": "to explain",
+    "forms": "erklärt · erklärte · haben erklärt",
+    "example": "Der Lehrer erklärt die Aufgabe.",
+    "exampleEn": "The teacher explains the task."
+  },
+  {
+    "id": "besuchen",
+    "group": 8,
+    "type": "verb",
+    "de": "besuchen",
+    "en": "to visit",
+    "forms": "besucht · besuchte · haben besucht",
+    "example": "Wir besuchen unsere Großeltern.",
+    "exampleEn": "We visit our grandparents."
+  },
+  {
+    "id": "bezahlen",
+    "group": 8,
+    "type": "verb",
+    "de": "bezahlen",
+    "en": "to pay",
+    "forms": "bezahlt · bezahlte · haben bezahlt",
+    "example": "Ich bezahle mit Karte.",
+    "exampleEn": "I pay by card."
+  },
+  {
+    "id": "danken",
+    "group": 8,
+    "type": "verb",
+    "de": "danken",
+    "en": "to thank",
+    "forms": "dankt · dankte · haben gedankt",
+    "example": "Ich danke dir sehr.",
+    "exampleEn": "Thank you very much."
+  },
+  {
+    "id": "entscheiden",
+    "group": 8,
+    "type": "verb",
+    "de": "entscheiden",
+    "en": "to decide",
+    "forms": "entscheidet · entschied · haben entschieden",
+    "example": "Ich muss mich entscheiden.",
+    "exampleEn": "I need to decide."
+  },
+  {
+    "id": "entwickeln",
+    "group": 8,
+    "type": "verb",
+    "de": "entwickeln",
+    "en": "to develop",
+    "forms": "entwickelt · entwickelte · haben entwickelt",
+    "example": "Die Firma entwickelt Apps.",
+    "exampleEn": "The company develops apps."
+  },
+  {
+    "id": "erhalten",
+    "group": 8,
+    "type": "verb",
+    "de": "erhalten",
+    "en": "to receive",
+    "forms": "erhält · erhielt · haben erhalten",
+    "example": "Sie erhält viele Briefe.",
+    "exampleEn": "She receives many letters."
+  },
+  {
+    "id": "erreichen",
+    "group": 8,
+    "type": "verb",
+    "de": "erreichen",
+    "en": "to reach",
+    "forms": "erreicht · erreichte · haben erreicht",
+    "example": "Ich kann ihn nicht erreichen.",
+    "exampleEn": "I can't reach him."
+  },
+  {
+    "id": "erzaehlen",
+    "group": 8,
+    "type": "verb",
+    "de": "erzählen",
+    "en": "to tell / narrate",
+    "forms": "erzählt · erzählte · haben erzählt",
+    "example": "Er erzählt eine Geschichte.",
+    "exampleEn": "He tells a story."
+  },
+  {
+    "id": "feiern",
+    "group": 8,
+    "type": "verb",
+    "de": "feiern",
+    "en": "to celebrate",
+    "forms": "feiert · feierte · haben gefeiert",
+    "example": "Wir feiern Geburtstag.",
+    "exampleEn": "We're celebrating a birthday."
+  },
+  {
+    "id": "kartoffel",
+    "group": 8,
+    "type": "die",
+    "de": "die Kartoffel",
+    "en": "potato",
+    "forms": "die Kartoffeln",
+    "example": "Die Kartoffel ist weich.",
+    "exampleEn": "The potato is soft."
+  },
+  {
+    "id": "ei",
+    "group": 8,
+    "type": "das",
+    "de": "das Ei",
+    "en": "egg",
+    "forms": "die Eier",
+    "example": "Ich esse ein Ei.",
+    "exampleEn": "I'm eating an egg."
+  },
+  {
+    "id": "kaffee",
+    "group": 8,
+    "type": "der",
+    "de": "der Kaffee",
+    "en": "coffee",
+    "forms": "die Kaffees",
+    "example": "Ich trinke morgens Kaffee.",
+    "exampleEn": "I drink coffee in the morning."
+  },
+  {
+    "id": "tee",
+    "group": 8,
+    "type": "der",
+    "de": "der Tee",
+    "en": "tea",
+    "forms": "die Tees",
+    "example": "Sie trinkt Tee.",
+    "exampleEn": "She drinks tea."
+  },
+  {
+    "id": "bier",
+    "group": 8,
+    "type": "das",
+    "de": "das Bier",
+    "en": "beer",
+    "forms": "die Biere",
+    "example": "Er trinkt ein Bier.",
+    "exampleEn": "He drinks a beer."
+  },
+  {
+    "id": "wein",
+    "group": 8,
+    "type": "der",
+    "de": "der Wein",
+    "en": "wine",
+    "forms": "die Weine",
+    "example": "Wir trinken Wein.",
+    "exampleEn": "We drink wine."
+  },
+  {
+    "id": "teller",
+    "group": 8,
+    "type": "der",
+    "de": "der Teller",
+    "en": "plate",
+    "forms": "die Teller",
+    "example": "Der Teller ist leer.",
+    "exampleEn": "The plate is empty."
+  },
+  {
+    "id": "glas",
+    "group": 8,
+    "type": "das",
+    "de": "das Glas",
+    "en": "glass",
+    "forms": "die Gläser",
+    "example": "Das Glas ist voll.",
+    "exampleEn": "The glass is full."
+  },
+  {
+    "id": "flasche",
+    "group": 8,
+    "type": "die",
+    "de": "die Flasche",
+    "en": "bottle",
+    "forms": "die Flaschen",
+    "example": "Die Flasche ist aus Glas.",
+    "exampleEn": "The bottle is made of glass."
+  },
+  {
+    "id": "messer",
+    "group": 8,
+    "type": "das",
+    "de": "das Messer",
+    "en": "knife",
+    "forms": "die Messer",
+    "example": "Das Messer ist scharf.",
+    "exampleEn": "The knife is sharp."
+  },
+  {
+    "id": "fuehlen",
+    "group": 9,
+    "type": "verb",
+    "de": "fühlen",
+    "en": "to feel",
+    "forms": "fühlt · fühlte · haben gefühlt",
+    "example": "Ich fühle mich gut.",
+    "exampleEn": "I feel good."
+  },
+  {
+    "id": "gefallen",
+    "group": 9,
+    "type": "verb",
+    "de": "gefallen",
+    "en": "to please / like",
+    "forms": "gefällt · gefiel · haben gefallen",
+    "example": "Das Buch gefällt mir.",
+    "exampleEn": "I like the book."
+  },
+  {
+    "id": "gehoeren",
+    "group": 9,
+    "type": "verb",
+    "de": "gehören",
+    "en": "to belong",
+    "forms": "gehört · gehörte · haben gehört",
+    "example": "Das gehört mir.",
+    "exampleEn": "That belongs to me."
+  },
+  {
+    "id": "hoffen",
+    "group": 9,
+    "type": "verb",
+    "de": "hoffen",
+    "en": "to hope",
+    "forms": "hofft · hoffte · haben gehofft",
+    "example": "Ich hoffe, es klappt.",
+    "exampleEn": "I hope it works out."
+  },
+  {
+    "id": "kaempfen",
+    "group": 9,
+    "type": "verb",
+    "de": "kämpfen",
+    "en": "to fight",
+    "forms": "kämpft · kämpfte · haben gekämpft",
+    "example": "Er kämpft für seine Rechte.",
+    "exampleEn": "He fights for his rights."
+  },
+  {
+    "id": "kosten",
+    "group": 9,
+    "type": "verb",
+    "de": "kosten",
+    "en": "to cost",
+    "forms": "kostet · kostete · haben gekostet",
+    "example": "Wie viel kostet das?",
+    "exampleEn": "How much does that cost?"
+  },
+  {
+    "id": "lachen",
+    "group": 9,
+    "type": "verb",
+    "de": "lachen",
+    "en": "to laugh",
+    "forms": "lacht · lachte · haben gelacht",
+    "example": "Sie lacht viel.",
+    "exampleEn": "She laughs a lot."
+  },
+  {
+    "id": "lieben",
+    "group": 9,
+    "type": "verb",
+    "de": "lieben",
+    "en": "to love",
+    "forms": "liebt · liebte · haben geliebt",
+    "example": "Ich liebe dich.",
+    "exampleEn": "I love you."
+  },
+  {
+    "id": "moegen",
+    "group": 9,
+    "type": "verb",
+    "de": "mögen",
+    "en": "to like",
+    "forms": "mag · mochte · haben gemocht",
+    "example": "Ich mag Hunde.",
+    "exampleEn": "I like dogs."
+  },
+  {
+    "id": "passieren",
+    "group": 9,
+    "type": "verb",
+    "de": "passieren",
+    "en": "to happen",
+    "forms": "passiert · passierte · haben passiert",
+    "example": "Was ist passiert?",
+    "exampleEn": "What happened?"
+  },
+  {
+    "id": "gabel",
+    "group": 9,
+    "type": "die",
+    "de": "die Gabel",
+    "en": "fork",
+    "forms": "die Gabeln",
+    "example": "Die Gabel liegt neben dem Teller.",
+    "exampleEn": "The fork is next to the plate."
+  },
+  {
+    "id": "loeffel",
+    "group": 9,
+    "type": "der",
+    "de": "der Löffel",
+    "en": "spoon",
+    "forms": "die Löffel",
+    "example": "Der Löffel ist im Joghurt.",
+    "exampleEn": "The spoon is in the yogurt."
+  },
+  {
+    "id": "jacke",
+    "group": 9,
+    "type": "die",
+    "de": "die Jacke",
+    "en": "jacket",
+    "forms": "die Jacken",
+    "example": "Deine Jacke ist schön.",
+    "exampleEn": "Your jacket is nice."
+  },
+  {
+    "id": "hose",
+    "group": 9,
+    "type": "die",
+    "de": "die Hose",
+    "en": "trousers",
+    "forms": "die Hosen",
+    "example": "Die Hose ist zu groß.",
+    "exampleEn": "The trousers are too big."
+  },
+  {
+    "id": "hemd",
+    "group": 9,
+    "type": "das",
+    "de": "das Hemd",
+    "en": "shirt",
+    "forms": "die Hemden",
+    "example": "Das Hemd ist weiß.",
+    "exampleEn": "The shirt is white."
+  },
+  {
+    "id": "kleid",
+    "group": 9,
+    "type": "das",
+    "de": "das Kleid",
+    "en": "dress",
+    "forms": "die Kleider",
+    "example": "Das Kleid ist rot.",
+    "exampleEn": "The dress is red."
+  },
+  {
+    "id": "uhr",
+    "group": 9,
+    "type": "die",
+    "de": "die Uhr",
+    "en": "clock / watch",
+    "forms": "die Uhren",
+    "example": "Die Uhr hängt an der Wand.",
+    "exampleEn": "The clock is on the wall."
+  },
+  {
+    "id": "telefon",
+    "group": 9,
+    "type": "das",
+    "de": "das Telefon",
+    "en": "telephone",
+    "forms": "die Telefone",
+    "example": "Das Telefon klingelt.",
+    "exampleEn": "The phone is ringing."
+  },
+  {
+    "id": "computer",
+    "group": 9,
+    "type": "der",
+    "de": "der Computer",
+    "en": "computer",
+    "forms": "die Computer",
+    "example": "Der Computer ist neu.",
+    "exampleEn": "The computer is new."
+  },
+  {
+    "id": "schluessel",
+    "group": 9,
+    "type": "der",
+    "de": "der Schlüssel",
+    "en": "key",
+    "forms": "die Schlüssel",
+    "example": "Ich habe meinen Schlüssel vergessen.",
+    "exampleEn": "I forgot my key."
+  },
+  {
+    "id": "planen",
+    "group": 10,
+    "type": "verb",
+    "de": "planen",
+    "en": "to plan",
+    "forms": "plant · plante · haben geplant",
+    "example": "Wir planen einen Ausflug.",
+    "exampleEn": "We're planning a trip."
+  },
+  {
+    "id": "reden",
+    "group": 10,
+    "type": "verb",
+    "de": "reden",
+    "en": "to talk",
+    "forms": "redet · redete · haben geredet",
+    "example": "Er redet zu viel.",
+    "exampleEn": "He talks too much."
+  },
+  {
+    "id": "reisen",
+    "group": 10,
+    "type": "verb",
+    "de": "reisen",
+    "en": "to travel",
+    "forms": "reist · reiste · sein gereist",
+    "example": "Ich reise gern.",
+    "exampleEn": "I like to travel."
+  },
+  {
+    "id": "schicken",
+    "group": 10,
+    "type": "verb",
+    "de": "schicken",
+    "en": "to send",
+    "forms": "schickt · schickte · haben geschickt",
+    "example": "Ich schicke dir eine E-Mail.",
+    "exampleEn": "I'll send you an email."
+  },
+  {
+    "id": "schmecken",
+    "group": 10,
+    "type": "verb",
+    "de": "schmecken",
+    "en": "to taste",
+    "forms": "schmeckt · schmeckte · haben geschmeckt",
+    "example": "Das schmeckt sehr gut.",
+    "exampleEn": "That tastes very good."
+  },
+  {
+    "id": "teilen",
+    "group": 10,
+    "type": "verb",
+    "de": "teilen",
+    "en": "to share",
+    "forms": "teilt · teilte · haben geteilt",
+    "example": "Wir teilen die Pizza.",
+    "exampleEn": "We share the pizza."
+  },
+  {
+    "id": "tragen",
+    "group": 10,
+    "type": "verb",
+    "de": "tragen",
+    "en": "to wear / carry",
+    "forms": "trägt · trug · haben getragen",
+    "example": "Er trägt eine Jacke.",
+    "exampleEn": "He wears a jacket."
+  },
+  {
+    "id": "versuchen",
+    "group": 10,
+    "type": "verb",
+    "de": "versuchen",
+    "en": "to try",
+    "forms": "versucht · versuchte · haben versucht",
+    "example": "Ich versuche es nochmal.",
+    "exampleEn": "I'll try again."
+  },
+  {
+    "id": "waehlen",
+    "group": 10,
+    "type": "verb",
+    "de": "wählen",
+    "en": "to choose",
+    "forms": "wählt · wählte · haben gewählt",
+    "example": "Du musst einen wählen.",
+    "exampleEn": "You must choose one."
+  },
+  {
+    "id": "wuenschen",
+    "group": 10,
+    "type": "verb",
+    "de": "wünschen",
+    "en": "to wish",
+    "forms": "wünscht · wünschte · haben gewünscht",
+    "example": "Ich wünsche dir viel Glück.",
+    "exampleEn": "I wish you good luck."
+  },
+  {
+    "id": "brief",
+    "group": 10,
+    "type": "der",
+    "de": "der Brief",
+    "en": "letter",
+    "forms": "die Briefe",
+    "example": "Ich schreibe einen Brief.",
+    "exampleEn": "I'm writing a letter."
+  },
+  {
+    "id": "zeitung",
+    "group": 10,
+    "type": "die",
+    "de": "die Zeitung",
+    "en": "newspaper",
+    "forms": "die Zeitungen",
+    "example": "Er liest die Zeitung.",
+    "exampleEn": "He reads the newspaper."
+  },
+  {
+    "id": "film",
+    "group": 10,
+    "type": "der",
+    "de": "der Film",
+    "en": "film",
+    "forms": "die Filme",
+    "example": "Der Film ist interessant.",
+    "exampleEn": "The film is interesting."
+  },
+  {
+    "id": "musik",
+    "group": 10,
+    "type": "die",
+    "de": "die Musik",
+    "en": "music",
+    "forms": "die Musiken",
+    "example": "Ich höre gern Musik.",
+    "exampleEn": "I like listening to music."
+  },
+  {
+    "id": "kunst",
+    "group": 10,
+    "type": "die",
+    "de": "die Kunst",
+    "en": "art",
+    "forms": "die Künste",
+    "example": "Kunst ist schön.",
+    "exampleEn": "Art is beautiful."
+  },
+  {
+    "id": "sport",
+    "group": 10,
+    "type": "der",
+    "de": "der Sport",
+    "en": "sport",
+    "forms": "die Sporte",
+    "example": "Sport ist gesund.",
+    "exampleEn": "Sport is healthy."
+  },
+  {
+    "id": "spiel",
+    "group": 10,
+    "type": "das",
+    "de": "das Spiel",
+    "en": "game",
+    "forms": "die Spiele",
+    "example": "Das Spiel macht Spaß.",
+    "exampleEn": "The game is fun."
+  },
+  {
+    "id": "ball",
+    "group": 10,
+    "type": "der",
+    "de": "der Ball",
+    "en": "ball",
+    "forms": "die Bälle",
+    "example": "Der Ball ist rund.",
+    "exampleEn": "The ball is round."
+  },
+  {
+    "id": "farbe",
+    "group": 10,
+    "type": "die",
+    "de": "die Farbe",
+    "en": "colour",
+    "forms": "die Farben",
+    "example": "Welche Farbe magst du?",
+    "exampleEn": "What colour do you like?"
+  },
+  {
+    "id": "licht",
+    "group": 10,
+    "type": "das",
+    "de": "das Licht",
+    "en": "light",
+    "forms": "die Lichter",
+    "example": "Das Licht ist hell.",
+    "exampleEn": "The light is bright."
+  },
+  {
+    "id": "aufmachen",
+    "group": 11,
+    "type": "verb",
+    "de": "aufmachen",
+    "en": "to open",
+    "forms": "macht auf · machte auf · haben aufgemacht",
+    "example": "Mach die Tür auf!",
+    "exampleEn": "Open the door!"
+  },
+  {
+    "id": "zumachen",
+    "group": 11,
+    "type": "verb",
+    "de": "zumachen",
+    "en": "to close",
+    "forms": "macht zu · machte zu · haben zugemacht",
+    "example": "Bitte mach das Fenster zu.",
+    "exampleEn": "Please close the window."
+  },
+  {
+    "id": "einladen",
+    "group": 11,
+    "type": "verb",
+    "de": "einladen",
+    "en": "to invite",
+    "forms": "lädt ein · lud ein · haben eingeladen",
+    "example": "Ich lade dich ein.",
+    "exampleEn": "I'm inviting you."
+  },
+  {
+    "id": "aussteigen",
+    "group": 11,
+    "type": "verb",
+    "de": "aussteigen",
+    "en": "to get off",
+    "forms": "steigt aus · stieg aus · sein ausgestiegen",
+    "example": "Wir steigen hier aus.",
+    "exampleEn": "We get off here."
+  },
+  {
+    "id": "einsteigen",
+    "group": 11,
+    "type": "verb",
+    "de": "einsteigen",
+    "en": "to get on",
+    "forms": "steigt ein · stieg ein · sein eingestiegen",
+    "example": "Bitte einsteigen!",
+    "exampleEn": "Please board!"
+  },
+  {
+    "id": "umsteigen",
+    "group": 11,
+    "type": "verb",
+    "de": "umsteigen",
+    "en": "to change (transport)",
+    "forms": "steigt um · stieg um · sein umgestiegen",
+    "example": "Muss ich umsteigen?",
+    "exampleEn": "Do I need to change trains?"
+  },
+  {
+    "id": "ankommen",
+    "group": 11,
+    "type": "verb",
+    "de": "ankommen",
+    "en": "to arrive",
+    "forms": "kommt an · kam an · sein angekommen",
+    "example": "Der Zug kommt um fünf an.",
+    "exampleEn": "The train arrives at five."
+  },
+  {
+    "id": "abfahren",
+    "group": 11,
+    "type": "verb",
+    "de": "abfahren",
+    "en": "to depart",
+    "forms": "fährt ab · fuhr ab · sein abgefahren",
+    "example": "Der Bus fährt um acht ab.",
+    "exampleEn": "The bus departs at eight."
+  },
+  {
+    "id": "aufstehen",
+    "group": 11,
+    "type": "verb",
+    "de": "aufstehen",
+    "en": "to get up",
+    "forms": "steht auf · stand auf · sein aufgestanden",
+    "example": "Ich stehe um sieben auf.",
+    "exampleEn": "I get up at seven."
+  },
+  {
+    "id": "einschlafen",
+    "group": 11,
+    "type": "verb",
+    "de": "einschlafen",
+    "en": "to fall asleep",
+    "forms": "schläft ein · schlief ein · sein eingeschlafen",
+    "example": "Das Baby schläft schnell ein.",
+    "exampleEn": "The baby falls asleep quickly."
+  },
+  {
+    "id": "stimme",
+    "group": 11,
+    "type": "die",
+    "de": "die Stimme",
+    "en": "voice",
+    "forms": "die Stimmen",
+    "example": "Ihre Stimme ist schön.",
+    "exampleEn": "Her voice is beautiful."
+  },
+  {
+    "id": "frage",
+    "group": 11,
+    "type": "die",
+    "de": "die Frage",
+    "en": "question",
+    "forms": "die Fragen",
+    "example": "Das ist eine gute Frage.",
+    "exampleEn": "That's a good question."
+  },
+  {
+    "id": "antwort",
+    "group": 11,
+    "type": "die",
+    "de": "die Antwort",
+    "en": "answer",
+    "forms": "die Antworten",
+    "example": "Ich weiß die Antwort nicht.",
+    "exampleEn": "I don't know the answer."
+  },
+  {
+    "id": "problem",
+    "group": 11,
+    "type": "das",
+    "de": "das Problem",
+    "en": "problem",
+    "forms": "die Probleme",
+    "example": "Das ist kein Problem.",
+    "exampleEn": "That's no problem."
+  },
+  {
+    "id": "loesung",
+    "group": 11,
+    "type": "die",
+    "de": "die Lösung",
+    "en": "solution",
+    "forms": "die Lösungen",
+    "example": "Wir finden eine Lösung.",
+    "exampleEn": "We'll find a solution."
+  },
+  {
+    "id": "idee",
+    "group": 11,
+    "type": "die",
+    "de": "die Idee",
+    "en": "idea",
+    "forms": "die Ideen",
+    "example": "Das ist eine gute Idee.",
+    "exampleEn": "That's a good idea."
+  },
+  {
+    "id": "meinung",
+    "group": 11,
+    "type": "die",
+    "de": "die Meinung",
+    "en": "opinion",
+    "forms": "die Meinungen",
+    "example": "Was ist deine Meinung?",
+    "exampleEn": "What's your opinion?"
+  },
+  {
+    "id": "nachricht",
+    "group": 11,
+    "type": "die",
+    "de": "die Nachricht",
+    "en": "message / news",
+    "forms": "die Nachrichten",
+    "example": "Ich habe eine Nachricht.",
+    "exampleEn": "I have a message."
+  },
+  {
+    "id": "geschichte",
+    "group": 11,
+    "type": "die",
+    "de": "die Geschichte",
+    "en": "story / history",
+    "forms": "die Geschichten",
+    "example": "Er erzählt eine Geschichte.",
+    "exampleEn": "He tells a story."
+  },
+  {
+    "id": "nummer",
+    "group": 11,
+    "type": "die",
+    "de": "die Nummer",
+    "en": "number",
+    "forms": "die Nummern",
+    "example": "Wie ist deine Nummer?",
+    "exampleEn": "What's your number?"
+  },
+  {
+    "id": "aufwachen",
+    "group": 12,
+    "type": "verb",
+    "de": "aufwachen",
+    "en": "to wake up",
+    "forms": "wacht auf · wachte auf · sein aufgewacht",
+    "example": "Ich wache früh auf.",
+    "exampleEn": "I wake up early."
+  },
+  {
+    "id": "anrufen",
+    "group": 12,
+    "type": "verb",
+    "de": "anrufen",
+    "en": "to call (phone)",
+    "forms": "ruft an · rief an · haben angerufen",
+    "example": "Ich rufe dich an.",
+    "exampleEn": "I'll call you."
+  },
+  {
+    "id": "ausgehen",
+    "group": 12,
+    "type": "verb",
+    "de": "ausgehen",
+    "en": "to go out",
+    "forms": "geht aus · ging aus · sein ausgegangen",
+    "example": "Wir gehen heute Abend aus.",
+    "exampleEn": "We're going out tonight."
+  },
+  {
+    "id": "einkaufen",
+    "group": 12,
+    "type": "verb",
+    "de": "einkaufen",
+    "en": "to go shopping",
+    "forms": "kauft ein · kaufte ein · haben eingekauft",
+    "example": "Sie geht jeden Samstag einkaufen.",
+    "exampleEn": "She goes shopping every Saturday."
+  },
+  {
+    "id": "vorstellen",
+    "group": 12,
+    "type": "verb",
+    "de": "vorstellen",
+    "en": "to introduce",
+    "forms": "stellt vor · stellte vor · haben vorgestellt",
+    "example": "Ich stelle mich vor.",
+    "exampleEn": "I introduce myself."
+  },
+  {
+    "id": "entschuldigen",
+    "group": 12,
+    "type": "verb",
+    "de": "entschuldigen",
+    "en": "to excuse / apologise",
+    "forms": "entschuldigt · entschuldigte · haben entschuldigt",
+    "example": "Entschuldige mich bitte.",
+    "exampleEn": "Please excuse me."
+  },
+  {
+    "id": "bedeuten",
+    "group": 12,
+    "type": "verb",
+    "de": "bedeuten",
+    "en": "to mean",
+    "forms": "bedeutet · bedeutete · haben bedeutet",
+    "example": "Was bedeutet dieses Wort?",
+    "exampleEn": "What does this word mean?"
+  },
+  {
+    "id": "gehoeren_2",
+    "group": 12,
+    "type": "verb",
+    "de": "gehören",
+    "en": "to belong",
+    "forms": "gehört · gehörte · haben gehört",
+    "example": "Das gehört mir.",
+    "exampleEn": "That belongs to me."
+  },
+  {
+    "id": "klingen",
+    "group": 12,
+    "type": "verb",
+    "de": "klingen",
+    "en": "to sound",
+    "forms": "klingt · klang · haben geklungen",
+    "example": "Das klingt gut.",
+    "exampleEn": "That sounds good."
+  },
+  {
+    "id": "scheinen",
+    "group": 12,
+    "type": "verb",
+    "de": "scheinen",
+    "en": "to seem / shine",
+    "forms": "scheint · schien · haben geschienen",
+    "example": "Die Sonne scheint.",
+    "exampleEn": "The sun is shining."
+  },
+  {
+    "id": "name",
+    "group": 12,
+    "type": "der",
+    "de": "der Name",
+    "en": "name",
+    "forms": "die Namen",
+    "example": "Wie ist dein Name?",
+    "exampleEn": "What's your name?"
+  },
+  {
+    "id": "wort",
+    "group": 12,
+    "type": "das",
+    "de": "das Wort",
+    "en": "word",
+    "forms": "die Wörter",
+    "example": "Ich kenne dieses Wort nicht.",
+    "exampleEn": "I don't know this word."
+  },
+  {
+    "id": "satz",
+    "group": 12,
+    "type": "der",
+    "de": "der Satz",
+    "en": "sentence",
+    "forms": "die Sätze",
+    "example": "Der Satz ist lang.",
+    "exampleEn": "The sentence is long."
+  },
+  {
+    "id": "sprache",
+    "group": 12,
+    "type": "die",
+    "de": "die Sprache",
+    "en": "language",
+    "forms": "die Sprachen",
+    "example": "Deutsch ist eine schwere Sprache.",
+    "exampleEn": "German is a difficult language."
+  },
+  {
+    "id": "bild",
+    "group": 12,
+    "type": "das",
+    "de": "das Bild",
+    "en": "picture / image",
+    "forms": "die Bilder",
+    "example": "Das Bild ist schön.",
+    "exampleEn": "The picture is beautiful."
+  },
+  {
+    "id": "foto",
+    "group": 12,
+    "type": "das",
+    "de": "das Foto",
+    "en": "photo",
+    "forms": "die Fotos",
+    "example": "Ich mache ein Foto.",
+    "exampleEn": "I'm taking a photo."
+  },
+  {
+    "id": "karte",
+    "group": 12,
+    "type": "die",
+    "de": "die Karte",
+    "en": "card / map / ticket",
+    "forms": "die Karten",
+    "example": "Ich kaufe eine Karte.",
+    "exampleEn": "I'm buying a ticket."
+  },
+  {
+    "id": "zimmer",
+    "group": 12,
+    "type": "das",
+    "de": "das Zimmer",
+    "en": "room",
+    "forms": "die Zimmer",
+    "example": "Das Zimmer ist sauber.",
+    "exampleEn": "The room is clean."
+  },
+  {
+    "id": "kueche",
+    "group": 12,
+    "type": "die",
+    "de": "die Küche",
+    "en": "kitchen",
+    "forms": "die Küchen",
+    "example": "Die Küche ist modern.",
+    "exampleEn": "The kitchen is modern."
+  },
+  {
+    "id": "bad",
+    "group": 12,
+    "type": "das",
+    "de": "das Bad",
+    "en": "bathroom",
+    "forms": "die Bäder",
+    "example": "Das Bad ist klein.",
+    "exampleEn": "The bathroom is small."
+  },
+  {
+    "id": "erscheinen",
+    "group": 13,
+    "type": "verb",
+    "de": "erscheinen",
+    "en": "to appear",
+    "forms": "erscheint · erschien · sein erschienen",
+    "example": "Das Buch erscheint morgen.",
+    "exampleEn": "The book is published tomorrow."
+  },
+  {
+    "id": "verlassen",
+    "group": 13,
+    "type": "verb",
+    "de": "verlassen",
+    "en": "to leave",
+    "forms": "verlässt · verließ · haben verlassen",
+    "example": "Er verlässt das Haus.",
+    "exampleEn": "He leaves the house."
+  },
+  {
+    "id": "treiben",
+    "group": 13,
+    "type": "verb",
+    "de": "treiben",
+    "en": "to do (sport)",
+    "forms": "treibt · trieb · haben getrieben",
+    "example": "Er treibt viel Sport.",
+    "exampleEn": "He does a lot of sports."
+  },
+  {
+    "id": "ziehen",
+    "group": 13,
+    "type": "verb",
+    "de": "ziehen",
+    "en": "to pull / move",
+    "forms": "zieht · zog · haben gezogen",
+    "example": "Wir ziehen nach München.",
+    "exampleEn": "We're moving to Munich."
+  },
+  {
+    "id": "legen",
+    "group": 13,
+    "type": "verb",
+    "de": "legen",
+    "en": "to lay / put",
+    "forms": "legt · legte · haben gelegt",
+    "example": "Leg das Buch auf den Tisch.",
+    "exampleEn": "Put the book on the table."
+  },
+  {
+    "id": "stellen",
+    "group": 13,
+    "type": "verb",
+    "de": "stellen",
+    "en": "to put (upright)",
+    "forms": "stellt · stellte · haben gestellt",
+    "example": "Ich stelle die Vase hier hin.",
+    "exampleEn": "I'll put the vase here."
+  },
+  {
+    "id": "haengen",
+    "group": 13,
+    "type": "verb",
+    "de": "hängen",
+    "en": "to hang",
+    "forms": "hängt · hängte · haben gehängt",
+    "example": "Das Bild hängt an der Wand.",
+    "exampleEn": "The picture hangs on the wall."
+  },
+  {
+    "id": "werfen",
+    "group": 13,
+    "type": "verb",
+    "de": "werfen",
+    "en": "to throw",
+    "forms": "wirft · warf · haben geworfen",
+    "example": "Er wirft den Ball.",
+    "exampleEn": "He throws the ball."
+  },
+  {
+    "id": "schneiden",
+    "group": 13,
+    "type": "verb",
+    "de": "schneiden",
+    "en": "to cut",
+    "forms": "schneidet · schnitt · haben geschnitten",
+    "example": "Sie schneidet das Brot.",
+    "exampleEn": "She cuts the bread."
+  },
+  {
+    "id": "malen",
+    "group": 13,
+    "type": "verb",
+    "de": "malen",
+    "en": "to paint",
+    "forms": "malt · malte · haben gemalt",
+    "example": "Das Kind malt ein Bild.",
+    "exampleEn": "The child paints a picture."
+  },
+  {
+    "id": "garten",
+    "group": 13,
+    "type": "der",
+    "de": "der Garten",
+    "en": "garden",
+    "forms": "die Gärten",
+    "example": "Der Garten ist schön.",
+    "exampleEn": "The garden is beautiful."
+  },
+  {
+    "id": "dorf",
+    "group": 13,
+    "type": "das",
+    "de": "das Dorf",
+    "en": "village",
+    "forms": "die Dörfer",
+    "example": "Das Dorf ist klein.",
+    "exampleEn": "The village is small."
+  },
+  {
+    "id": "insel",
+    "group": 13,
+    "type": "die",
+    "de": "die Insel",
+    "en": "island",
+    "forms": "die Inseln",
+    "example": "Die Insel ist wunderschön.",
+    "exampleEn": "The island is beautiful."
+  },
+  {
+    "id": "nacht",
+    "group": 13,
+    "type": "die",
+    "de": "die Nacht",
+    "en": "night",
+    "forms": "die Nächte",
+    "example": "Die Nacht ist kalt.",
+    "exampleEn": "The night is cold."
+  },
+  {
+    "id": "morgen",
+    "group": 13,
+    "type": "der",
+    "de": "der Morgen",
+    "en": "morning",
+    "forms": "die Morgen",
+    "example": "Guten Morgen!",
+    "exampleEn": "Good morning!"
+  },
+  {
+    "id": "abend",
+    "group": 13,
+    "type": "der",
+    "de": "der Abend",
+    "en": "evening",
+    "forms": "die Abende",
+    "example": "Guten Abend!",
+    "exampleEn": "Good evening!"
+  },
+  {
+    "id": "woche",
+    "group": 13,
+    "type": "die",
+    "de": "die Woche",
+    "en": "week",
+    "forms": "die Wochen",
+    "example": "Diese Woche bin ich beschäftigt.",
+    "exampleEn": "This week I'm busy."
+  },
+  {
+    "id": "monat",
+    "group": 13,
+    "type": "der",
+    "de": "der Monat",
+    "en": "month",
+    "forms": "die Monate",
+    "example": "Im nächsten Monat fahre ich weg.",
+    "exampleEn": "Next month I'm going away."
+  },
+  {
+    "id": "stunde",
+    "group": 13,
+    "type": "die",
+    "de": "die Stunde",
+    "en": "hour",
+    "forms": "die Stunden",
+    "example": "Wir warten eine Stunde.",
+    "exampleEn": "We wait for an hour."
+  },
+  {
+    "id": "minute",
+    "group": 13,
+    "type": "die",
+    "de": "die Minute",
+    "en": "minute",
+    "forms": "die Minuten",
+    "example": "Warte eine Minute!",
+    "exampleEn": "Wait a minute!"
+  },
+  {
+    "id": "bauen",
+    "group": 14,
+    "type": "verb",
+    "de": "bauen",
+    "en": "to build",
+    "forms": "baut · baute · haben gebaut",
+    "example": "Sie bauen ein Haus.",
+    "exampleEn": "They're building a house."
+  },
+  {
+    "id": "mieten",
+    "group": 14,
+    "type": "verb",
+    "de": "mieten",
+    "en": "to rent",
+    "forms": "mietet · mietete · haben gemietet",
+    "example": "Wir mieten eine Wohnung.",
+    "exampleEn": "We're renting an apartment."
+  },
+  {
+    "id": "verkaufen",
+    "group": 14,
+    "type": "verb",
+    "de": "verkaufen",
+    "en": "to sell",
+    "forms": "verkauft · verkaufte · haben verkauft",
+    "example": "Er verkauft sein Auto.",
+    "exampleEn": "He's selling his car."
+  },
+  {
+    "id": "oeffnen_2",
+    "group": 14,
+    "type": "verb",
+    "de": "öffnen",
+    "en": "to open",
+    "forms": "öffnet · öffnete · haben geöffnet",
+    "example": "Er öffnet die Tür.",
+    "exampleEn": "He opens the door."
+  },
+  {
+    "id": "schliessen",
+    "group": 14,
+    "type": "verb",
+    "de": "schließen",
+    "en": "to close",
+    "forms": "schließt · schloss · haben geschlossen",
+    "example": "Bitte schließ die Tür.",
+    "exampleEn": "Please close the door."
+  },
+  {
+    "id": "druecken",
+    "group": 14,
+    "type": "verb",
+    "de": "drücken",
+    "en": "to press",
+    "forms": "drückt · drückte · haben gedrückt",
+    "example": "Drücke den Knopf.",
+    "exampleEn": "Press the button."
+  },
+  {
+    "id": "ziehen_2",
+    "group": 14,
+    "type": "verb",
+    "de": "ziehen",
+    "en": "to pull / move",
+    "forms": "zieht · zog · haben gezogen",
+    "example": "Wir ziehen nach München.",
+    "exampleEn": "We're moving to Munich."
+  },
+  {
+    "id": "stossen",
+    "group": 14,
+    "type": "verb",
+    "de": "stoßen",
+    "en": "to push",
+    "forms": "stößt · stieß · haben gestoßen",
+    "example": "Er stößt gegen die Wand.",
+    "exampleEn": "He bumps into the wall."
+  },
+  {
+    "id": "beruehren",
+    "group": 14,
+    "type": "verb",
+    "de": "berühren",
+    "en": "to touch",
+    "forms": "berührt · berührte · haben berührt",
+    "example": "Berühr das nicht.",
+    "exampleEn": "Don't touch that."
+  },
+  {
+    "id": "greifen",
+    "group": 14,
+    "type": "verb",
+    "de": "greifen",
+    "en": "to grasp",
+    "forms": "greift · griff · haben gegriffen",
+    "example": "Sie greift nach dem Glas.",
+    "exampleEn": "She reaches for the glass."
+  },
+  {
+    "id": "sekunde",
+    "group": 14,
+    "type": "die",
+    "de": "die Sekunde",
+    "en": "second",
+    "forms": "die Sekunden",
+    "example": "In einer Sekunde bin ich da.",
+    "exampleEn": "I'll be there in a second."
+  },
+  {
+    "id": "koerper",
+    "group": 14,
+    "type": "der",
+    "de": "der Körper",
+    "en": "body",
+    "forms": "die Körper",
+    "example": "Der Körper braucht Ruhe.",
+    "exampleEn": "The body needs rest."
+  },
+  {
+    "id": "kopf",
+    "group": 14,
+    "type": "der",
+    "de": "der Kopf",
+    "en": "head",
+    "forms": "die Köpfe",
+    "example": "Mein Kopf tut weh.",
+    "exampleEn": "My head hurts."
+  },
+  {
+    "id": "auge",
+    "group": 14,
+    "type": "das",
+    "de": "das Auge",
+    "en": "eye",
+    "forms": "die Augen",
+    "example": "Sie hat blaue Augen.",
+    "exampleEn": "She has blue eyes."
+  },
+  {
+    "id": "ohr",
+    "group": 14,
+    "type": "das",
+    "de": "das Ohr",
+    "en": "ear",
+    "forms": "die Ohren",
+    "example": "Er hat große Ohren.",
+    "exampleEn": "He has big ears."
+  },
+  {
+    "id": "nase",
+    "group": 14,
+    "type": "die",
+    "de": "die Nase",
+    "en": "nose",
+    "forms": "die Nasen",
+    "example": "Meine Nase ist rot.",
+    "exampleEn": "My nose is red."
+  },
+  {
+    "id": "mund",
+    "group": 14,
+    "type": "der",
+    "de": "der Mund",
+    "en": "mouth",
+    "forms": "die Münder",
+    "example": "Der Mund ist trocken.",
+    "exampleEn": "The mouth is dry."
+  },
+  {
+    "id": "zahn",
+    "group": 14,
+    "type": "der",
+    "de": "der Zahn",
+    "en": "tooth",
+    "forms": "die Zähne",
+    "example": "Der Zahn tut weh.",
+    "exampleEn": "The tooth hurts."
+  },
+  {
+    "id": "haar",
+    "group": 14,
+    "type": "das",
+    "de": "das Haar",
+    "en": "hair",
+    "forms": "die Haare",
+    "example": "Ihr Haar ist lang.",
+    "exampleEn": "Her hair is long."
+  },
+  {
+    "id": "arm",
+    "group": 14,
+    "type": "der",
+    "de": "der Arm",
+    "en": "arm",
+    "forms": "die Arme",
+    "example": "Mein Arm ist kaputt.",
+    "exampleEn": "My arm is broken."
+  },
+  {
+    "id": "packen",
+    "group": 15,
+    "type": "verb",
+    "de": "packen",
+    "en": "to pack",
+    "forms": "packt · packte · haben gepackt",
+    "example": "Ich muss meinen Koffer packen.",
+    "exampleEn": "I need to pack my suitcase."
+  },
+  {
+    "id": "heben",
+    "group": 15,
+    "type": "verb",
+    "de": "heben",
+    "en": "to lift",
+    "forms": "hebt · hob · haben gehoben",
+    "example": "Er hebt die Box hoch.",
+    "exampleEn": "He lifts the box."
+  },
+  {
+    "id": "tragen_2",
+    "group": 15,
+    "type": "verb",
+    "de": "tragen",
+    "en": "to wear / carry",
+    "forms": "trägt · trug · haben getragen",
+    "example": "Er trägt eine Jacke.",
+    "exampleEn": "He wears a jacket."
+  },
+  {
+    "id": "bringen_2",
+    "group": 15,
+    "type": "verb",
+    "de": "bringen",
+    "en": "to bring",
+    "forms": "bringt · brachte · haben gebracht",
+    "example": "Ich bringe das Buch.",
+    "exampleEn": "I'll bring the book."
+  },
+  {
+    "id": "holen",
+    "group": 15,
+    "type": "verb",
+    "de": "holen",
+    "en": "to fetch",
+    "forms": "holt · holte · haben geholt",
+    "example": "Kannst du Wasser holen?",
+    "exampleEn": "Can you fetch some water?"
+  },
+  {
+    "id": "schicken_2",
+    "group": 15,
+    "type": "verb",
+    "de": "schicken",
+    "en": "to send",
+    "forms": "schickt · schickte · haben geschickt",
+    "example": "Ich schicke dir eine E-Mail.",
+    "exampleEn": "I'll send you an email."
+  },
+  {
+    "id": "liefern",
+    "group": 15,
+    "type": "verb",
+    "de": "liefern",
+    "en": "to deliver",
+    "forms": "liefert · lieferte · haben geliefert",
+    "example": "Das Paket wird morgen geliefert.",
+    "exampleEn": "The package will be delivered tomorrow."
+  },
+  {
+    "id": "empfangen",
+    "group": 15,
+    "type": "verb",
+    "de": "empfangen",
+    "en": "to receive",
+    "forms": "empfängt · empfing · haben empfangen",
+    "example": "Er empfängt seine Gäste.",
+    "exampleEn": "He receives his guests."
+  },
+  {
+    "id": "bezahlen_2",
+    "group": 15,
+    "type": "verb",
+    "de": "bezahlen",
+    "en": "to pay",
+    "forms": "bezahlt · bezahlte · haben bezahlt",
+    "example": "Ich bezahle mit Karte.",
+    "exampleEn": "I pay by card."
+  },
+  {
+    "id": "wechseln",
+    "group": 15,
+    "type": "verb",
+    "de": "wechseln",
+    "en": "to change",
+    "forms": "wechselt · wechselte · haben gewechselt",
+    "example": "Ich muss Geld wechseln.",
+    "exampleEn": "I need to exchange money."
+  },
+  {
+    "id": "bein",
+    "group": 15,
+    "type": "das",
+    "de": "das Bein",
+    "en": "leg",
+    "forms": "die Beine",
+    "example": "Das Bein tut weh.",
+    "exampleEn": "My leg hurts."
+  },
+  {
+    "id": "herz",
+    "group": 15,
+    "type": "das",
+    "de": "das Herz",
+    "en": "heart",
+    "forms": "die Herzen",
+    "example": "Ihr Herz ist groß.",
+    "exampleEn": "Her heart is big."
+  },
+  {
+    "id": "blut",
+    "group": 15,
+    "type": "das",
+    "de": "das Blut",
+    "en": "blood",
+    "forms": "die Blute",
+    "example": "Das Blut ist rot.",
+    "exampleEn": "Blood is red."
+  },
+  {
+    "id": "luft",
+    "group": 15,
+    "type": "die",
+    "de": "die Luft",
+    "en": "air",
+    "forms": "die Lüfte",
+    "example": "Die Luft ist frisch.",
+    "exampleEn": "The air is fresh."
+  },
+  {
+    "id": "erde",
+    "group": 15,
+    "type": "die",
+    "de": "die Erde",
+    "en": "earth",
+    "forms": "die Erden",
+    "example": "Die Erde ist rund.",
+    "exampleEn": "The earth is round."
+  },
+  {
+    "id": "feuer",
+    "group": 15,
+    "type": "das",
+    "de": "das Feuer",
+    "en": "fire",
+    "forms": "die Feuer",
+    "example": "Das Feuer ist warm.",
+    "exampleEn": "The fire is warm."
+  },
+  {
+    "id": "energie",
+    "group": 15,
+    "type": "die",
+    "de": "die Energie",
+    "en": "energy",
+    "forms": "die Energien",
+    "example": "Ich habe keine Energie.",
+    "exampleEn": "I have no energy."
+  },
+  {
+    "id": "macht",
+    "group": 15,
+    "type": "die",
+    "de": "die Macht",
+    "en": "power",
+    "forms": "die Mächte",
+    "example": "Wissen ist Macht.",
+    "exampleEn": "Knowledge is power."
+  },
+  {
+    "id": "kraft",
+    "group": 15,
+    "type": "die",
+    "de": "die Kraft",
+    "en": "strength / power",
+    "forms": "die Kräfte",
+    "example": "Er hat viel Kraft.",
+    "exampleEn": "He has a lot of strength."
+  },
+  {
+    "id": "freiheit",
+    "group": 15,
+    "type": "die",
+    "de": "die Freiheit",
+    "en": "freedom",
+    "forms": "die Freiheiten",
+    "example": "Freiheit ist wichtig.",
+    "exampleEn": "Freedom is important."
+  },
+  {
+    "id": "tauschen",
+    "group": 16,
+    "type": "verb",
+    "de": "tauschen",
+    "en": "to swap",
+    "forms": "tauscht · tauschte · haben getauscht",
+    "example": "Können wir tauschen?",
+    "exampleEn": "Can we swap?"
+  },
+  {
+    "id": "sparen",
+    "group": 16,
+    "type": "verb",
+    "de": "sparen",
+    "en": "to save (money)",
+    "forms": "spart · sparte · haben gespart",
+    "example": "Ich spare für ein neues Auto.",
+    "exampleEn": "I'm saving for a new car."
+  },
+  {
+    "id": "verdienen",
+    "group": 16,
+    "type": "verb",
+    "de": "verdienen",
+    "en": "to earn",
+    "forms": "verdient · verdiente · haben verdient",
+    "example": "Sie verdient gut.",
+    "exampleEn": "She earns well."
+  },
+  {
+    "id": "vorbereiten",
+    "group": 16,
+    "type": "verb",
+    "de": "vorbereiten",
+    "en": "to prepare",
+    "forms": "bereitet vor · bereitete vor · haben vorbereitet",
+    "example": "Ich bereite mich vor.",
+    "exampleEn": "I'm preparing myself."
+  },
+  {
+    "id": "bestellen",
+    "group": 16,
+    "type": "verb",
+    "de": "bestellen",
+    "en": "to order",
+    "forms": "bestellt · bestellte · haben bestellt",
+    "example": "Ich bestelle ein Wasser.",
+    "exampleEn": "I'll order a water."
+  },
+  {
+    "id": "reservieren",
+    "group": 16,
+    "type": "verb",
+    "de": "reservieren",
+    "en": "to reserve",
+    "forms": "reserviert · reservierte · haben reserviert",
+    "example": "Ich reserviere einen Tisch.",
+    "exampleEn": "I'm reserving a table."
+  },
+  {
+    "id": "empfehlen",
+    "group": 16,
+    "type": "verb",
+    "de": "empfehlen",
+    "en": "to recommend",
+    "forms": "empfiehlt · empfahl · haben empfohlen",
+    "example": "Können Sie etwas empfehlen?",
+    "exampleEn": "Can you recommend something?"
+  },
+  {
+    "id": "erlauben",
+    "group": 16,
+    "type": "verb",
+    "de": "erlauben",
+    "en": "to allow",
+    "forms": "erlaubt · erlaubte · haben erlaubt",
+    "example": "Darf ich? – Ja, ich erlaube es.",
+    "exampleEn": "May I? – Yes, I allow it."
+  },
+  {
+    "id": "verbieten",
+    "group": 16,
+    "type": "verb",
+    "de": "verbieten",
+    "en": "to forbid",
+    "forms": "verbietet · verbot · haben verboten",
+    "example": "Das ist verboten.",
+    "exampleEn": "That is forbidden."
+  },
+  {
+    "id": "gelingen",
+    "group": 16,
+    "type": "verb",
+    "de": "gelingen",
+    "en": "to succeed",
+    "forms": "gelingt · gelang · sein gelungen",
+    "example": "Es gelingt mir nicht.",
+    "exampleEn": "I don't manage to do it."
+  },
+  {
+    "id": "wahrheit",
+    "group": 16,
+    "type": "die",
+    "de": "die Wahrheit",
+    "en": "truth",
+    "forms": "die Wahrheiten",
+    "example": "Er sagt die Wahrheit.",
+    "exampleEn": "He tells the truth."
+  },
+  {
+    "id": "liebe",
+    "group": 16,
+    "type": "die",
+    "de": "die Liebe",
+    "en": "love",
+    "forms": "die Lieben",
+    "example": "die Liebe ist hier.",
+    "exampleEn": "The liebe is here."
+  },
+  {
+    "id": "freude",
+    "group": 16,
+    "type": "die",
+    "de": "die Freude",
+    "en": "joy",
+    "forms": "die Freuden",
+    "example": "Das ist eine große Freude.",
+    "exampleEn": "That is a great joy."
+  },
+  {
+    "id": "angst",
+    "group": 16,
+    "type": "die",
+    "de": "die Angst",
+    "en": "fear",
+    "forms": "die Ängste",
+    "example": "Ich habe Angst.",
+    "exampleEn": "I'm afraid."
+  },
+  {
+    "id": "hoffnung",
+    "group": 16,
+    "type": "die",
+    "de": "die Hoffnung",
+    "en": "hope",
+    "forms": "die Hoffnungen",
+    "example": "Es gibt immer Hoffnung.",
+    "exampleEn": "There is always hope."
+  },
+  {
+    "id": "traum",
+    "group": 16,
+    "type": "der",
+    "de": "der Traum",
+    "en": "dream",
+    "forms": "die Träume",
+    "example": "Das ist mein Traum.",
+    "exampleEn": "That's my dream."
+  },
+  {
+    "id": "gedanke",
+    "group": 16,
+    "type": "der",
+    "de": "der Gedanke",
+    "en": "thought",
+    "forms": "die Gedanken",
+    "example": "Das ist ein guter Gedanke.",
+    "exampleEn": "That's a good thought."
+  },
+  {
+    "id": "gefuehl",
+    "group": 16,
+    "type": "das",
+    "de": "das Gefühl",
+    "en": "feeling",
+    "forms": "die Gefühle",
+    "example": "Ich habe ein gutes Gefühl.",
+    "exampleEn": "I have a good feeling."
+  },
+  {
+    "id": "unterschied",
+    "group": 16,
+    "type": "der",
+    "de": "der Unterschied",
+    "en": "difference",
+    "forms": "die Unterschiede",
+    "example": "Was ist der Unterschied?",
+    "exampleEn": "What is the difference?"
+  },
+  {
+    "id": "beispiel",
+    "group": 16,
+    "type": "das",
+    "de": "das Beispiel",
+    "en": "example",
+    "forms": "die Beispiele",
+    "example": "Zum Beispiel Äpfel.",
+    "exampleEn": "For example, apples."
+  },
+  {
+    "id": "scheitern",
+    "group": 17,
+    "type": "verb",
+    "de": "scheitern",
+    "en": "to fail",
+    "forms": "scheitert · scheiterte · sein gescheitert",
+    "example": "Das Projekt scheitert.",
+    "exampleEn": "The project fails."
+  },
+  {
+    "id": "verbessern",
+    "group": 17,
+    "type": "verb",
+    "de": "verbessern",
+    "en": "to improve",
+    "forms": "verbessert · verbesserte · haben verbessert",
+    "example": "Ich muss mein Deutsch verbessern.",
+    "exampleEn": "I need to improve my German."
+  },
+  {
+    "id": "wiederholen",
+    "group": 17,
+    "type": "verb",
+    "de": "wiederholen",
+    "en": "to repeat",
+    "forms": "wiederholt · wiederholte · haben wiederholt",
+    "example": "Kannst du das wiederholen?",
+    "exampleEn": "Can you repeat that?"
+  },
+  {
+    "id": "aufhoeren",
+    "group": 17,
+    "type": "verb",
+    "de": "aufhören",
+    "en": "to stop",
+    "forms": "hört auf · hörte auf · haben aufgehört",
+    "example": "Hör auf damit!",
+    "exampleEn": "Stop doing that!"
+  },
+  {
+    "id": "anfangen",
+    "group": 17,
+    "type": "verb",
+    "de": "anfangen",
+    "en": "to start",
+    "forms": "fängt an · fing an · haben angefangen",
+    "example": "Wann fangen wir an?",
+    "exampleEn": "When do we start?"
+  },
+  {
+    "id": "benutzen",
+    "group": 17,
+    "type": "verb",
+    "de": "benutzen",
+    "en": "to use",
+    "forms": "benutzt · benutzte · haben benutzt",
+    "example": "Ich kann benutzen.",
+    "exampleEn": "I can benutzen."
+  },
+  {
+    "id": "verwenden",
+    "group": 17,
+    "type": "verb",
+    "de": "verwenden",
+    "en": "to use / employ",
+    "forms": "verwendet · verwendete · haben verwendet",
+    "example": "Ich kann verwenden.",
+    "exampleEn": "I can verwenden."
+  },
+  {
+    "id": "ersetzen",
+    "group": 17,
+    "type": "verb",
+    "de": "ersetzen",
+    "en": "to replace",
+    "forms": "ersetzt · ersetzte · haben ersetzt",
+    "example": "Ich kann ersetzen.",
+    "exampleEn": "I can ersetzen."
+  },
+  {
+    "id": "hinzufuegen",
+    "group": 17,
+    "type": "verb",
+    "de": "hinzufügen",
+    "en": "to add",
+    "forms": "fügt hinzu · fügte hinzu · haben hinzugefügt",
+    "example": "Ich kann hinzufügen.",
+    "exampleEn": "I can hinzufügen."
+  },
+  {
+    "id": "entfernen",
+    "group": 17,
+    "type": "verb",
+    "de": "entfernen",
+    "en": "to remove",
+    "forms": "entfernt · entfernte · haben entfernt",
+    "example": "Ich kann entfernen.",
+    "exampleEn": "I can entfernen."
+  },
+  {
+    "id": "ergebnis",
+    "group": 17,
+    "type": "das",
+    "de": "das Ergebnis",
+    "en": "result",
+    "forms": "die Ergebnisse",
+    "example": "Das Ergebnis ist gut.",
+    "exampleEn": "The result is good."
+  },
+  {
+    "id": "moeglichkeit",
+    "group": 17,
+    "type": "die",
+    "de": "die Möglichkeit",
+    "en": "possibility",
+    "forms": "die Möglichkeiten",
+    "example": "Das ist eine Möglichkeit.",
+    "exampleEn": "That is a possibility."
+  },
+  {
+    "id": "aufgabe",
+    "group": 17,
+    "type": "die",
+    "de": "die Aufgabe",
+    "en": "task",
+    "forms": "die Aufgaben",
+    "example": "Das ist meine Aufgabe.",
+    "exampleEn": "That is my task."
+  },
+  {
+    "id": "ziel",
+    "group": 17,
+    "type": "das",
+    "de": "das Ziel",
+    "en": "goal",
+    "forms": "die Ziele",
+    "example": "Was ist dein Ziel?",
+    "exampleEn": "What is your goal?"
+  },
+  {
+    "id": "erfolg",
+    "group": 17,
+    "type": "der",
+    "de": "der Erfolg",
+    "en": "success",
+    "forms": "die Erfolge",
+    "example": "Das ist ein großer Erfolg.",
+    "exampleEn": "That is a great success."
+  },
+  {
+    "id": "fehler",
+    "group": 17,
+    "type": "der",
+    "de": "der Fehler",
+    "en": "mistake",
+    "forms": "die Fehler",
+    "example": "Jeder macht Fehler.",
+    "exampleEn": "Everyone makes mistakes."
+  },
+  {
+    "id": "chance",
+    "group": 17,
+    "type": "die",
+    "de": "die Chance",
+    "en": "chance",
+    "forms": "die Chancen",
+    "example": "Das ist eine gute Chance.",
+    "exampleEn": "That's a good opportunity."
+  },
+  {
+    "id": "risiko",
+    "group": 17,
+    "type": "das",
+    "de": "das Risiko",
+    "en": "risk",
+    "forms": "die Risikos",
+    "example": "Es gibt ein Risiko.",
+    "exampleEn": "There is a risk."
+  },
+  {
+    "id": "preis",
+    "group": 17,
+    "type": "der",
+    "de": "der Preis",
+    "en": "price",
+    "forms": "die Preise",
+    "example": "Der Preis ist hoch.",
+    "exampleEn": "The price is high."
+  },
+  {
+    "id": "qualitaet",
+    "group": 17,
+    "type": "die",
+    "de": "die Qualität",
+    "en": "quality",
+    "forms": "die Qualitäten",
+    "example": "Die Qualität ist gut.",
+    "exampleEn": "The quality is good."
+  },
+  {
+    "id": "pruefen",
+    "group": 18,
+    "type": "verb",
+    "de": "prüfen",
+    "en": "to check / test",
+    "forms": "prüft · prüfte · haben geprüft",
+    "example": "Ich kann prüfen.",
+    "exampleEn": "I can prüfen."
+  },
+  {
+    "id": "testen",
+    "group": 18,
+    "type": "verb",
+    "de": "testen",
+    "en": "to test",
+    "forms": "testet · testete · haben getestet",
+    "example": "Ich kann testen.",
+    "exampleEn": "I can testen."
+  },
+  {
+    "id": "messen",
+    "group": 18,
+    "type": "verb",
+    "de": "messen",
+    "en": "to measure",
+    "forms": "misst · maß · haben gemessen",
+    "example": "Ich kann messen.",
+    "exampleEn": "I can messen."
+  },
+  {
+    "id": "zaehlen",
+    "group": 18,
+    "type": "verb",
+    "de": "zählen",
+    "en": "to count",
+    "forms": "zählt · zählte · haben gezählt",
+    "example": "Ich kann zählen.",
+    "exampleEn": "I can zählen."
+  },
+  {
+    "id": "berechnen",
+    "group": 18,
+    "type": "verb",
+    "de": "berechnen",
+    "en": "to calculate",
+    "forms": "berechnet · berechnete · haben berechnet",
+    "example": "Ich kann berechnen.",
+    "exampleEn": "I can berechnen."
+  },
+  {
+    "id": "vergleichen",
+    "group": 18,
+    "type": "verb",
+    "de": "vergleichen",
+    "en": "to compare",
+    "forms": "vergleicht · verglich · haben verglichen",
+    "example": "Ich kann vergleichen.",
+    "exampleEn": "I can vergleichen."
+  },
+  {
+    "id": "beschreiben",
+    "group": 18,
+    "type": "verb",
+    "de": "beschreiben",
+    "en": "to describe",
+    "forms": "beschreibt · beschrieb · haben beschrieben",
+    "example": "Ich kann beschreiben.",
+    "exampleEn": "I can beschreiben."
+  },
+  {
+    "id": "ueberpruefen",
+    "group": 18,
+    "type": "verb",
+    "de": "überprüfen",
+    "en": "to verify / check",
+    "forms": "überprüft · überprüfte · haben überprüft",
+    "example": "Ich kann überprüfen.",
+    "exampleEn": "I can überprüfen."
+  },
+  {
+    "id": "analysieren",
+    "group": 18,
+    "type": "verb",
+    "de": "analysieren",
+    "en": "to analyse",
+    "forms": "analysiert · analysierte · haben analysiert",
+    "example": "Ich kann analysieren.",
+    "exampleEn": "I can analysieren."
+  },
+  {
+    "id": "organisieren",
+    "group": 18,
+    "type": "verb",
+    "de": "organisieren",
+    "en": "to organise",
+    "forms": "organisiert · organisierte · haben organisiert",
+    "example": "Ich kann organisieren.",
+    "exampleEn": "I can organisieren."
+  },
+  {
+    "id": "menge",
+    "group": 18,
+    "type": "die",
+    "de": "die Menge",
+    "en": "quantity / amount",
+    "forms": "die Mengen",
+    "example": "Das ist eine große Menge.",
+    "exampleEn": "That's a large quantity."
+  },
+  {
+    "id": "linie",
+    "group": 18,
+    "type": "die",
+    "de": "die Linie",
+    "en": "line",
+    "forms": "die Linien",
+    "example": "Fahre die rote Linie.",
+    "exampleEn": "Take the red line."
+  },
+  {
+    "id": "punkt",
+    "group": 18,
+    "type": "der",
+    "de": "der Punkt",
+    "en": "point",
+    "forms": "die Punkte",
+    "example": "Das ist ein wichtiger Punkt.",
+    "exampleEn": "That is an important point."
+  },
+  {
+    "id": "form",
+    "group": 18,
+    "type": "die",
+    "de": "die Form",
+    "en": "form / shape",
+    "forms": "die Formen",
+    "example": "Welche Form hat es?",
+    "exampleEn": "What shape is it?"
+  },
+  {
+    "id": "richtung",
+    "group": 18,
+    "type": "die",
+    "de": "die Richtung",
+    "en": "direction",
+    "forms": "die Richtungen",
+    "example": "In welche Richtung?",
+    "exampleEn": "In which direction?"
+  },
+  {
+    "id": "entfernung",
+    "group": 18,
+    "type": "die",
+    "de": "die Entfernung",
+    "en": "distance",
+    "forms": "die Entfernungen",
+    "example": "Die Entfernung ist groß.",
+    "exampleEn": "The distance is large."
+  },
+  {
+    "id": "gewicht",
+    "group": 18,
+    "type": "das",
+    "de": "das Gewicht",
+    "en": "weight",
+    "forms": "die Gewichte",
+    "example": "Das Gewicht ist drei Kilo.",
+    "exampleEn": "The weight is three kilos."
+  },
+  {
+    "id": "groesse",
+    "group": 18,
+    "type": "die",
+    "de": "die Größe",
+    "en": "size",
+    "forms": "die Größen",
+    "example": "Welche Größe haben Sie?",
+    "exampleEn": "What size do you take?"
+  },
+  {
+    "id": "farbe_2",
+    "group": 18,
+    "type": "die",
+    "de": "die Farbe",
+    "en": "colour",
+    "forms": "die Farben",
+    "example": "Welche Farbe magst du?",
+    "exampleEn": "What colour do you like?"
+  },
+  {
+    "id": "gruppe",
+    "group": 18,
+    "type": "die",
+    "de": "die Gruppe",
+    "en": "group",
+    "forms": "die Gruppen",
+    "example": "Wir sind eine Gruppe.",
+    "exampleEn": "We are a group."
+  },
+  {
+    "id": "kommunizieren",
+    "group": 19,
+    "type": "verb",
+    "de": "kommunizieren",
+    "en": "to communicate",
+    "forms": "kommuniziert · kommunizierte · haben kommuniziert",
+    "example": "Ich kann kommunizieren.",
+    "exampleEn": "I can kommunizieren."
+  },
+  {
+    "id": "diskutieren",
+    "group": 19,
+    "type": "verb",
+    "de": "diskutieren",
+    "en": "to discuss",
+    "forms": "diskutiert · diskutierte · haben diskutiert",
+    "example": "Ich kann diskutieren.",
+    "exampleEn": "I can diskutieren."
+  },
+  {
+    "id": "zustimmen",
+    "group": 19,
+    "type": "verb",
+    "de": "zustimmen",
+    "en": "to agree",
+    "forms": "stimmt zu · stimmte zu · haben zugestimmt",
+    "example": "Ich kann zustimmen.",
+    "exampleEn": "I can zustimmen."
+  },
+  {
+    "id": "ablehnen",
+    "group": 19,
+    "type": "verb",
+    "de": "ablehnen",
+    "en": "to decline",
+    "forms": "lehnt ab · lehnte ab · haben abgelehnt",
+    "example": "Ich kann ablehnen.",
+    "exampleEn": "I can ablehnen."
+  },
+  {
+    "id": "akzeptieren",
+    "group": 19,
+    "type": "verb",
+    "de": "akzeptieren",
+    "en": "to accept",
+    "forms": "akzeptiert · akzeptierte · haben akzeptiert",
+    "example": "Ich kann akzeptieren.",
+    "exampleEn": "I can akzeptieren."
+  },
+  {
+    "id": "aufnehmen",
+    "group": 19,
+    "type": "verb",
+    "de": "aufnehmen",
+    "en": "to record / take up",
+    "forms": "nimmt auf · nahm auf · haben aufgenommen",
+    "example": "Ich kann aufnehmen.",
+    "exampleEn": "I can aufnehmen."
+  },
+  {
+    "id": "aufzeichnen",
+    "group": 19,
+    "type": "verb",
+    "de": "aufzeichnen",
+    "en": "to record",
+    "forms": "zeichnet auf · zeichnete auf · haben aufgezeichnet",
+    "example": "Ich kann aufzeichnen.",
+    "exampleEn": "I can aufzeichnen."
+  },
+  {
+    "id": "veroeffentlichen",
+    "group": 19,
+    "type": "verb",
+    "de": "veröffentlichen",
+    "en": "to publish",
+    "forms": "veröffentlicht · veröffentlichte · haben veröffentlicht",
+    "example": "Ich kann veröffentlichen.",
+    "exampleEn": "I can veröffentlichen."
+  },
+  {
+    "id": "drucken",
+    "group": 19,
+    "type": "verb",
+    "de": "drucken",
+    "en": "to print",
+    "forms": "druckt · druckte · haben gedruckt",
+    "example": "Ich kann drucken.",
+    "exampleEn": "I can drucken."
+  },
+  {
+    "id": "speichern",
+    "group": 19,
+    "type": "verb",
+    "de": "speichern",
+    "en": "to save (file)",
+    "forms": "speichert · speicherte · haben gespeichert",
+    "example": "Ich kann speichern.",
+    "exampleEn": "I can speichern."
+  },
+  {
+    "id": "teil",
+    "group": 19,
+    "type": "das",
+    "de": "das Teil",
+    "en": "part",
+    "forms": "die Teile",
+    "example": "Das ist ein Teil des Problems.",
+    "exampleEn": "That is part of the problem."
+  },
+  {
+    "id": "stueck",
+    "group": 19,
+    "type": "das",
+    "de": "das Stück",
+    "en": "piece",
+    "forms": "die Stücke",
+    "example": "Ich nehme ein Stück Kuchen.",
+    "exampleEn": "I'll take a piece of cake."
+  },
+  {
+    "id": "reihe",
+    "group": 19,
+    "type": "die",
+    "de": "die Reihe",
+    "en": "row / series",
+    "forms": "die Reihen",
+    "example": "Wir stehen in einer Reihe.",
+    "exampleEn": "We stand in a row."
+  },
+  {
+    "id": "liste",
+    "group": 19,
+    "type": "die",
+    "de": "die Liste",
+    "en": "list",
+    "forms": "die Listen",
+    "example": "Ich habe eine Liste.",
+    "exampleEn": "I have a list."
+  },
+  {
+    "id": "titel",
+    "group": 19,
+    "type": "der",
+    "de": "der Titel",
+    "en": "title",
+    "forms": "die Titel",
+    "example": "Was ist der Titel des Buches?",
+    "exampleEn": "What is the title of the book?"
+  },
+  {
+    "id": "inhalt",
+    "group": 19,
+    "type": "der",
+    "de": "der Inhalt",
+    "en": "content",
+    "forms": "die Inhalte",
+    "example": "Der Inhalt ist interessant.",
+    "exampleEn": "The content is interesting."
+  },
+  {
+    "id": "system",
+    "group": 19,
+    "type": "das",
+    "de": "das System",
+    "en": "system",
+    "forms": "die Systeme",
+    "example": "Das System funktioniert.",
+    "exampleEn": "The system works."
+  },
+  {
+    "id": "netz",
+    "group": 19,
+    "type": "das",
+    "de": "das Netz",
+    "en": "network",
+    "forms": "die Netze",
+    "example": "Das Netz ist schnell.",
+    "exampleEn": "The network is fast."
+  },
+  {
+    "id": "programm",
+    "group": 19,
+    "type": "das",
+    "de": "das Programm",
+    "en": "programme",
+    "forms": "die Programme",
+    "example": "Das Programm ist gut.",
+    "exampleEn": "The program is good."
+  },
+  {
+    "id": "datei",
+    "group": 19,
+    "type": "die",
+    "de": "die Datei",
+    "en": "file",
+    "forms": "die Dateien",
+    "example": "Die Datei ist groß.",
+    "exampleEn": "The file is large."
+  },
+  {
+    "id": "laden",
+    "group": 20,
+    "type": "verb",
+    "de": "laden",
+    "en": "to load / charge",
+    "forms": "lädt · lud · haben geladen",
+    "example": "Ich kann laden.",
+    "exampleEn": "I can laden."
+  },
+  {
+    "id": "installieren",
+    "group": 20,
+    "type": "verb",
+    "de": "installieren",
+    "en": "to install",
+    "forms": "installiert · installierte · haben installiert",
+    "example": "Ich kann installieren.",
+    "exampleEn": "I can installieren."
+  },
+  {
+    "id": "seite",
+    "group": 20,
+    "type": "die",
+    "de": "die Seite",
+    "en": "page / side",
+    "forms": "die Seiten",
+    "example": "Auf Seite drei.",
+    "exampleEn": "On page three."
+  },
+  {
+    "id": "text",
+    "group": 20,
+    "type": "der",
+    "de": "der Text",
+    "en": "text",
+    "forms": "die Texte",
+    "example": "Lies den Text!",
+    "exampleEn": "Read the text!"
+  },
+  {
+    "id": "artikel",
+    "group": 20,
+    "type": "der",
+    "de": "der Artikel",
+    "en": "article",
+    "forms": "die Artikel",
+    "example": "Der Artikel ist interessant.",
+    "exampleEn": "The article is interesting."
+  },
+  {
+    "id": "vertrag",
+    "group": 20,
+    "type": "der",
+    "de": "der Vertrag",
+    "en": "contract",
+    "forms": "die Verträge",
+    "example": "Er unterschreibt den Vertrag.",
+    "exampleEn": "He signs the contract."
+  },
+  {
+    "id": "gesetz",
+    "group": 20,
+    "type": "das",
+    "de": "das Gesetz",
+    "en": "law",
+    "forms": "die Gesetze",
+    "example": "Das Gesetz ist klar.",
+    "exampleEn": "The law is clear."
+  },
+  {
+    "id": "recht",
+    "group": 20,
+    "type": "das",
+    "de": "das Recht",
+    "en": "right / law",
+    "forms": "die Rechte",
+    "example": "Das ist mein Recht.",
+    "exampleEn": "That is my right."
+  },
+  {
+    "id": "pflicht",
+    "group": 20,
+    "type": "die",
+    "de": "die Pflicht",
+    "en": "duty",
+    "forms": "die Pflichten",
+    "example": "Das ist meine Pflicht.",
+    "exampleEn": "That is my duty."
+  },
+  {
+    "id": "regel",
+    "group": 20,
+    "type": "die",
+    "de": "die Regel",
+    "en": "rule",
+    "forms": "die Regeln",
+    "example": "Die Regel ist einfach.",
+    "exampleEn": "The rule is simple."
+  },
+  {
+    "id": "methode",
+    "group": 20,
+    "type": "die",
+    "de": "die Methode",
+    "en": "method",
+    "forms": "die Methoden",
+    "example": "Diese Methode ist besser.",
+    "exampleEn": "This method is better."
+  },
+  {
+    "id": "plan",
+    "group": 20,
+    "type": "der",
+    "de": "der Plan",
+    "en": "plan",
+    "forms": "die Pläne",
+    "example": "Was ist der Plan?",
+    "exampleEn": "What is the plan?"
+  },
+  {
+    "id": "projekt",
+    "group": 20,
+    "type": "das",
+    "de": "das Projekt",
+    "en": "project",
+    "forms": "die Projekte",
+    "example": "Das Projekt ist fertig.",
+    "exampleEn": "The project is finished."
+  },
+  {
+    "id": "produkt",
+    "group": 20,
+    "type": "das",
+    "de": "das Produkt",
+    "en": "product",
+    "forms": "die Produkte",
+    "example": "Das Produkt ist neu.",
+    "exampleEn": "The product is new."
+  },
+  {
+    "id": "marke",
+    "group": 20,
+    "type": "die",
+    "de": "die Marke",
+    "en": "brand",
+    "forms": "die Marken",
+    "example": "Das ist eine gute Marke.",
+    "exampleEn": "That is a good brand."
+  },
+  {
+    "id": "modell",
+    "group": 20,
+    "type": "das",
+    "de": "das Modell",
+    "en": "model",
+    "forms": "die Modelle",
+    "example": "Das Modell ist modern.",
+    "exampleEn": "The model is modern."
+  },
+  {
+    "id": "typ",
+    "group": 20,
+    "type": "der",
+    "de": "der Typ",
+    "en": "type / guy",
+    "forms": "die Typen",
+    "example": "Er ist ein netter Typ.",
+    "exampleEn": "He is a nice guy."
+  },
+  {
+    "id": "art",
+    "group": 20,
+    "type": "die",
+    "de": "die Art",
+    "en": "type / kind",
+    "forms": "die Arten",
+    "example": "Was für eine Art ist das?",
+    "exampleEn": "What kind is that?"
+  },
+  {
+    "id": "weise",
+    "group": 20,
+    "type": "die",
+    "de": "die Weise",
+    "en": "way / manner",
+    "forms": "die Weisen",
+    "example": "Auf welche Weise?",
+    "exampleEn": "In what way?"
+  },
+  {
+    "id": "stil",
+    "group": 20,
+    "type": "der",
+    "de": "der Stil",
+    "en": "style",
+    "forms": "die Stile",
+    "example": "Er hat Stil.",
+    "exampleEn": "He has style."
+  },
+  {
+    "id": "schritt",
+    "group": 21,
+    "type": "der",
+    "de": "der Schritt",
+    "en": "step",
+    "forms": "die Schritte",
+    "example": "Das ist ein großer Schritt.",
+    "exampleEn": "That is a big step."
+  },
+  {
+    "id": "phase",
+    "group": 21,
+    "type": "die",
+    "de": "die Phase",
+    "en": "phase",
+    "forms": "die Phasen",
+    "example": "Wir sind in einer neuen Phase.",
+    "exampleEn": "We are in a new phase."
+  },
+  {
+    "id": "stufe",
+    "group": 21,
+    "type": "die",
+    "de": "die Stufe",
+    "en": "level / stage",
+    "forms": "die Stufen",
+    "example": "Die erste Stufe ist fertig.",
+    "exampleEn": "The first stage is done."
+  },
+  {
+    "id": "ebene",
+    "group": 21,
+    "type": "die",
+    "de": "die Ebene",
+    "en": "level / plane",
+    "forms": "die Ebenen",
+    "example": "Das ist eine andere Ebene.",
+    "exampleEn": "That is a different level."
+  },
+  {
+    "id": "bereich",
+    "group": 21,
+    "type": "der",
+    "de": "der Bereich",
+    "en": "area / field",
+    "forms": "die Bereiche",
+    "example": "In diesem Bereich.",
+    "exampleEn": "In this area."
+  },
+  {
+    "id": "thema",
+    "group": 21,
+    "type": "das",
+    "de": "das Thema",
+    "en": "topic",
+    "forms": "die Themen",
+    "example": "Was ist das Thema?",
+    "exampleEn": "What is the topic?"
+  },
+  {
+    "id": "begriff",
+    "group": 21,
+    "type": "der",
+    "de": "der Begriff",
+    "en": "term / concept",
+    "forms": "die Begriffe",
+    "example": "Das ist ein neuer Begriff.",
+    "exampleEn": "That is a new term."
+  },
+  {
+    "id": "wohnung",
+    "group": 21,
+    "type": "die",
+    "de": "die Wohnung",
+    "en": "flat / apartment",
+    "forms": "die Wohnungen",
+    "example": "die Wohnung ist hier.",
+    "exampleEn": "The wohnung is here."
+  },
+  {
+    "id": "strasse_2",
+    "group": 21,
+    "type": "die",
+    "de": "die Straße",
+    "en": "street",
+    "forms": "die Straßen",
+    "example": "Die Straße ist breit.",
+    "exampleEn": "The street is wide."
+  },
+  {
+    "id": "bruecke",
+    "group": 21,
+    "type": "die",
+    "de": "die Brücke",
+    "en": "bridge",
+    "forms": "die Brücken",
+    "example": "die Brücke ist hier.",
+    "exampleEn": "The brücke is here."
+  },
+  {
+    "id": "kirche",
+    "group": 21,
+    "type": "die",
+    "de": "die Kirche",
+    "en": "church",
+    "forms": "die Kirchen",
+    "example": "die Kirche ist hier.",
+    "exampleEn": "The kirche is here."
+  },
+  {
+    "id": "krankenhaus",
+    "group": 21,
+    "type": "das",
+    "de": "das Krankenhaus",
+    "en": "hospital",
+    "forms": "die Krankenhäuser",
+    "example": "das Krankenhaus ist hier.",
+    "exampleEn": "The krankenhaus is here."
+  },
+  {
+    "id": "apotheke",
+    "group": 21,
+    "type": "die",
+    "de": "die Apotheke",
+    "en": "pharmacy",
+    "forms": "die Apotheken",
+    "example": "die Apotheke ist hier.",
+    "exampleEn": "The apotheke is here."
+  },
+  {
+    "id": "bibliothek",
+    "group": 21,
+    "type": "die",
+    "de": "die Bibliothek",
+    "en": "library",
+    "forms": "die Bibliotheken",
+    "example": "die Bibliothek ist hier.",
+    "exampleEn": "The bibliothek is here."
+  },
+  {
+    "id": "museum",
+    "group": 21,
+    "type": "das",
+    "de": "das Museum",
+    "en": "museum",
+    "forms": "die Museen",
+    "example": "das Museum ist hier.",
+    "exampleEn": "The museum is here."
+  },
+  {
+    "id": "kino",
+    "group": 21,
+    "type": "das",
+    "de": "das Kino",
+    "en": "cinema",
+    "forms": "die Kinos",
+    "example": "das Kino ist hier.",
+    "exampleEn": "The kino is here."
+  },
+  {
+    "id": "theater",
+    "group": 21,
+    "type": "das",
+    "de": "das Theater",
+    "en": "theatre",
+    "forms": "die Theater",
+    "example": "das Theater ist hier.",
+    "exampleEn": "The theater is here."
+  },
+  {
+    "id": "konzert",
+    "group": 21,
+    "type": "das",
+    "de": "das Konzert",
+    "en": "concert",
+    "forms": "die Konzerte",
+    "example": "das Konzert ist hier.",
+    "exampleEn": "The konzert is here."
+  },
+  {
+    "id": "veranstaltung",
+    "group": 21,
+    "type": "die",
+    "de": "die Veranstaltung",
+    "en": "event",
+    "forms": "die Veranstaltungen",
+    "example": "die Veranstaltung ist hier.",
+    "exampleEn": "The veranstaltung is here."
+  },
+  {
+    "id": "feier",
+    "group": 21,
+    "type": "die",
+    "de": "die Feier",
+    "en": "celebration",
+    "forms": "die Feiern",
+    "example": "die Feier ist hier.",
+    "exampleEn": "The feier is here."
+  },
+  {
+    "id": "urlaub",
+    "group": 22,
+    "type": "der",
+    "de": "der Urlaub",
+    "en": "holiday",
+    "forms": "die Urlaube",
+    "example": "der Urlaub ist hier.",
+    "exampleEn": "The urlaub is here."
+  },
+  {
+    "id": "reise",
+    "group": 22,
+    "type": "die",
+    "de": "die Reise",
+    "en": "trip / journey",
+    "forms": "die Reisen",
+    "example": "die Reise ist hier.",
+    "exampleEn": "The reise is here."
+  },
+  {
+    "id": "gepaeck",
+    "group": 22,
+    "type": "das",
+    "de": "das Gepäck",
+    "en": "luggage",
+    "forms": "die Gepäcke",
+    "example": "das Gepäck ist hier.",
+    "exampleEn": "The gepäck is here."
+  },
+  {
+    "id": "koffer",
+    "group": 22,
+    "type": "der",
+    "de": "der Koffer",
+    "en": "suitcase",
+    "forms": "die Koffer",
+    "example": "der Koffer ist hier.",
+    "exampleEn": "The koffer is here."
+  },
+  {
+    "id": "pass",
+    "group": 22,
+    "type": "der",
+    "de": "der Pass",
+    "en": "passport",
+    "forms": "die Pässe",
+    "example": "der Pass ist hier.",
+    "exampleEn": "The pass is here."
+  },
+  {
+    "id": "visum",
+    "group": 22,
+    "type": "das",
+    "de": "das Visum",
+    "en": "visa",
+    "forms": "die Visa",
+    "example": "das Visum ist hier.",
+    "exampleEn": "The visum is here."
+  },
+  {
+    "id": "ticket",
+    "group": 22,
+    "type": "das",
+    "de": "das Ticket",
+    "en": "ticket",
+    "forms": "die Tickets",
+    "example": "das Ticket ist hier.",
+    "exampleEn": "The ticket is here."
+  },
+  {
+    "id": "fahrkarte",
+    "group": 22,
+    "type": "die",
+    "de": "die Fahrkarte",
+    "en": "train ticket",
+    "forms": "die Fahrkarten",
+    "example": "die Fahrkarte ist hier.",
+    "exampleEn": "The fahrkarte is here."
+  },
+  {
+    "id": "fahrt",
+    "group": 22,
+    "type": "die",
+    "de": "die Fahrt",
+    "en": "journey / ride",
+    "forms": "die Fahrten",
+    "example": "die Fahrt ist hier.",
+    "exampleEn": "The fahrt is here."
+  },
+  {
+    "id": "strecke",
+    "group": 22,
+    "type": "die",
+    "de": "die Strecke",
+    "en": "route / distance",
+    "forms": "die Strecken",
+    "example": "die Strecke ist hier.",
+    "exampleEn": "The strecke is here."
+  },
+  {
+    "id": "entscheidung",
+    "group": 22,
+    "type": "die",
+    "de": "die Entscheidung",
+    "en": "decision",
+    "forms": "die Entscheidungen",
+    "example": "die Entscheidung ist hier.",
+    "exampleEn": "The entscheidung is here."
+  },
+  {
+    "id": "wahl",
+    "group": 22,
+    "type": "die",
+    "de": "die Wahl",
+    "en": "choice / election",
+    "forms": "die Wahlen",
+    "example": "die Wahl ist hier.",
+    "exampleEn": "The wahl is here."
+  },
+  {
+    "id": "moeglichkeit_2",
+    "group": 22,
+    "type": "die",
+    "de": "die Möglichkeit",
+    "en": "possibility",
+    "forms": "die Möglichkeiten",
+    "example": "Das ist eine Möglichkeit.",
+    "exampleEn": "That is a possibility."
+  },
+  {
+    "id": "gelegenheit",
+    "group": 22,
+    "type": "die",
+    "de": "die Gelegenheit",
+    "en": "opportunity",
+    "forms": "die Gelegenheiten",
+    "example": "die Gelegenheit ist hier.",
+    "exampleEn": "The gelegenheit is here."
+  },
+  {
+    "id": "einladung",
+    "group": 22,
+    "type": "die",
+    "de": "die Einladung",
+    "en": "invitation",
+    "forms": "die Einladungen",
+    "example": "die Einladung ist hier.",
+    "exampleEn": "The einladung is here."
+  },
+  {
+    "id": "besuch",
+    "group": 22,
+    "type": "der",
+    "de": "der Besuch",
+    "en": "visit",
+    "forms": "die Besuche",
+    "example": "der Besuch ist hier.",
+    "exampleEn": "The besuch is here."
+  },
+  {
+    "id": "gespraech",
+    "group": 22,
+    "type": "das",
+    "de": "das Gespräch",
+    "en": "conversation",
+    "forms": "die Gespräche",
+    "example": "das Gespräch ist hier.",
+    "exampleEn": "The gespräch is here."
+  },
+  {
+    "id": "interview",
+    "group": 22,
+    "type": "das",
+    "de": "das Interview",
+    "en": "interview",
+    "forms": "die Interviews",
+    "example": "das Interview ist hier.",
+    "exampleEn": "The interview is here."
+  },
+  {
+    "id": "bericht",
+    "group": 22,
+    "type": "der",
+    "de": "der Bericht",
+    "en": "report",
+    "forms": "die Berichte",
+    "example": "der Bericht ist hier.",
+    "exampleEn": "The bericht is here."
+  },
+  {
+    "id": "aufsatz",
+    "group": 22,
+    "type": "der",
+    "de": "der Aufsatz",
+    "en": "essay",
+    "forms": "die Aufsätze",
+    "example": "der Aufsatz ist hier.",
+    "exampleEn": "The aufsatz is here."
+  },
+  {
+    "id": "kommentar",
+    "group": 23,
+    "type": "der",
+    "de": "der Kommentar",
+    "en": "comment",
+    "forms": "die Kommentare",
+    "example": "der Kommentar ist hier.",
+    "exampleEn": "The kommentar is here."
+  },
+  {
+    "id": "antwort_2",
+    "group": 23,
+    "type": "die",
+    "de": "die Antwort",
+    "en": "answer",
+    "forms": "die Antworten",
+    "example": "Ich weiß die Antwort nicht.",
+    "exampleEn": "I don't know the answer."
+  },
+  {
+    "id": "anfrage",
+    "group": 23,
+    "type": "die",
+    "de": "die Anfrage",
+    "en": "request / enquiry",
+    "forms": "die Anfragen",
+    "example": "die Anfrage ist hier.",
+    "exampleEn": "The anfrage is here."
+  },
+  {
+    "id": "angebot",
+    "group": 23,
+    "type": "das",
+    "de": "das Angebot",
+    "en": "offer",
+    "forms": "die Angebote",
+    "example": "das Angebot ist hier.",
+    "exampleEn": "The angebot is here."
+  },
+  {
+    "id": "bestellung",
+    "group": 23,
+    "type": "die",
+    "de": "die Bestellung",
+    "en": "order",
+    "forms": "die Bestellungen",
+    "example": "die Bestellung ist hier.",
+    "exampleEn": "The bestellung is here."
+  },
+  {
+    "id": "rechnung",
+    "group": 23,
+    "type": "die",
+    "de": "die Rechnung",
+    "en": "bill / invoice",
+    "forms": "die Rechnungen",
+    "example": "die Rechnung ist hier.",
+    "exampleEn": "The rechnung is here."
+  },
+  {
+    "id": "quittung",
+    "group": 23,
+    "type": "die",
+    "de": "die Quittung",
+    "en": "receipt",
+    "forms": "die Quittungen",
+    "example": "die Quittung ist hier.",
+    "exampleEn": "The quittung is here."
+  },
+  {
+    "id": "vertrag_2",
+    "group": 23,
+    "type": "der",
+    "de": "der Vertrag",
+    "en": "contract",
+    "forms": "die Verträge",
+    "example": "Er unterschreibt den Vertrag.",
+    "exampleEn": "He signs the contract."
+  },
+  {
+    "id": "versicherung",
+    "group": 23,
+    "type": "die",
+    "de": "die Versicherung",
+    "en": "insurance",
+    "forms": "die Versicherungen",
+    "example": "die Versicherung ist hier.",
+    "exampleEn": "The versicherung is here."
+  },
+  {
+    "id": "steuer",
+    "group": 23,
+    "type": "das",
+    "de": "das Steuer",
+    "en": "tax",
+    "forms": "die Steuer",
+    "example": "das Steuer ist hier.",
+    "exampleEn": "The steuer is here."
+  },
+  {
+    "id": "konto",
+    "group": 23,
+    "type": "das",
+    "de": "das Konto",
+    "en": "account",
+    "forms": "die Konten",
+    "example": "das Konto ist hier.",
+    "exampleEn": "The konto is here."
+  },
+  {
+    "id": "kredit",
+    "group": 23,
+    "type": "der",
+    "de": "der Kredit",
+    "en": "credit / loan",
+    "forms": "die Kredite",
+    "example": "der Kredit ist hier.",
+    "exampleEn": "The kredit is here."
+  },
+  {
+    "id": "schuld",
+    "group": 23,
+    "type": "die",
+    "de": "die Schuld",
+    "en": "debt / fault",
+    "forms": "die Schulden",
+    "example": "die Schuld ist hier.",
+    "exampleEn": "The schuld is here."
+  },
+  {
+    "id": "gehalt",
+    "group": 23,
+    "type": "der",
+    "de": "der Gehalt",
+    "en": "salary",
+    "forms": "die Gehalte",
+    "example": "der Gehalt ist hier.",
+    "exampleEn": "The gehalt is here."
+  },
+  {
+    "id": "lohn",
+    "group": 23,
+    "type": "der",
+    "de": "der Lohn",
+    "en": "wage",
+    "forms": "die Löhne",
+    "example": "der Lohn ist hier.",
+    "exampleEn": "The lohn is here."
+  },
+  {
+    "id": "beruf",
+    "group": 23,
+    "type": "der",
+    "de": "der Beruf",
+    "en": "profession",
+    "forms": "die Berufe",
+    "example": "der Beruf ist hier.",
+    "exampleEn": "The beruf is here."
+  },
+  {
+    "id": "stelle",
+    "group": 23,
+    "type": "die",
+    "de": "die Stelle",
+    "en": "position / job",
+    "forms": "die Stellen",
+    "example": "die Stelle ist hier.",
+    "exampleEn": "The stelle is here."
+  },
+  {
+    "id": "bewerbung",
+    "group": 23,
+    "type": "die",
+    "de": "die Bewerbung",
+    "en": "application",
+    "forms": "die Bewerbungen",
+    "example": "die Bewerbung ist hier.",
+    "exampleEn": "The bewerbung is here."
+  },
+  {
+    "id": "ausbildung",
+    "group": 23,
+    "type": "die",
+    "de": "die Ausbildung",
+    "en": "training / education",
+    "forms": "die Ausbildungen",
+    "example": "die Ausbildung ist hier.",
+    "exampleEn": "The ausbildung is here."
+  },
+  {
+    "id": "studium",
+    "group": 23,
+    "type": "das",
+    "de": "das Studium",
+    "en": "university studies",
+    "forms": "die Studien",
+    "example": "das Studium ist hier.",
+    "exampleEn": "The studium is here."
+  },
+  {
+    "id": "pruefung",
+    "group": 24,
+    "type": "die",
+    "de": "die Prüfung",
+    "en": "exam",
+    "forms": "die Prüfungen",
+    "example": "die Prüfung ist hier.",
+    "exampleEn": "The prüfung is here."
+  },
+  {
+    "id": "note",
+    "group": 24,
+    "type": "die",
+    "de": "die Note",
+    "en": "grade",
+    "forms": "die Noten",
+    "example": "die Note ist hier.",
+    "exampleEn": "The note is here."
+  },
+  {
+    "id": "unterricht",
+    "group": 24,
+    "type": "der",
+    "de": "der Unterricht",
+    "en": "lesson / teaching",
+    "forms": "die Unterrichte",
+    "example": "der Unterricht ist hier.",
+    "exampleEn": "The unterricht is here."
+  },
+  {
+    "id": "uebung",
+    "group": 24,
+    "type": "die",
+    "de": "die Übung",
+    "en": "exercise",
+    "forms": "die Übungen",
+    "example": "die Übung ist hier.",
+    "exampleEn": "The übung is here."
+  },
+  {
+    "id": "loesung_2",
+    "group": 24,
+    "type": "die",
+    "de": "die Lösung",
+    "en": "solution",
+    "forms": "die Lösungen",
+    "example": "Wir finden eine Lösung.",
+    "exampleEn": "We'll find a solution."
+  },
+  {
+    "id": "aufgabe_2",
+    "group": 24,
+    "type": "die",
+    "de": "die Aufgabe",
+    "en": "task",
+    "forms": "die Aufgaben",
+    "example": "Das ist meine Aufgabe.",
+    "exampleEn": "That is my task."
+  },
+  {
+    "id": "hausaufgabe",
+    "group": 24,
+    "type": "die",
+    "de": "die Hausaufgabe",
+    "en": "homework",
+    "forms": "die Hausaufgaben",
+    "example": "die Hausaufgabe ist hier.",
+    "exampleEn": "The hausaufgabe is here."
+  },
+  {
+    "id": "lektion",
+    "group": 24,
+    "type": "die",
+    "de": "die Lektion",
+    "en": "lesson",
+    "forms": "die Lektionen",
+    "example": "die Lektion ist hier.",
+    "exampleEn": "The lektion is here."
+  },
+  {
+    "id": "kapitel",
+    "group": 24,
+    "type": "das",
+    "de": "das Kapitel",
+    "en": "chapter",
+    "forms": "die Kapitel",
+    "example": "das Kapitel ist hier.",
+    "exampleEn": "The kapitel is here."
+  },
+  {
+    "id": "abschnitt",
+    "group": 24,
+    "type": "der",
+    "de": "der Abschnitt",
+    "en": "section",
+    "forms": "die Abschnitte",
+    "example": "der Abschnitt ist hier.",
+    "exampleEn": "The abschnitt is here."
+  },
+  {
+    "id": "absatz",
+    "group": 24,
+    "type": "der",
+    "de": "der Absatz",
+    "en": "paragraph",
+    "forms": "die Absätze",
+    "example": "der Absatz ist hier.",
+    "exampleEn": "The absatz is here."
+  },
+  {
+    "id": "seite_2",
+    "group": 24,
+    "type": "die",
+    "de": "die Seite",
+    "en": "page / side",
+    "forms": "die Seiten",
+    "example": "Auf Seite drei.",
+    "exampleEn": "On page three."
+  },
+  {
+    "id": "zeile",
+    "group": 24,
+    "type": "die",
+    "de": "die Zeile",
+    "en": "line",
+    "forms": "die Zeilen",
+    "example": "die Zeile ist hier.",
+    "exampleEn": "The zeile is here."
+  },
+  {
+    "id": "zeichen",
+    "group": 24,
+    "type": "das",
+    "de": "das Zeichen",
+    "en": "character / sign",
+    "forms": "die Zeichen",
+    "example": "das Zeichen ist hier.",
+    "exampleEn": "The zeichen is here."
+  },
+  {
+    "id": "symbol",
+    "group": 24,
+    "type": "das",
+    "de": "das Symbol",
+    "en": "symbol",
+    "forms": "die Symbole",
+    "example": "das Symbol ist hier.",
+    "exampleEn": "The symbol is here."
+  },
+  {
+    "id": "muster",
+    "group": 24,
+    "type": "das",
+    "de": "das Muster",
+    "en": "pattern",
+    "forms": "die Muster",
+    "example": "das Muster ist hier.",
+    "exampleEn": "The muster is here."
+  },
+  {
+    "id": "design",
+    "group": 24,
+    "type": "das",
+    "de": "das Design",
+    "en": "design",
+    "forms": "die Designs",
+    "example": "das Design ist hier.",
+    "exampleEn": "The design is here."
+  },
+  {
+    "id": "layout",
+    "group": 24,
+    "type": "das",
+    "de": "das Layout",
+    "en": "layout",
+    "forms": "die Layouts",
+    "example": "das Layout ist hier.",
+    "exampleEn": "The layout is here."
+  },
+  {
+    "id": "format",
+    "group": 24,
+    "type": "das",
+    "de": "das Format",
+    "en": "format",
+    "forms": "die Formate",
+    "example": "das Format ist hier.",
+    "exampleEn": "The format is here."
+  },
+  {
+    "id": "groesse_2",
+    "group": 25,
+    "type": "die",
+    "de": "die Größe",
+    "en": "size",
+    "forms": "die Größen",
+    "example": "Welche Größe haben Sie?",
+    "exampleEn": "What size do you take?"
+  },
+  {
+    "id": "massstab",
+    "group": 25,
+    "type": "der",
+    "de": "der Maßstab",
+    "en": "scale",
+    "forms": "die Maßstäbe",
+    "example": "der Maßstab ist hier.",
+    "exampleEn": "The maßstab is here."
+  },
+  {
+    "id": "gewinn",
+    "group": 25,
+    "type": "der",
+    "de": "der Gewinn",
+    "en": "profit / win",
+    "forms": "die Gewinne",
+    "example": "der Gewinn ist hier.",
+    "exampleEn": "The gewinn is here."
+  },
+  {
+    "id": "verlust",
+    "group": 25,
+    "type": "der",
+    "de": "der Verlust",
+    "en": "loss",
+    "forms": "die Verluste",
+    "example": "der Verlust ist hier.",
+    "exampleEn": "The verlust is here."
+  },
+  {
+    "id": "umsatz",
+    "group": 25,
+    "type": "der",
+    "de": "der Umsatz",
+    "en": "turnover",
+    "forms": "die Umsätze",
+    "example": "der Umsatz ist hier.",
+    "exampleEn": "The umsatz is here."
+  },
+  {
+    "id": "ausgabe",
+    "group": 25,
+    "type": "die",
+    "de": "die Ausgabe",
+    "en": "expenditure",
+    "forms": "die Ausgaben",
+    "example": "die Ausgabe ist hier.",
+    "exampleEn": "The ausgabe is here."
+  },
+  {
+    "id": "einnahme",
+    "group": 25,
+    "type": "die",
+    "de": "die Einnahme",
+    "en": "income",
+    "forms": "die Einnahmen",
+    "example": "die Einnahme ist hier.",
+    "exampleEn": "The einnahme is here."
+  },
+  {
+    "id": "ersparnis",
+    "group": 25,
+    "type": "die",
+    "de": "die Ersparnis",
+    "en": "saving",
+    "forms": "die Ersparnisse",
+    "example": "die Ersparnis ist hier.",
+    "exampleEn": "The ersparnis is here."
+  },
+  {
+    "id": "werkzeug",
+    "group": 25,
+    "type": "das",
+    "de": "das Werkzeug",
+    "en": "tool",
+    "forms": "die Werkzeuge",
+    "example": "das Werkzeug ist hier.",
+    "exampleEn": "The werkzeug is here."
+  },
+  {
+    "id": "maschine",
+    "group": 25,
+    "type": "die",
+    "de": "die Maschine",
+    "en": "machine",
+    "forms": "die Maschinen",
+    "example": "die Maschine ist hier.",
+    "exampleEn": "The maschine is here."
+  },
+  {
+    "id": "geraet",
+    "group": 25,
+    "type": "das",
+    "de": "das Gerät",
+    "en": "device",
+    "forms": "die Geräte",
+    "example": "das Gerät ist hier.",
+    "exampleEn": "The gerät is here."
+  },
+  {
+    "id": "apparat",
+    "group": 25,
+    "type": "der",
+    "de": "der Apparat",
+    "en": "apparatus",
+    "forms": "die Apparate",
+    "example": "der Apparat ist hier.",
+    "exampleEn": "The apparat is here."
+  },
+  {
+    "id": "instrument",
+    "group": 25,
+    "type": "das",
+    "de": "das Instrument",
+    "en": "instrument",
+    "forms": "die Instrumente",
+    "example": "das Instrument ist hier.",
+    "exampleEn": "The instrument is here."
+  },
+  {
+    "id": "material",
+    "group": 25,
+    "type": "das",
+    "de": "das Material",
+    "en": "material",
+    "forms": "die Materialien",
+    "example": "das Material ist hier.",
+    "exampleEn": "The material is here."
+  },
+  {
+    "id": "stoff",
+    "group": 25,
+    "type": "der",
+    "de": "der Stoff",
+    "en": "fabric / material",
+    "forms": "die Stoffe",
+    "example": "der Stoff ist hier.",
+    "exampleEn": "The stoff is here."
+  },
+  {
+    "id": "holz",
+    "group": 25,
+    "type": "das",
+    "de": "das Holz",
+    "en": "wood",
+    "forms": "die Hölzer",
+    "example": "das Holz ist hier.",
+    "exampleEn": "The holz is here."
+  },
+  {
+    "id": "metall",
+    "group": 25,
+    "type": "das",
+    "de": "das Metall",
+    "en": "metal",
+    "forms": "die Metalle",
+    "example": "das Metall ist hier.",
+    "exampleEn": "The metall is here."
+  },
+  {
+    "id": "stein",
+    "group": 25,
+    "type": "der",
+    "de": "der Stein",
+    "en": "stone",
+    "forms": "die Steine",
+    "example": "Der Stein ist schwer.",
+    "exampleEn": "The stone is heavy."
+  },
+  {
+    "id": "schere",
+    "group": 25,
+    "type": "die",
+    "de": "die Schere",
+    "en": "scissors",
+    "forms": "die Scheren",
+    "example": "Wo ist die Schere?",
+    "exampleEn": "Where are the scissors?"
+  },
+  {
+    "id": "schloss",
+    "group": 25,
+    "type": "das",
+    "de": "das Schloss",
+    "en": "castle / lock",
+    "forms": "die Schlösser",
+    "example": "Das Schloss ist sehr alt.",
+    "exampleEn": "The castle is very old."
+  },
+  {
+    "id": "bruecke",
+    "group": 25,
+    "type": "die",
+    "de": "die Brücke",
+    "en": "bridge",
+    "forms": "die Brücken",
+    "example": "Die Brücke ist lang.",
+    "exampleEn": "The bridge is long."
+  }
+]
