@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#141318" />
+  <meta name="description" content="German vocabulary flashcards with spaced repetition" />
+  <title>Deutsch</title>
+
+  <!-- PWA manifest -->
+  <link rel="manifest" href="./manifest.json" />
+
+  <!-- Google Fonts: Fraunces (display) + Hanken Grotesk (UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <span class="header-title">Deutsch</span>
+    <button class="icon-btn" id="settingsBtn" aria-label="Open settings">⚙</button>
+  </header>
+
+  <!-- ===== PROGRESS STRIP ===== -->
+  <div class="progress-strip" id="progressStrip">
+    <div class="progress-info">
+      <span id="statLearned">0</span> learned
+      <span class="sep">·</span>
+      <span id="statTotal">0</span> total
+      <span class="sep">·</span>
+      <span id="statQueue">0</span> left today
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </div>
+
+  <!-- ===== MAIN AREA ===== -->
+  <main class="main" id="main">
+
+    <!-- Loading -->
+    <div class="state-screen" id="loadingScreen">
+      <p class="state-msg muted">Loading…</p>
+    </div>
+
+    <!-- Error -->
+    <div class="state-screen hidden" id="errorScreen">
+      <p class="state-msg">Could not load words.</p>
+      <p class="muted small" id="errorDetail"></p>
+      <button class="btn btn-secondary" onclick="location.reload()">Retry</button>
+    </div>
+
+    <!-- Card scene (3-D flip) -->
+    <div class="card-scene hidden" id="cardScene">
+      <div class="card" id="card" role="button" tabindex="0" aria-label="Flashcard — tap to flip">
+
+        <!-- FRONT FACE -->
+        <div class="card-face card-front" id="cardFront">
+          <div class="card-top-bar" id="frontBar"></div>
+          <div class="card-body">
+            <span class="type-pill" id="frontPill"></span>
+            <p class="word-de" id="frontWord"></p>
+            <button class="listen-btn" id="listenBtn" aria-label="Listen to German pronunciation">
+              🔊 Hören
+            </button>
+            <p class="hint-text">Say it aloud, then tap to reveal</p>
+          </div>
+        </div>
+
+        <!-- BACK FACE -->
+        <div class="card-face card-back" id="cardBack">
+          <div class="card-top-bar" id="backBar"></div>
+          <div class="card-body back-body">
+            <span class="type-pill" id="backPill"></span>
+            <p class="word-de word-de-back" id="backWord"></p>
+            <p class="word-forms" id="backForms"></p>
+            <p class="word-en" id="backEn"></p>
+            <div class="example-block">
+              <p class="example-de" id="backExDe"></p>
+              <p class="example-en" id="backExEn"></p>
+            </div>
+            <p class="gender-note hidden" id="genderNote"></p>
+            <div class="answer-btns">
+              <button class="btn btn-wrong" id="btnWrong">Didn't know</button>
+              <button class="btn btn-right" id="btnRight">Knew it ✓</button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.card -->
+    </div><!-- /.card-scene -->
+
+    <!-- Done screen -->
+    <div class="state-screen hidden" id="doneScreen">
+      <div class="done-icon">✓</div>
+      <h2 class="done-title">Session complete!</h2>
+      <div class="done-stats" id="doneStats"></div>
+      <button class="btn btn-primary" id="btnMore">Pull in more new cards</button>
+      <button class="btn btn-secondary" id="btnRestart">Restart with due cards</button>
+    </div>
+
+    <!-- Nothing due screen -->
+    <div class="state-screen hidden" id="emptyScreen">
+      <div class="done-icon">📚</div>
+      <h2 class="done-title">All caught up!</h2>
+      <p class="muted">Come back tomorrow — your cards will be waiting.</p>
+      <div class="done-stats" id="emptyStats"></div>
+    </div>
+
+  </main>
+
+  <!-- ===== SETTINGS SHEET ===== -->
+  <div class="sheet-backdrop hidden" id="sheetBackdrop"></div>
+  <div class="settings-sheet hidden" id="settingsSheet" role="dialog" aria-label="Settings">
+    <div class="sheet-handle"></div>
+    <h2 class="sheet-title">Settings</h2>
+
+    <!-- New cards per day -->
+    <div class="setting-row">
+      <label class="setting-label">New cards per day</label>
+      <div class="stepper">
+        <button class="stepper-btn" id="stepperDown" aria-label="Decrease">−</button>
+        <span class="stepper-val" id="stepperVal">20</span>
+        <button class="stepper-btn" id="stepperUp" aria-label="Increase">+</button>
+      </div>
+    </div>
+
+    <!-- Colour key -->
+    <div class="legend">
+      <h3 class="legend-title">Colour key</h3>
+      <div class="legend-grid">
+        <div class="legend-item"><span class="legend-dot" style="background:#6aa0ff"></span> <em>der</em> — masculine</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#f0697f"></span> <em>die</em> — feminine</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#57c08a"></span> <em>das</em> — neuter</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#b39bf2"></span> verb</div>
+      </div>
+    </div>
+
+    <!-- Reset -->
+    <div class="reset-section">
+      <button class="btn btn-danger" id="resetBtn">Reset all progress</button>
+      <div class="reset-confirm hidden" id="resetConfirm">
+        <p class="reset-warning">This will erase all progress and cannot be undone.</p>
+        <div class="reset-confirm-row">
+          <button class="btn btn-secondary" id="resetCancelBtn">Cancel</button>
+          <button class="btn btn-danger" id="resetConfirmBtn">Yes, reset</button>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-secondary btn-full" id="sheetCloseBtn">Close</button>
+  </div>
+
+  <script src="./app.js"></script>
+  <script>
+    // Register service worker with relative path — works at /german/ subdirectory
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js', { scope: './' })
+          .catch(err => console.warn('SW registration failed:', err));
+      });
+    }
+  </script>
+</body>
+</html>
