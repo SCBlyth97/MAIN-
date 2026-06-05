@@ -11,7 +11,7 @@
 // ─────────────────────────────────────────────
 
 const SUPABASE_URL = 'https://wnwwnkfbclrdgtmnhul.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_IG_F4wtfW3G0U3o4yQ37HQ_IyRK6a3t';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indudnd4bmtmYmNscmRndG1uaHVsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA2MTkzMDksImV4cCI6MjA5NjE5NTMwOX0.ea5AaWq35TJz8waR4vR3NLfNpr2OC1P_7l1tAluolSk';
 const SUPABASE_HEADERS = {
   'apikey': SUPABASE_KEY,
   'Authorization': `Bearer ${SUPABASE_KEY}`,
