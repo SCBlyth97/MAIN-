@@ -40,6 +40,12 @@ let sessionIdx   = 0;
 let currentWord  = null;
 let isFlipped    = false;
 
+// Drill state
+let drillWords = [];
+let drillIdx   = 0;
+let drillRight = 0;
+let drillWrong = 0;
+
 // ─────────────────────────────────────────────
 // DOM REFERENCES
 // ─────────────────────────────────────────────
@@ -85,6 +91,24 @@ const dom = {
   genderNote:    $('genderNote'),
   btnWrong:      $('btnWrong'),
   btnRight:      $('btnRight'),
+
+  // Drill
+  drillScreen:      $('drillScreen'),
+  drillActive:      $('drillActive'),
+  drillResults:     $('drillResults'),
+  drillProgress:    $('drillProgress'),
+  drillScore:       $('drillScore'),
+  drillNoun:        $('drillNoun'),
+  drillEn:          $('drillEn'),
+  drillFeedback:    $('drillFeedback'),
+  drillBtnDer:      $('drillBtnDer'),
+  drillBtnDie:      $('drillBtnDie'),
+  drillBtnDas:      $('drillBtnDas'),
+  drillResultIcon:  $('drillResultIcon'),
+  drillResultTitle: $('drillResultTitle'),
+  drillResultSub:   $('drillResultSub'),
+  btnDrillAgain:    $('btnDrillAgain'),
+  btnBackFromDrill: $('btnBackFromDrill'),
 
   // Done/empty
   btnMore:          $('btnMore'),
@@ -383,6 +407,7 @@ function showNextCard() {
 
 function showScreen(which) {
   dom.groupScreen.classList.add('hidden');
+  dom.drillScreen.classList.add('hidden');
   dom.loadingScreen.classList.add('hidden');
   dom.errorScreen.classList.add('hidden');
   dom.cardScene.classList.add('hidden');
@@ -390,6 +415,7 @@ function showScreen(which) {
   dom.emptyScreen.classList.add('hidden');
 
   if (which === 'groups')  dom.groupScreen.classList.remove('hidden');
+  if (which === 'drill')   dom.drillScreen.classList.remove('hidden');
   if (which === 'loading') dom.loadingScreen.classList.remove('hidden');
   if (which === 'error')   dom.errorScreen.classList.remove('hidden');
   if (which === 'card')    dom.cardScene.classList.remove('hidden');
@@ -493,6 +519,78 @@ function changeNewPerDay(delta) {
 }
 
 // ─────────────────────────────────────────────
+// GENDER DRILL
+// ─────────────────────────────────────────────
+
+function startDrill() {
+  const nouns = allWords.filter(w => ['der', 'die', 'das'].includes(w.type)).slice(0, 50);
+  drillWords = shuffle([...nouns]);
+  drillIdx   = 0;
+  drillRight = 0;
+  drillWrong = 0;
+  dom.backBtn.classList.remove('hidden');
+  dom.progressStrip.classList.add('hidden');
+  dom.drillActive.classList.remove('hidden');
+  dom.drillResults.classList.add('hidden');
+  showScreen('drill');
+  renderDrillWord();
+}
+
+function renderDrillWord() {
+  const word = drillWords[drillIdx];
+  dom.drillNoun.textContent = word.de.replace(/^(der|die|das)\s+/i, '').trim();
+  dom.drillEn.textContent   = word.en;
+  dom.drillProgress.textContent = `${drillIdx + 1} / ${drillWords.length}`;
+  dom.drillScore.innerHTML  = `✓ ${drillRight} &nbsp; ✗ ${drillWrong}`;
+  dom.drillFeedback.className = 'drill-feedback hidden';
+  dom.drillFeedback.textContent = '';
+  [dom.drillBtnDer, dom.drillBtnDie, dom.drillBtnDas].forEach(btn => {
+    btn.disabled  = false;
+    btn.className = 'drill-btn';
+  });
+}
+
+function handleDrillAnswer(chosen) {
+  const word    = drillWords[drillIdx];
+  const correct = word.type;
+  const isRight = chosen === correct;
+
+  [dom.drillBtnDer, dom.drillBtnDie, dom.drillBtnDas].forEach(btn => btn.disabled = true);
+
+  const chosenBtn  = $('drillBtn' + chosen[0].toUpperCase() + chosen.slice(1));
+  const correctBtn = $('drillBtn' + correct[0].toUpperCase() + correct.slice(1));
+
+  if (isRight) {
+    drillRight++;
+    chosenBtn.classList.add('drill-correct');
+    dom.drillFeedback.textContent = 'Correct! ✓';
+    dom.drillFeedback.className   = 'drill-feedback drill-ok';
+  } else {
+    drillWrong++;
+    chosenBtn.classList.add('drill-wrong');
+    correctBtn.classList.add('drill-correct');
+    const noun = word.de.replace(/^(der|die|das)\s+/i, '').trim();
+    dom.drillFeedback.textContent = `It's ${correct} ${noun}`;
+    dom.drillFeedback.className   = 'drill-feedback drill-bad';
+  }
+
+  setTimeout(() => {
+    drillIdx++;
+    if (drillIdx >= drillWords.length) showDrillResults();
+    else renderDrillWord();
+  }, isRight ? 550 : 1100);
+}
+
+function showDrillResults() {
+  const pct = Math.round((drillRight / drillWords.length) * 100);
+  dom.drillActive.classList.add('hidden');
+  dom.drillResults.classList.remove('hidden');
+  dom.drillResultIcon.textContent  = pct >= 80 ? '🎯' : pct >= 50 ? '💪' : '📚';
+  dom.drillResultTitle.textContent = `${drillRight} / ${drillWords.length} correct`;
+  dom.drillResultSub.textContent   = `${pct}% accuracy`;
+}
+
+// ─────────────────────────────────────────────
 // INITIALISE
 // ─────────────────────────────────────────────
 
@@ -525,6 +623,14 @@ function wireEvents() {
   dom.backBtn.addEventListener('click', goBackToGroups);
   dom.btnBackFromDone.addEventListener('click', goBackToGroups);
   dom.btnBackFromEmpty.addEventListener('click', goBackToGroups);
+  dom.btnBackFromDrill.addEventListener('click', goBackToGroups);
+
+  // Gender drill
+  $('btnStartDrill').addEventListener('click', startDrill);
+  dom.btnDrillAgain.addEventListener('click', startDrill);
+  [dom.drillBtnDer, dom.drillBtnDie, dom.drillBtnDas].forEach(btn => {
+    btn.addEventListener('click', () => handleDrillAnswer(btn.dataset.gender));
+  });
 
   // Study again — replay all group words regardless of due dates
   dom.btnStudyAgain.addEventListener('click', () => {
