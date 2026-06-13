@@ -181,6 +181,9 @@
     <div class="sheet-handle"></div>
     <h2 class="sheet-title">Settings</h2>
 
+    <!-- Cloud sync / account (populated by updateAuthUI in app.js) -->
+    <div id="authRow"></div>
+
     <!-- New cards per day -->
     <div class="setting-row">
       <label class="setting-label">New cards per day</label>
@@ -217,6 +220,10 @@
     <button class="btn btn-secondary btn-full" id="sheetCloseBtn">Close</button>
   </div>
 
+  <!-- Supabase JS v2 (UMD bundle — exposes window.supabase) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Project credentials — safe to commit because RLS restricts every request to the signed-in user -->
+  <script src="./config.js"></script>
   <script src="./app.js"></script>
   <script>
     // Register service worker with relative path — works at /german/ subdirectory
