@@ -23,7 +23,11 @@
   <header class="header">
     <button class="icon-btn hidden" id="backBtn" aria-label="Back to groups">←</button>
     <span class="header-title">Deutsch</span>
-    <button class="icon-btn" id="settingsBtn" aria-label="Open settings">⚙</button>
+    <!-- header-right groups the icon buttons on the right so they sit flush together -->
+    <div class="header-right">
+      <button class="icon-btn" id="statsBtn" aria-label="View stats">📊</button>
+      <button class="icon-btn" id="settingsBtn" aria-label="Open settings">⚙</button>
+    </div>
   </header>
 
   <!-- ===== PROGRESS STRIP ===== -->
@@ -48,6 +52,11 @@
       <button class="drill-entry" id="btnStartDrill">
         <span class="drill-entry-title">⚡ Gender Drill</span>
         <span class="drill-entry-sub">First 50 nouns — tap der / die / das</span>
+      </button>
+      <!-- Weak-words button: disabled and shows count via JS (updateWeakButtons) -->
+      <button class="drill-entry drill-entry-weak" id="btnWeakHome" disabled>
+        <span class="drill-entry-title">🔥 Weak Words</span>
+        <span class="drill-entry-sub">Loading…</span>
       </button>
       <div class="group-grid" id="groupGrid"></div>
     </div>
@@ -135,7 +144,13 @@
       <h2 class="done-title">Session complete!</h2>
       <div class="done-stats" id="doneStats"></div>
       <button class="btn btn-primary" id="btnMore">Pull in more new cards</button>
+      <!-- Weak-words button also appears here so users can jump straight into weak review -->
+      <button class="drill-entry drill-entry-weak" id="btnWeakDone" disabled>
+        <span class="drill-entry-title">🔥 Weak Words</span>
+        <span class="drill-entry-sub">Loading…</span>
+      </button>
       <button class="btn btn-secondary" id="btnRestart">Restart with due cards</button>
+      <button class="btn btn-secondary" id="btnStudyAgain">Study again ↺</button>
       <button class="btn btn-secondary" id="btnBackFromDone">← All groups</button>
     </div>
 
@@ -147,6 +162,15 @@
       <div class="done-stats" id="emptyStats"></div>
       <button class="btn btn-primary" id="btnStudyAgain">Study again ↺</button>
       <button class="btn btn-secondary" id="btnBackFromEmpty">← All groups</button>
+    </div>
+
+    <!-- Stats screen -->
+    <div class="state-screen hidden" id="statsScreen">
+      <div class="done-icon">📊</div>
+      <h2 class="done-title">Your Progress</h2>
+      <!-- statsGrid is populated by openStats() in app.js -->
+      <div class="stats-grid" id="statsGrid"></div>
+      <button class="btn btn-secondary btn-full" id="btnCloseStats">← Back</button>
     </div>
 
   </main>

@@ -864,3 +864,54 @@ button { font-family: var(--font-ui); cursor: pointer; border: none; background:
   border-color: var(--die) !important;
   color: var(--die) !important;
 }
+
+/* ---------- Weak words entry ---------- */
+/* Overrides the base .drill-entry accent colour to pink/red to signal challenge */
+.drill-entry-weak {
+  border-color: rgba(240,105,127,0.4);
+}
+.drill-entry-weak .drill-entry-title { color: var(--die); }
+.drill-entry-weak:hover:not(:disabled) { border-color: var(--die); }
+/* Disabled state: shown when there are no weak words */
+.drill-entry-weak:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* ---------- Stats screen ---------- */
+/* Two-column grid of compact stat cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  max-width: 360px;
+}
+
+/* Each individual stat card: number on top, label below */
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-card);
+  padding: 16px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  text-align: center;
+}
+
+/* The big number — colour is set inline by JS to convey meaning (green = good, red = needs work) */
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
