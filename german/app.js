@@ -317,6 +317,17 @@ function renderGroupSelector() {
   const groupNums = getGroupNums();
   dom.groupGrid.innerHTML = '';
 
+  // Update home subtitle with overall progress
+  const totalWords   = allWords.length;
+  const learnedWords = allWords.filter(w => { const p = state.progress[w.id]; return p && p.box >= 3; }).length;
+  const seenWords    = allWords.filter(w => state.progress[w.id]).length;
+  const subtitle = $('homeSubtitle');
+  if (subtitle) {
+    subtitle.textContent = seenWords === 0
+      ? `${totalWords} words across ${groupNums.length} groups`
+      : `${learnedWords} of ${totalWords} words learned · ${seenWords} seen`;
+  }
+
   groupNums.forEach(num => {
     const { total, learned, seen } = getGroupStats(num);
     const firstIdx = allWords.findIndex(w => (w.group || 1) === num);

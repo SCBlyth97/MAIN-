@@ -21,7 +21,7 @@
 
   <!-- ===== HEADER ===== -->
   <header class="header">
-    <button class="icon-btn hidden" id="backBtn" aria-label="Back to groups">←</button>
+    <button class="home-btn hidden" id="backBtn" aria-label="Back to home">⌂ Home</button>
     <span class="header-title">Deutsch</span>
     <!-- header-right groups the icon buttons on the right so they sit flush together -->
     <div class="header-right">
@@ -47,8 +47,13 @@
   <!-- ===== MAIN AREA ===== -->
   <main class="main" id="main">
 
-    <!-- Group selector -->
-    <div class="state-screen hidden" id="groupScreen">
+    <!-- Home / Group selector -->
+    <div class="home-screen hidden" id="groupScreen">
+      <div class="home-header">
+        <h1 class="home-title">What do you want to study?</h1>
+        <p class="home-sub" id="homeSubtitle"></p>
+      </div>
+      <div class="home-section-label">Quick practice</div>
       <button class="drill-entry" id="btnStartDrill">
         <span class="drill-entry-title">⚡ Gender Drill</span>
         <span class="drill-entry-sub">First 50 nouns — tap der / die / das</span>
@@ -58,6 +63,7 @@
         <span class="drill-entry-title">🔥 Weak Words</span>
         <span class="drill-entry-sub">Loading…</span>
       </button>
+      <div class="home-section-label">Study by group</div>
       <div class="group-grid" id="groupGrid"></div>
     </div>
 
