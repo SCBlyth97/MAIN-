@@ -7,7 +7,10 @@
 
 'use strict';
 
-const CACHE_NAME = 'deutsch-v1';
+// Bump this version on every deploy that changes the app shell (index.html,
+// app.js, style.css). Changing the name forces a fresh install + the activate
+// handler below deletes every old cache, so stale assets can never be served.
+const CACHE_NAME = 'deutsch-v2';
 
 // Assets to pre-cache on install
 const PRECACHE_URLS = [
@@ -99,10 +102,14 @@ async function networkFirst(request) {
     }
     return response;
   } catch {
+    // Offline: fall back to a previously cached copy if we have one.
+    // Do NOT fabricate an empty '[]' body — that used to masquerade as a
+    // valid (but empty) word list and tripped the "Could not load words"
+    // error screen. A real 503 lets the app show an honest offline message.
     const cached = await caches.match(request);
-    return cached || new Response('[]', {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' }
+    return cached || new Response('Offline', {
+      status: 503,
+      statusText: 'Service Unavailable'
     });
   }
 }
