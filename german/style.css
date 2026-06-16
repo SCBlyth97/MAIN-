@@ -94,6 +94,30 @@ button { font-family: var(--font-ui); cursor: pointer; border: none; background:
   outline: none;
 }
 
+.home-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 14px;
+  border-radius: var(--r-pill);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.home-btn:hover,
+.home-btn:focus-visible {
+  background: var(--border);
+  border-color: var(--verb);
+  outline: none;
+}
+.home-btn:active { transform: scale(0.96); }
+
 /* ---------- Progress strip ---------- */
 .progress-strip {
   background: var(--surface);
@@ -132,15 +156,55 @@ button { font-family: var(--font-ui); cursor: pointer; border: none; background:
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 28px 16px 48px;
+  overflow-y: auto;
 }
 
-/* ---------- Group selector ---------- */
-#groupScreen {
-  max-width: 100%;
+/* Centre non-home screens vertically */
+.main > .state-screen,
+.main > .card-scene,
+.main > #drillScreen {
+  margin: auto 0;
+}
+
+/* ---------- Home / Group selector ---------- */
+.home-screen {
+  display: flex;
+  flex-direction: column;
   align-items: stretch;
-  text-align: left;
+  width: 100%;
+  max-width: 480px;
+  gap: 8px;
+}
+
+.home-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 0 12px;
+}
+
+.home-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.home-sub {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.home-section-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+  padding: 8px 0 2px;
 }
 
 .group-grid {
@@ -148,11 +212,7 @@ button { font-family: var(--font-ui); cursor: pointer; border: none; background:
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   width: 100%;
-  max-width: 480px;
-  max-height: calc(100dvh - 120px);
-  overflow-y: auto;
-  margin: 0 auto;
-  padding: 4px 2px 20px;
+  padding: 4px 0 20px;
 }
 
 .group-card {
