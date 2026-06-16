@@ -163,8 +163,7 @@ button { font-family: var(--font-ui); cursor: pointer; border: none; background:
 
 /* Centre non-home screens vertically */
 .main > .state-screen,
-.main > .card-scene,
-.main > #drillScreen {
+.main > .card-scene {
   margin: auto 0;
 }
 
@@ -806,7 +805,7 @@ button { font-family: var(--font-ui); cursor: pointer; border: none; background:
   }
 }
 
-/* ---------- Drill entry card ---------- */
+/* ---------- Entry card (Weak Words button) ---------- */
 .drill-entry {
   background: var(--surface);
   border: 1px solid rgba(179,155,242,0.4);
@@ -832,98 +831,6 @@ button { font-family: var(--font-ui); cursor: pointer; border: none; background:
 }
 
 .drill-entry-sub { font-size: 0.78rem; color: var(--muted); }
-
-/* ---------- Drill screen ---------- */
-#drillScreen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  width: 100%;
-  max-width: 360px;
-  padding: 8px 0 16px;
-}
-
-#drillActive,
-#drillResults {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-}
-
-.drill-meta {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  font-size: 0.82rem;
-  color: var(--muted);
-  font-variant-numeric: tabular-nums;
-}
-
-.drill-noun {
-  font-family: var(--font-display);
-  font-size: 2.8rem;
-  font-weight: 600;
-  text-align: center;
-  line-height: 1.1;
-  margin: 4px 0 0;
-}
-
-.drill-en {
-  font-size: 1rem;
-  text-align: center;
-  margin: 0;
-}
-
-.drill-feedback {
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-align: center;
-  min-height: 1.3em;
-}
-.drill-ok  { color: var(--das); }
-.drill-bad { color: var(--die); }
-
-.drill-btns {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-}
-
-.drill-btn {
-  flex: 1;
-  padding: 18px 8px;
-  border-radius: var(--r-btn);
-  font-family: var(--font-ui);
-  font-size: 1.15rem;
-  font-weight: 700;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: opacity 0.1s, transform 0.1s;
-}
-.drill-btn:active:not(:disabled) { transform: scale(0.95); }
-.drill-btn:disabled { cursor: default; }
-
-#drillBtnDer { background: rgba(106,160,255,0.15); color: var(--der); border-color: rgba(106,160,255,0.35); }
-#drillBtnDie { background: rgba(240,105,127,0.15); color: var(--die); border-color: rgba(240,105,127,0.35); }
-#drillBtnDas { background: rgba(87,192,138,0.15);  color: var(--das); border-color: rgba(87,192,138,0.35); }
-
-#drillBtnDer:not(:disabled):hover { background: rgba(106,160,255,0.28); }
-#drillBtnDie:not(:disabled):hover { background: rgba(240,105,127,0.28); }
-#drillBtnDas:not(:disabled):hover { background: rgba(87,192,138,0.28); }
-
-/* Feedback states */
-#drillBtnDer.drill-correct { background: rgba(106,160,255,0.45); border-color: var(--der); }
-#drillBtnDie.drill-correct { background: rgba(240,105,127,0.45); border-color: var(--die); }
-#drillBtnDas.drill-correct { background: rgba(87,192,138,0.45);  border-color: var(--das); }
-
-.drill-btn.drill-wrong {
-  background: rgba(240,105,127,0.2) !important;
-  border-color: var(--die) !important;
-  color: var(--die) !important;
-}
 
 /* ---------- Weak words entry ---------- */
 /* Overrides the base .drill-entry accent colour to pink/red to signal challenge */
