@@ -1,0 +1,2 @@
+# Node dependencies (jsdom for the smoke test is installed locally, not committed)
+node_modules/
