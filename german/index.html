@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#141318" />
+  <meta name="theme-color" content="#131312" />
   <meta name="description" content="German vocabulary flashcards with spaced repetition" />
   <title>Deutsch</title>
 
   <!-- PWA manifest -->
   <link rel="manifest" href="./manifest.json" />
 
-  <!-- Google Fonts: Fraunces (display) + Hanken Grotesk (UI) -->
+  <!-- Google Fonts: Hanken Grotesk (display) + Inter (body) + JetBrains Mono (labels).
+       System fallbacks in style.css keep the app readable offline if these fail. -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="./style.css" />
 </head>
@@ -49,16 +50,34 @@
 
     <!-- Home / Group selector -->
     <div class="home-screen hidden" id="groupScreen">
-      <div class="home-header">
-        <h1 class="home-title">What do you want to study?</h1>
-        <p class="home-sub" id="homeSubtitle"></p>
-      </div>
-      <!-- Weak-words button: disabled and shows count via JS (updateWeakButtons) -->
-      <button class="drill-entry drill-entry-weak" id="btnWeakHome" disabled>
-        <span class="drill-entry-title">🔥 Weak Words</span>
-        <span class="drill-entry-sub">Loading…</span>
+
+      <!-- "Heute" daily-progress summary (real data: new cards introduced today) -->
+      <section class="today-card">
+        <div class="today-head">
+          <span class="mono-label">Heute</span>
+          <span class="mono-label today-pct" id="todayPct">0%</span>
+        </div>
+        <div class="today-body">
+          <div>
+            <p class="today-count"><span id="todayLearned">0</span><span class="today-target">/<span id="todayTarget">20</span></span></p>
+            <p class="mono-label muted">words today</p>
+          </div>
+          <div class="today-ring" id="todayRing"></div>
+        </div>
+        <div class="today-track"><div class="today-track-fill" id="todayTrackFill"></div></div>
+      </section>
+
+      <!-- Quick Practice CTA — wired to the real Weak Words session.
+           updateWeakButtons() enables/disables it and fills .weak-sub. -->
+      <button class="cta-primary" id="btnWeakHome" disabled>
+        <span class="cta-text">
+          <span class="cta-title">Quick Practice</span>
+          <span class="cta-sub weak-sub">Loading…</span>
+        </span>
+        <span class="cta-arrow" aria-hidden="true">→</span>
       </button>
-      <div class="home-section-label">Study by group</div>
+
+      <h3 class="home-section-title">Wortschatz</h3>
       <div class="group-grid" id="groupGrid"></div>
     </div>
 
@@ -82,21 +101,24 @@
         <!-- FRONT FACE -->
         <div class="card-face card-front" id="cardFront">
           <div class="card-top-bar" id="frontBar"></div>
-          <div class="card-body">
-            <span class="type-pill" id="frontPill"></span>
-            <p class="word-de" id="frontWord"></p>
-            <button class="listen-btn" id="listenBtn" aria-label="Listen to German pronunciation">
-              🔊 Hören
-            </button>
-            <p class="hint-text">Say it aloud, then tap to reveal</p>
+          <div class="card-icons">
+            <button class="card-ico-btn" id="listenBtn" aria-label="Listen to German pronunciation">🔊</button>
+            <button class="card-ico-btn" id="starBtn" aria-label="Star this word">☆</button>
           </div>
+          <div class="card-body">
+            <span class="type-pill gender-chip" id="frontPill"></span>
+            <p class="word-de" id="frontWord"></p>
+            <p class="card-example" id="frontExample"></p>
+            <span class="tap-hint">TAP TO REVEAL</span>
+          </div>
+          <div class="card-progress"><div class="card-progress-fill" id="cardProgressFill"></div></div>
         </div>
 
         <!-- BACK FACE -->
         <div class="card-face card-back" id="cardBack">
           <div class="card-top-bar" id="backBar"></div>
           <div class="card-body back-body">
-            <span class="type-pill" id="backPill"></span>
+            <span class="type-pill gender-chip" id="backPill"></span>
             <p class="word-de word-de-back" id="backWord"></p>
             <p class="word-forms" id="backForms"></p>
             <p class="word-en" id="backEn"></p>
@@ -122,9 +144,9 @@
       <div class="done-stats" id="doneStats"></div>
       <button class="btn btn-primary" id="btnMore">Pull in more new cards</button>
       <!-- Weak-words button also appears here so users can jump straight into weak review -->
-      <button class="drill-entry drill-entry-weak" id="btnWeakDone" disabled>
-        <span class="drill-entry-title">🔥 Weak Words</span>
-        <span class="drill-entry-sub">Loading…</span>
+      <button class="weak-entry" id="btnWeakDone" disabled>
+        <span class="weak-entry-title">🔥 Weak Words</span>
+        <span class="weak-sub">Loading…</span>
       </button>
       <button class="btn btn-secondary" id="btnRestart">Restart with due cards</button>
       <button class="btn btn-secondary" id="btnStudyAgain">Study again ↺</button>
@@ -152,6 +174,20 @@
 
   </main>
 
+  <!-- ===== BOTTOM NAV ===== -->
+  <!-- Shown on home + stats only. Every tab maps to a screen that already exists. -->
+  <nav class="bottom-nav hidden" id="bottomNav">
+    <button class="nav-item" id="navLernen" aria-label="Learn — home">
+      <span class="nav-ico">📚</span><span class="nav-label">Lernen</span>
+    </button>
+    <button class="nav-item" id="navErfolg" aria-label="Progress — stats">
+      <span class="nav-ico">📊</span><span class="nav-label">Erfolg</span>
+    </button>
+    <button class="nav-item" id="navProfil" aria-label="Profile — settings">
+      <span class="nav-ico">⚙</span><span class="nav-label">Profil</span>
+    </button>
+  </nav>
+
   <!-- ===== SETTINGS SHEET ===== -->
   <div class="sheet-backdrop hidden" id="sheetBackdrop"></div>
   <div class="settings-sheet hidden" id="settingsSheet" role="dialog" aria-label="Settings">
@@ -175,10 +211,10 @@
     <div class="legend">
       <h3 class="legend-title">Colour key</h3>
       <div class="legend-grid">
-        <div class="legend-item"><span class="legend-dot" style="background:#6aa0ff"></span> <em>der</em> — masculine</div>
-        <div class="legend-item"><span class="legend-dot" style="background:#f0697f"></span> <em>die</em> — feminine</div>
-        <div class="legend-item"><span class="legend-dot" style="background:#57c08a"></span> <em>das</em> — neuter</div>
-        <div class="legend-item"><span class="legend-dot" style="background:#b39bf2"></span> verb</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#4895EF"></span> <em>der</em> — masculine</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#F72585"></span> <em>die</em> — feminine</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#4CC9F0"></span> <em>das</em> — neuter</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#8B80D6"></span> verb</div>
       </div>
     </div>
 

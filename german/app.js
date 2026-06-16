@@ -16,10 +16,10 @@ const SCHEMA_VERSION = 2;  // bump whenever the persisted state shape changes
 const BOX_INTERVALS = { 1: 1, 2: 2, 3: 4, 4: 9, 5: 21 };
 
 const TYPE_COLOUR = {
-  der:  '#6aa0ff',
-  die:  '#f0697f',
-  das:  '#57c08a',
-  verb: '#b39bf2'
+  der:  '#4895ef',  /* azure     */
+  die:  '#f72585',  /* neon rose */
+  das:  '#4cc9f0',  /* cyan-teal */
+  verb: '#8b80d6'   /* lavender  */
 };
 
 const GENDER_LABEL = {
@@ -73,6 +73,19 @@ const dom = {
   progressStrip: $('progressStrip'),
   statsBtn:      $('statsBtn'),
 
+  // Home "Heute" summary
+  todayPct:       $('todayPct'),
+  todayLearned:   $('todayLearned'),
+  todayTarget:    $('todayTarget'),
+  todayRing:      $('todayRing'),
+  todayTrackFill: $('todayTrackFill'),
+
+  // Bottom nav
+  bottomNav:  $('bottomNav'),
+  navLernen:  $('navLernen'),
+  navErfolg:  $('navErfolg'),
+  navProfil:  $('navProfil'),
+
   // Progress strip
   statLearned:   $('statLearned'),
   statTotal:     $('statTotal'),
@@ -84,6 +97,9 @@ const dom = {
   frontBar:      $('frontBar'),
   frontPill:     $('frontPill'),
   frontWord:     $('frontWord'),
+  frontExample:  $('frontExample'),
+  cardProgressFill: $('cardProgressFill'),
+  starBtn:       $('starBtn'),
   listenBtn:     $('listenBtn'),
   backBar:       $('backBar'),
   backPill:      $('backPill'),
@@ -291,26 +307,44 @@ function getGroupStats(groupNum) {
   return { total, learned, seen };
 }
 
+// An SVG progress ring. r=16 gives a circumference of ~100, so the percentage
+// maps directly to stroke-dashoffset (100 - pct). Stroke colour is the mustard
+// accent via the .ring-fill CSS rule.
+function ringSvg(pct) {
+  const offset = 100 - Math.max(0, Math.min(100, pct));
+  return `<svg class="ring" viewBox="0 0 36 36" aria-hidden="true">
+    <circle class="ring-track" cx="18" cy="18" r="16" fill="none" stroke-width="3"></circle>
+    <circle class="ring-fill" cx="18" cy="18" r="16" fill="none" stroke-width="3"
+      stroke-dasharray="100" stroke-dashoffset="${offset}" stroke-linecap="round"></circle>
+  </svg>`;
+}
+
+// Fill the "Heute" summary with real daily data: how many NEW cards have been
+// introduced today versus the user's new-cards-per-day target.
+function renderTodayCard() {
+  const target = state.settings.newPerDay || 1;
+  const count  = (state.newDay && state.newDay.date === todayStr()) ? state.newDay.count : 0;
+  const pct    = Math.min(100, Math.round((count / target) * 100));
+
+  if (dom.todayLearned)   dom.todayLearned.textContent   = count;
+  if (dom.todayTarget)    dom.todayTarget.textContent    = target;
+  if (dom.todayPct)       dom.todayPct.textContent       = pct + '%';
+  if (dom.todayTrackFill) dom.todayTrackFill.style.width = pct + '%';
+  if (dom.todayRing)      dom.todayRing.innerHTML        = ringSvg(pct);
+}
+
 function renderGroupSelector() {
   const groupNums = getGroupNums();
   dom.groupGrid.innerHTML = '';
 
-  // Update home subtitle with overall progress
-  const totalWords   = allWords.length;
-  const learnedWords = allWords.filter(w => { const p = state.progress[w.id]; return p && p.box >= 3; }).length;
-  const seenWords    = allWords.filter(w => state.progress[w.id]).length;
-  const subtitle = $('homeSubtitle');
-  if (subtitle) {
-    subtitle.textContent = seenWords === 0
-      ? `${totalWords} words across ${groupNums.length} groups`
-      : `${learnedWords} of ${totalWords} words learned · ${seenWords} seen`;
-  }
+  renderTodayCard();
 
   groupNums.forEach(num => {
     const { total, learned, seen } = getGroupStats(num);
     const firstIdx = allWords.findIndex(w => (w.group || 1) === num);
     const lastIdx  = firstIdx + total - 1;
     const range    = `Words ${firstIdx + 1}–${lastIdx + 1}`;
+    const pct      = total > 0 ? Math.round((learned / total) * 100) : 0;
 
     let statusClass = 'gcard-status-new';
     let statusText  = 'Not started';
@@ -319,15 +353,23 @@ function renderGroupSelector() {
       statusText  = '✓ Complete';
     } else if (seen > 0) {
       statusClass = 'gcard-status-progress';
-      statusText  = `${Math.round((learned / total) * 100)}% learned`;
+      statusText  = 'In progress';
     }
 
     const card = document.createElement('button');
     card.className = 'group-card';
     card.innerHTML = `
-      <span class="gcard-num">Group ${num}</span>
-      <span class="gcard-range">${range}</span>
-      <span class="gcard-status ${statusClass}">${statusText}</span>
+      <div class="gcard-top">
+        <div class="gcard-head">
+          <span class="gcard-num">Group ${num}</span>
+          <span class="gcard-range mono-label">${range}</span>
+        </div>
+        <div class="gcard-ring">${ringSvg(pct)}<span class="gcard-pct">${pct}%</span></div>
+      </div>
+      <div class="gcard-foot">
+        <span class="mono-label">${total} Wörter</span>
+        <span class="gcard-status ${statusClass}">${statusText}</span>
+      </div>
     `;
     card.addEventListener('click', () => openGroup(num));
     dom.groupGrid.appendChild(card);
@@ -441,7 +483,7 @@ function updateWeakButtons() {
   const count = getWeakWords().length;
   [dom.btnWeakHome, dom.btnWeakDone].forEach(btn => {
     if (!btn) return;
-    const sub = btn.querySelector('.drill-entry-sub');
+    const sub = btn.querySelector('.weak-sub');
     if (count === 0) {
       btn.disabled    = true;
       sub.textContent = 'No weak words right now';
@@ -483,6 +525,12 @@ function updateProgressUI() {
   dom.statTotal.textContent    = total;
   dom.statQueue.textContent    = Math.max(0, left);
   dom.progressFill.style.width = (total > 0 ? (learned / total) * 100 : 0).toFixed(1) + '%';
+
+  // Thin accent along the card front: how far through the session queue we are.
+  if (dom.cardProgressFill) {
+    const pct = session.length > 0 ? (sessionIdx / session.length) * 100 : 0;
+    dom.cardProgressFill.style.width = pct.toFixed(1) + '%';
+  }
 }
 
 // ─────────────────────────────────────────────
@@ -729,23 +777,56 @@ function rerenderCurrentScreen() {
 // CARD RENDERING
 // ─────────────────────────────────────────────
 
+// Convert a #rrggbb hex to an rgba() string at the given alpha.
+function hexToRgba(hex, alpha) {
+  const h = hex.replace('#', '');
+  const r = parseInt(h.slice(0, 2), 16);
+  const g = parseInt(h.slice(2, 4), 16);
+  const b = parseInt(h.slice(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+// Escape user-facing text before inserting as innerHTML (words.json is static
+// and trusted, but this keeps the colour-injection path safe regardless).
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+// Build the word HTML with the leading article coloured by gender.
+// Verbs (and anything without a der/die/das prefix) render plain.
+function wordHtml(word) {
+  const m = /^(der|die|das)\s+(.+)$/i.exec(word.de);
+  if (m) {
+    const colour = TYPE_COLOUR[m[1].toLowerCase()] || TYPE_COLOUR[word.type];
+    return `<span style="color:${colour}">${escapeHtml(m[1])}</span> ${escapeHtml(m[2])}`;
+  }
+  return escapeHtml(word.de);
+}
+
+// Tint the gender chip + thin accent bar for the given word type.
 function applyTypeStyle(bar, pill, type) {
   const colour = TYPE_COLOUR[type] || TYPE_COLOUR.verb;
-  bar.style.background  = colour;
-  pill.style.background = colour;
-  pill.textContent      = type;
+  if (bar) bar.style.background = colour;
+  pill.textContent       = `[${type.toUpperCase()}]`;
+  pill.style.color       = colour;
+  pill.style.background   = hexToRgba(colour, 0.15);
+  pill.style.borderColor  = hexToRgba(colour, 0.35);
 }
 
 function showCard(word) {
   currentWord = word;
   isFlipped   = false;
   dom.card.classList.remove('flipped');
+  if (dom.starBtn) { dom.starBtn.textContent = '☆'; dom.starBtn.classList.remove('starred'); }
 
   applyTypeStyle(dom.frontBar, dom.frontPill, word.type);
-  dom.frontWord.textContent = word.de;
+  dom.frontWord.innerHTML       = wordHtml(word);
+  if (dom.frontExample) dom.frontExample.textContent = word.example || '';
 
   applyTypeStyle(dom.backBar, dom.backPill, word.type);
-  dom.backWord.textContent  = word.de;
+  dom.backWord.innerHTML    = wordHtml(word);
   dom.backForms.textContent = word.forms || '';
   dom.backEn.textContent    = word.en;
   dom.backExDe.textContent  = word.example   || '';
@@ -797,6 +878,13 @@ function showScreen(which) {
   if (which === 'done')    dom.doneScreen.classList.remove('hidden');
   if (which === 'empty')   dom.emptyScreen.classList.remove('hidden');
   if (which === 'stats')   dom.statsScreen.classList.remove('hidden');
+
+  // Bottom nav: only on the lobby screens (home + stats), and highlight the
+  // tab that matches the active screen.
+  const showNav = (which === 'groups' || which === 'stats');
+  if (dom.bottomNav) dom.bottomNav.classList.toggle('hidden', !showNav);
+  if (dom.navLernen) dom.navLernen.classList.toggle('active', which === 'groups');
+  if (dom.navErfolg) dom.navErfolg.classList.toggle('active', which === 'stats');
 }
 
 function showDoneScreen() {
@@ -960,12 +1048,27 @@ function wireEvents() {
   dom.card.addEventListener('click', e => {
     if (e.target === dom.btnWrong || e.target === dom.btnRight) return;
     if (e.target === dom.listenBtn || dom.listenBtn.contains(e.target)) return;
+    if (dom.starBtn && (e.target === dom.starBtn || dom.starBtn.contains(e.target))) return;
     flipCard();
   });
   dom.card.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flipCard(); }
   });
   dom.listenBtn.addEventListener('click', e => { e.stopPropagation(); if (currentWord) speak(currentWord.de); });
+
+  // Star is a cosmetic per-card highlight (visual only, matches the mockup chrome).
+  if (dom.starBtn) {
+    dom.starBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      const on = dom.starBtn.classList.toggle('starred');
+      dom.starBtn.textContent = on ? '★' : '☆';
+    });
+  }
+
+  // Bottom nav — every tab routes to a screen that already exists.
+  if (dom.navLernen) dom.navLernen.addEventListener('click', goBackToGroups);
+  if (dom.navErfolg) dom.navErfolg.addEventListener('click', openStats);
+  if (dom.navProfil) dom.navProfil.addEventListener('click', openSettings);
 
   dom.btnWrong.addEventListener('click', e => { e.stopPropagation(); answer(false); });
   dom.btnRight.addEventListener('click', e => { e.stopPropagation(); answer(true);  });
