@@ -1019,9 +1019,26 @@ async function init() {
     return;
   }
 
-  wireEvents();
-  setupAuth();         // register onAuthStateChange; does NOT block rendering
-  renderGroupSelector();
+  // Failsafe: if we're still on the loading screen after 10 s something went
+  // wrong in wireEvents/renderGroupSelector below — make the error visible.
+  const failsafe = setTimeout(() => {
+    if (currentScreen === 'loading') {
+      dom.errorDetail.textContent = 'Timed out waiting for the app to start.';
+      showScreen('error');
+    }
+  }, 10000);
+
+  try {
+    wireEvents();
+    setupAuth();         // register onAuthStateChange; does NOT block rendering
+    renderGroupSelector();
+  } catch (err) {
+    console.error('Deutsch: startup error:', err);
+    dom.errorDetail.textContent = err.message || String(err);
+    showScreen('error');
+  } finally {
+    clearTimeout(failsafe);
+  }
 }
 
 // ─────────────────────────────────────────────

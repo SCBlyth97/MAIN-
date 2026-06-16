@@ -10,7 +10,7 @@
 // Bump this version on every deploy that changes the app shell (index.html,
 // app.js, style.css). Changing the name forces a fresh install + the activate
 // handler below deletes every old cache, so stale assets can never be served.
-const CACHE_NAME = 'deutsch-v2';
+const CACHE_NAME = 'deutsch-v3';
 
 // Assets to pre-cache on install
 const PRECACHE_URLS = [
