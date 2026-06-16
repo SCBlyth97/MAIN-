@@ -53,11 +53,6 @@
         <h1 class="home-title">What do you want to study?</h1>
         <p class="home-sub" id="homeSubtitle"></p>
       </div>
-      <div class="home-section-label">Quick practice</div>
-      <button class="drill-entry" id="btnStartDrill">
-        <span class="drill-entry-title">⚡ Gender Drill</span>
-        <span class="drill-entry-sub">First 50 nouns — tap der / die / das</span>
-      </button>
       <!-- Weak-words button: disabled and shows count via JS (updateWeakButtons) -->
       <button class="drill-entry drill-entry-weak" id="btnWeakHome" disabled>
         <span class="drill-entry-title">🔥 Weak Words</span>
@@ -67,30 +62,6 @@
       <div class="group-grid" id="groupGrid"></div>
     </div>
 
-    <!-- Gender drill -->
-    <div class="hidden" id="drillScreen">
-      <div id="drillActive">
-        <div class="drill-meta">
-          <span id="drillProgress">1 / 50</span>
-          <span id="drillScore">✓ 0 &nbsp; ✗ 0</span>
-        </div>
-        <p class="drill-noun" id="drillNoun"></p>
-        <p class="drill-en muted" id="drillEn"></p>
-        <p class="drill-feedback hidden" id="drillFeedback"></p>
-        <div class="drill-btns">
-          <button class="drill-btn" data-gender="der" id="drillBtnDer">der</button>
-          <button class="drill-btn" data-gender="die" id="drillBtnDie">die</button>
-          <button class="drill-btn" data-gender="das" id="drillBtnDas">das</button>
-        </div>
-      </div>
-      <div id="drillResults" class="hidden">
-        <div class="done-icon" id="drillResultIcon">🎯</div>
-        <h2 class="done-title" id="drillResultTitle"></h2>
-        <p class="muted" id="drillResultSub"></p>
-        <button class="btn btn-primary" id="btnDrillAgain">Try again ↺</button>
-      </div>
-      <button class="btn btn-secondary" id="btnBackFromDrill">← All groups</button>
-    </div>
 
     <!-- Loading -->
     <div class="state-screen" id="loadingScreen">
