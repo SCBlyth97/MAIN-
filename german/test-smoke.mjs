@@ -44,15 +44,37 @@ window.fetch = async (url) => ({
 window.speechSynthesis = { cancel() {}, speak() {} };
 window.SpeechSynthesisUtterance = function () {};
 window.scrollTo = () => {};
-// no window.supabase -> guest mode
-window.SUPABASE_URL = '';
-window.SUPABASE_ANON_KEY = '';
+
+// Simulate the real Supabase UMD bundle, which defines a GLOBAL `supabase`.
+// This is what caused the production "stuck on Loading" crash: app.js's
+// top-level `const supabase` collided with this global and threw a parse-time
+// SyntaxError. Defining it here means the test exercises that exact condition.
+window.supabase = {
+  createClient: () => ({
+    auth: {
+      onAuthStateChange: () => ({ data: { subscription: { unsubscribe() {} } } }),
+      signInWithOtp: async () => ({ error: null }),
+      signOut: async () => ({ error: null }),
+    },
+    from: () => ({ upsert: async () => ({ error: null }), select: () => ({ eq: () => ({ maybeSingle: async () => ({ data: null, error: null }) }) }) }),
+  }),
+};
+window.SUPABASE_URL = 'https://example.supabase.co';
+window.SUPABASE_ANON_KEY = 'test-anon-key';
 
 const wait = ms => new Promise(r => setTimeout(r, ms));
 const visible = el => el && !el.classList.contains('hidden');
 
 (async () => {
   console.log('\n=== Deutsch smoke test ===\n');
+
+  // 0) Static guard: app.js must NOT declare a top-level `const/let/var supabase`.
+  // The Supabase UMD CDN bundle defines a global `supabase`; a colliding lexical
+  // declaration throws a parse-time SyntaxError in real browsers (but NOT in
+  // jsdom, where the global is a configurable property), so guard it at source.
+  console.log('0) Source guard');
+  ok(!/\b(?:const|let|var)\s+supabase\b/.test(appJs),
+     'app.js does not redeclare the global `supabase` identifier');
 
   // Execute app.js (calls init() at the bottom). Append a test hook so the
   // harness can reach the module-scoped helpers without re-evaluating them.

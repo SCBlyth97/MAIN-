@@ -149,7 +149,7 @@ const dom = {
 // the whole app runs in guest-only mode with no auth UI changes.
 // ─────────────────────────────────────────────
 
-const supabase = (
+const supabaseClient = (
   typeof window.supabase !== 'undefined' &&
   window.SUPABASE_URL &&
   window.SUPABASE_ANON_KEY
@@ -248,8 +248,8 @@ function saveState() {
   // Only runs when a user is signed in AND Supabase is configured.
   // We do NOT await this — the UI never waits for the network.
   // If offline or signed out, nothing happens and local progress is safe.
-  if (supabase && currentUser) {
-    supabase.from('user_progress').upsert({
+  if (supabaseClient && currentUser) {
+    supabaseClient.from('user_progress').upsert({
       user_id:    currentUser.id,
       state:      state,
       updated_at: state.lastModified
@@ -578,12 +578,12 @@ function closeStats() { goBackToGroups(); }
 //   • when the user lands back on the page after clicking a magic link
 //   • after signOut()
 function setupAuth() {
-  // Always render the initial auth UI, even if supabase is null (shows "not configured")
+  // Always render the initial auth UI, even if supabaseClient is null (shows "not configured")
   updateAuthUI();
 
-  if (!supabase) return; // no config — guest-only mode, nothing more to do
+  if (!supabaseClient) return; // no config — guest-only mode, nothing more to do
 
-  supabase.auth.onAuthStateChange(async (event, session) => {
+  supabaseClient.auth.onAuthStateChange(async (event, session) => {
     const wasSignedIn = !!currentUser;
     currentUser = session?.user ?? null;
 
@@ -604,7 +604,7 @@ function updateAuthUI() {
   const row = $('authRow');
   if (!row) return;
 
-  if (!supabase) {
+  if (!supabaseClient) {
     // config.js not yet filled in — show a neutral placeholder
     row.innerHTML = `<p class="sync-status" style="padding:4px 0">Sync not configured</p>`;
     return;
@@ -654,7 +654,7 @@ function openSignInForm() {
 let linkCooldown = false;
 
 async function sendMagicLink() {
-  if (linkCooldown || !supabase) return;
+  if (linkCooldown || !supabaseClient) return;
 
   const emailEl  = $('authEmail');
   const statusEl = $('authStatus');
@@ -669,7 +669,7 @@ async function sendMagicLink() {
   if (sendBtn)  sendBtn.disabled = true;
   if (statusEl) statusEl.textContent = 'Sending…';
 
-  const { error } = await supabase.auth.signInWithOtp({
+  const { error } = await supabaseClient.auth.signInWithOtp({
     email,
     options: {
       // Redirect back to this exact page after the user clicks the link.
@@ -703,8 +703,8 @@ async function sendMagicLink() {
 }
 
 async function handleSignOut() {
-  if (!supabase) return;
-  await supabase.auth.signOut();
+  if (!supabaseClient) return;
+  await supabaseClient.auth.signOut();
   // onAuthStateChange fires automatically after signOut() and calls updateAuthUI()
 }
 
@@ -713,11 +713,11 @@ async function handleSignOut() {
 // Called once when the user becomes signed in. Fetches the cloud row
 // and adopts whichever version (local or cloud) has the more recent lastModified.
 async function reconcileWithCloud() {
-  if (!supabase || !currentUser) return;
+  if (!supabaseClient || !currentUser) return;
 
   try {
     // maybeSingle() returns { data: null } instead of an error when no row exists
-    const { data, error } = await supabase
+    const { data, error } = await supabaseClient
       .from('user_progress')
       .select('state, updated_at')
       .eq('user_id', currentUser.id)
@@ -756,8 +756,8 @@ async function reconcileWithCloud() {
 // Push the current local state to Supabase.
 // Awaited in reconcileWithCloud() for correctness; called fire-and-forget by saveState().
 async function pushToCloud() {
-  if (!supabase || !currentUser) return;
-  const { error } = await supabase.from('user_progress').upsert({
+  if (!supabaseClient || !currentUser) return;
+  const { error } = await supabaseClient.from('user_progress').upsert({
     user_id:    currentUser.id,
     state:      state,
     updated_at: state.lastModified || new Date().toISOString()
